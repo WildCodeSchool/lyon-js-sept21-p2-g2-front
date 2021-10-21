@@ -1,4 +1,4 @@
-import logo from '../assets/newLogo.png';
+import logo from '../assets/logoV2.png';
 
 import '../wll.css';
 import '../index.css';
