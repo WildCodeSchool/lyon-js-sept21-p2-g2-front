@@ -1,5 +1,12 @@
+import Home from './components/Home';
+import './Home.css';
+
 function App() {
-  return <div />;
+  return (
+    <div className="home-container">
+      <Home />
+    </div>
+  );
 }
 
 export default App;
