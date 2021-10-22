@@ -5,10 +5,12 @@ import {
 } from 'react-router-dom';
 import Home from './components/Home';
 import TagList from './components/TagList';
+import Header from './components/Header';
 
 function App() {
   return (
     <>
+      <Header />
       <Home />
       <TagList />
 
