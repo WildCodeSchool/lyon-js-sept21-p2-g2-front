@@ -1,0 +1,18 @@
+.navBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #b23a48;
+  height: 70px;
+  /*padding: 0 20px 0 20px;*/
+}
+
+#logo {
+  margin: 10px 20px 10px 20px;
+}
+
+#logBtn {
+  display: flex;
+  align-items: center;
+  border-radius: 8px 0 8px 0;
+}
