@@ -4,15 +4,16 @@ import {
   Route /* Link */,
 } from 'react-router-dom';
 import Home from './components/Home';
-import TagList from './components/TagList';
+// import TagList from './components/TagList';
 import Header from './components/Header';
+import AbstractBlogPost from './components/AbstractBlogPost';
 
 function App() {
   return (
     <>
       <Header />
       <Home />
-      <TagList />
+      <AbstractBlogPost />
 
       <Router>
         {/* <Link to="/">

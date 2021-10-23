@@ -1,0 +1,31 @@
+/* mist class colors from taiwind */
+
+.miniatureBlogPost {
+  background-color: salmon;
+  height: 100px;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  border-radius: 0.3em;
+  display: flex;
+  align-items: flex-start;
+  overflow: hidden;
+  padding: 5px;
+}
+
+.avatarCell {
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  background-color: black;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 5px;
+  position: absolute;
+}
+
+.userText {
+  font-size: 0.7em;
+  margin-left: 100px;
+}
