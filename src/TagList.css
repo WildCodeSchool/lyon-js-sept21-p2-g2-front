@@ -1,11 +1,8 @@
 /*need font size, font family*/
-#root {
-  height: 100vh;
-}
 
 .allTags {
   width: 85%;
-  height: 20%;
+  height: 200px;
   margin: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
