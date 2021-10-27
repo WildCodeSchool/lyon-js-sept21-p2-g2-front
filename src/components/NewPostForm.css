@@ -7,6 +7,7 @@
   background-color: salmon;
   border-radius: 7px;
   padding: 10px;
+  box-shadow: -2px -2px 8px 4px rgba(43, 35, 37, 0.3);
 }
 
 h3 {
@@ -16,16 +17,71 @@ h3 {
 
 #post-title {
   text-align: left;
-  margin: 5px;
+  margin: var(--smallBorderRadius);
   letter-spacing: 2px;
   font-weight: 500;
 }
-
-#name {
+.react-datepicker__input-container input {
+  border-radius: var(--smallBorderRadius);
+  width: 25%;
+  cursor: pointer;
   text-align: center;
+  color: #461220;
+  box-shadow: -2px -2px 8px 4px rgba(43, 35, 37, 0.3);
 }
 
+#name {
+  border-radius: var(--smallBorderRadius);
+  width: 100%;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: -2px -2px 8px 4px rgba(43, 35, 37, 0.3);
+}
+
+#add-post-btn {
+  background-color: var(--drakestShade);
+  margin-top: 1em;
+  height: 2.5rem;
+  width: 100%;
+  border-radius: var(--smallBorderRadius);
+  box-shadow: -2px -2px 8px 4px rgba(43, 35, 37, 0.3);
+  color: #fff;
+}
 #new-post-area {
+  resize: none;
   height: 130px;
   width: 100%;
+  border-radius: var(--smallBorderRadius);
+  cursor: pointer;
+  padding: 10px;
+}
+
+#downloadPict {
+  background-color: skyblue;
+  border-radius: var(--smallBorderRadius);
+  text-align: center;
+  height: 130px;
+  width: 100%;
+}
+
+@media screen and (max-width: 500px) {
+  .allTags {
+    width: 85%;
+    height: 200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    background-color: salmon;
+    border-radius: 7px;
+    cursor: pointer;
+  }
+  .react-datepicker__input-container input {
+    border-radius: var(--smallBorderRadius);
+    width: 100%;
+    cursor: pointer;
+    text-align: center;
+    color: #461220;
+    box-shadow: -2px -2px 8px 4px rgba(43, 35, 37, 0.3);
+  }
 }
