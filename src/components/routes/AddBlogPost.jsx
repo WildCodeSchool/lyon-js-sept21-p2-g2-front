@@ -1,7 +1,8 @@
 import React from 'react';
+import CreateNewPost from '../CreateNewPost';
 
 const AddBlogPost = () => {
-  return <div>Ajout BlogPost</div>;
+  return <CreateNewPost />;
 };
 
 export default AddBlogPost;
