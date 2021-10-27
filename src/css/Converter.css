@@ -1,0 +1,37 @@
+img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  margin: auto;
+}
+
+button img {
+  border-radius: 0;
+}
+
+.converter-container {
+  width: 85%;
+  margin: auto;
+  background-color: #461220;
+  border-radius: 8px;
+  color: #fff;
+}
+
+#convertion-result {
+  grid-column: 3;
+}
+
+.devise-container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 3fr 1fr 3fr;
+  grid-template-rows: repeat(2, 1fr);
+  text-align: center;
+}
+
+input {
+  width: 80%;
+  background-color: pink;
+  margin: auto;
+}
