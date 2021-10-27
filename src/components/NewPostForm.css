@@ -1,5 +1,5 @@
 .contact-form {
-  height: 550px;
+  height: auto;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
@@ -22,24 +22,10 @@ h3 {
 }
 
 #name {
-  width: 70%;
   text-align: center;
 }
 
-.form-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-#tagList-import {
-  margin: -15px;
-  font-size: 1px;
-}
-
-#text-add {
-  height: 150px;
-  width: 90%;
-}
-
-.taglist {
+#new-post-area {
+  height: 130px;
+  width: 100%;
 }
