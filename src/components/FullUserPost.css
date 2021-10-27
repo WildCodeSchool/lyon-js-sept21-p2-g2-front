@@ -1,0 +1,136 @@
+#mainContainer {
+  display: flex;
+  justify-content: center;
+}
+
+#fullUserPost {
+  display: flex;
+  flex-direction: column;
+  margin: 10% 5% 10% 5%;
+  border-radius: 8px;
+  width: 80%;
+  padding: 1%;
+  box-shadow: 10px 10px 16px 0px rgba(0, 0, 0, 0.75);
+}
+
+#blocBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* User Informations */
+
+#userPostInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4%;
+}
+
+#userPostInfo img {
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+}
+
+/* Post Text*/
+
+#postText {
+  width: 70%;
+}
+
+/* Carousel */
+
+div#slider {
+  width: 80%;
+  max-width: 1000px;
+  overflow: hidden;
+}
+
+div#slider figure {
+  position: relative;
+  width: 500%;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  left: 0;
+  text-align: left;
+  animation: 20s slidy infinite;
+}
+
+div#slider figure img {
+  width: 20%;
+  height: auto;
+  float: left;
+}
+
+@keyframes slidy {
+  0% {
+    left: 0%;
+  }
+  20% {
+    left: 0%;
+  }
+  25% {
+    left: -100%;
+  }
+  45% {
+    left: -100%;
+  }
+  50% {
+    left: -200%;
+  }
+  70% {
+    left: -200%;
+  }
+  75% {
+    left: -300%;
+  }
+  95% {
+    left: -300%;
+  }
+  100% {
+    left: -400%;
+  }
+}
+
+/* Comments Section */
+
+#postedComments {
+  display: inline-flex;
+  justify-content: space-around;
+  flex-direction: row;
+  text-align: left;
+}
+
+#userInfoComment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
+  margin: 0 2% 0 2%;
+  font-size: 12px;
+}
+
+#postAvatar {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin: 0 2% 0 2%;
+}
+
+#postText {
+  margin: 2% 0 2% 0;
+}
+
+#comments {
+  min-width: 240px;
+  min-height: 240px;
+  margin: 4% 0 4% 0;
+}
+
+#postBtn {
+  margin-bottom: 4%;
+}
