@@ -1,57 +1,101 @@
 import React, { /* useState, */ useEffect } from 'react';
 import axios from 'axios';
-import swiss from '../assets/switzerland.png';
-import japan from '../assets/japan.png';
+import usa from '../assets/united-states.png';
 import arrow from '../assets/right-arrow.png';
+import choice from '../assets/choice.png';
 import '../css/Converter.css';
 
 const Converter = () => {
   const [amount, setAmount] = React.useState('');
   const [result, setResult] = React.useState('');
+  const [firstCurrency, setFirstCurrency] = React.useState('CHOOSE CURRENCY:');
+  const [countries, setCountries] = React.useState([]);
+  const [flag, setFlag] = React.useState(choice);
+  const [currencies, setCurrencies] = React.useState([]);
 
-  const from = 'EUR';
+  const from = firstCurrency;
   const to = 'USD';
-  const apiKey = 'b201704f8af9a3f10da3fae8fcf7d77b';
 
-  const conversion = `${to}${from}`;
+  const handleFlagChange = (e) => {
+    const currentCountry = countries.find(
+      (elem) => elem.name === e.target.value
+    );
+    setFlag(currentCountry.flag);
 
+    const currentCurrency = currencies.find(
+      (elem) => elem.name === e.target.value
+    );
+    setFirstCurrency(currentCurrency.currency);
+  };
+
+  /* ***** EXCHANGE RATE API **** */
   useEffect(() => {
-    const url = `http://apilayer.net/api/live?access_key=${apiKey}&currencies=${from}&source=${to}&format=1`;
+    const url = `https://api.exchangerate.host/convert?from=${from}&to=${to}`;
     axios
       .get(url)
-      .then((res) => res.data.quotes[conversion])
-      .then((data) => setResult(data * amount))
+      .then((res) => res.data.info.rate)
+      .then((data) => setResult((data * amount).toFixed(2)))
       .catch((err) => console.error(err));
     // return () => {
     //   cleanup;
     // };
   }, [amount, result]);
 
+  /* ***** GET COUNTRIES NAMES LIST AND FLAGS ***** */
+  useEffect(() => {
+    axios
+      .get('https://countriesnow.space/api/v0.1/countries/flag/images')
+      .then((res) => res.data.data)
+      .then((data) => setCountries(data));
+    // return () => {
+    //   cleanup
+    // }
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get('https://countriesnow.space/api/v0.1/countries/currency')
+      .then((res) => res.data.data)
+      .then((data) => {
+        console.log(data);
+        setCurrencies(data);
+      });
+    // return () => {
+    //   cleanup
+    // }
+  }, []);
+
   return (
     <div className="converter-container">
       <div className="devise-container">
         <div>
-          <img src={swiss} alt="swiss flag" />
-          <span>CHF</span>
+          <img src={flag} alt="flag" />
+          <p className="currencies">{from}</p>
+          <select name="" id="" onChange={handleFlagChange}>
+            <option value="">--Select currency--</option>
+            {countries.map((country) => (
+              <option key={country.name} value={country.name}>
+                {country.name}
+              </option>
+            ))}
+          </select>
         </div>
         <button type="button">
           <img src={arrow} alt="arrow" />
         </button>
         <div>
-          <img src={japan} alt="japan flag" />
-          <span>JPY</span>
+          <img src={usa} alt="usa flag" />
+          <p className="currencies">USD</p>
         </div>
         <input
           type="text"
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
         />
-        <p id="convertion-result">{result}¥</p>
+        <p id="convertion-result">{result}$</p>
       </div>
     </div>
   );
 };
 
 export default Converter;
-
-// API key: b201704f8af9a3f10da3fae8fcf7d77b

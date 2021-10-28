@@ -3,6 +3,7 @@ img {
   height: 3rem;
   border-radius: 50%;
   margin: auto;
+  margin-top: 32px;
 }
 
 button img {
@@ -19,19 +20,38 @@ button img {
 
 #convertion-result {
   grid-column: 3;
+  align-self: center;
+  font-size: 1.8rem;
 }
 
 .devise-container {
   display: grid;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   grid-template-columns: 3fr 1fr 3fr;
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: 1fr 0.6fr;
   text-align: center;
 }
 
 input {
   width: 80%;
-  background-color: pink;
-  margin: auto;
+  background-color: #fcb9b2;
+  margin: 16px auto 16px;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+option {
+  color: black;
+  width: 80%;
+}
+
+select {
+  color: black;
+  width: 80%;
+}
+
+.currencies {
+  margin: 8px auto 16px;
+  height: 16px;
 }
