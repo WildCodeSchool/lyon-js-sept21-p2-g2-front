@@ -1,7 +1,12 @@
 import React from 'react';
+import DestinationBloc from '../DestinationBloc';
 
 const Destination = () => {
-  return <div>page destination</div>;
+  return (
+    <>
+      <DestinationBloc />
+    </>
+  );
 };
 
 export default Destination;
