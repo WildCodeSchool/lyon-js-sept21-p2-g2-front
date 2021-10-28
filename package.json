@@ -12,6 +12,7 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "react": "^17.0.2",
+    "react-datepicker": "^4.3.0",
     "react-dom": "^17.0.2",
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
@@ -24,7 +25,8 @@
     "eject": "react-scripts eject",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "format": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|css|md|vue)\""
+    "format": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|css|md|vue)\"",
+    "clean": "npm-run-all format lint:fix"
   },
   "eslintConfig": {
     "extends": [
@@ -63,7 +65,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm-run-all format lint:fix"
+      "pre-commit": "npm run clean"
     }
   }
 }
