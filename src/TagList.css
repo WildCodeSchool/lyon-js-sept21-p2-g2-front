@@ -1,0 +1,25 @@
+/*need font size, font family*/
+
+.allTags {
+  width: 85%;
+  height: 200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  background-color: salmon;
+  border-radius: 7px;
+}
+
+.cell {
+  padding-left: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+label {
+  font-size: 12px;
+}
+
+input {
+  vertical-align: text-top;
+}
