@@ -5,7 +5,7 @@ const TagList = () => {
   return (
     <form className="allTags">
       <div className="cell">
-        <label htmlFor="gastronomie">
+        <label htmlFor="gastronomie" className="taglist">
           <input type="checkbox" id="gastronomie" className="taglist" />{' '}
           #Gastronomie
         </label>
