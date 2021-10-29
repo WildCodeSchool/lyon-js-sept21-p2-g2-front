@@ -7,11 +7,13 @@ import AboutUs from './components/routes/AboutUs';
 import Destination from './components/routes/Destination';
 import PostDetails from './components/routes/PostDetails';
 import Footer from './components/Footer';
+import Filter from './components/routes/Filter';
 
 function App() {
   return (
     <Router>
       <Header />
+      <Filter />
       <main>
         <Switch>
           <Route exact path="/" component={Home} />
