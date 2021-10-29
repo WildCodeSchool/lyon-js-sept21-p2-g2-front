@@ -1,0 +1,16 @@
+.contact-us-form {
+  height: auto;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  background-color: salmon;
+  border-radius: 7px;
+  padding: 10px;
+  box-shadow: -2px -2px 8px 4px rgba(43, 35, 37, 0.3);
+}
+
+h3 {
+  font-weight: 400;
+  margin-top: 15px;
+}
