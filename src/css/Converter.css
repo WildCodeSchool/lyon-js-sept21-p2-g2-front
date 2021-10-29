@@ -62,8 +62,8 @@
 }
 
 .currencies {
-  margin: 8px auto 16px;
-  height: 16px;
+  margin: 8px auto;
+  /* height: 16px; */
 }
 
 .toCurrency {

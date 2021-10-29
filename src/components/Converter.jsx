@@ -6,7 +6,7 @@ import choice from '../assets/choice.png';
 import '../css/Converter.css';
 
 const Converter = () => {
-  const [amount, setAmount] = React.useState('');
+  const [amount, setAmount] = React.useState(1);
   const [result, setResult] = React.useState('');
   const [firstCurrency, setFirstCurrency] = React.useState('CHOOSE CURRENCY:');
   const [countries, setCountries] = React.useState([]);
@@ -30,11 +30,11 @@ const Converter = () => {
     setFirstCurrency(currentCurrency.currency);
 
     setDisplayInput(true);
+    setDisplayToCurrency(true);
   };
 
   const handleAmountChange = (e) => {
     setAmount(e.target.value);
-    setDisplayToCurrency(true);
   };
 
   /* ***** EXCHANGE RATE API **** */
@@ -79,7 +79,12 @@ const Converter = () => {
       <div className="devise-container">
         <div>
           <img src={flag} alt="flag" />
-          <p className="currencies">{from}</p>
+          <p
+            className="currencies"
+            style={{ fontSize: displayInput ? '16px' : '12px' }}
+          >
+            {from}
+          </p>
         </div>
         <select name="" id="" onChange={handleFlagChange}>
           <option value="">--Select currency--</option>
@@ -89,16 +94,10 @@ const Converter = () => {
             </option>
           ))}
         </select>
-        <button
-          type="button"
-          style={{ display: displayToCurrency ? 'block' : 'none' }}
-        >
+        <button type="button">
           <img src={arrow} alt="arrow" />
         </button>
-        <div
-          className="toCurrency"
-          style={{ display: displayToCurrency ? 'block' : 'none' }}
-        >
+        <div className="toCurrency">
           <img src={usa} alt="usa flag" />
           <p className="currencies">USD</p>
         </div>
