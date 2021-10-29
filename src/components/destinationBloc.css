@@ -1,23 +1,23 @@
-#destinationBloc {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+#mainContainer {
+  display: flex;
   justify-content: center;
-  align-items: center;
-  align-content: center;
-  text-align: center;
-  width: 180px;
-  height: 180px;
+}
+
+#destinationBloc {
+  width: 85%;
+  height: 85%;
   margin: 5% 5% 5% 5%;
   border-radius: 8px;
-  box-shadow: 10px 10px 16px 0px rgba(0, 0, 0, 0.75);
+  padding: 4%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 #flag {
-  /* margin: 20px; */
   border-radius: 20px;
-  width: 60px;
-  height: 40px;
+  width: 60%;
+  height: 40%;
   grid-column-start: 1;
   grid-column-end: 2;
   margin: 0 auto;
@@ -26,9 +26,43 @@
 #destinationName {
   grid-column-start: 2;
   grid-column-end: 3;
+  text-align: center;
 }
 
-#dataList {
-  font-size: 11px;
-  text-align: center;
+.countryBloc {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  justify-content: center;
+  align-content: center;
+  grid-template-areas:
+    'flagBox destinationName'
+    'dataBox dataBox'
+    'dataBox dataBox';
+}
+
+.flagBox {
+  grid-area: flagBox;
+}
+
+.destinationName {
+  grid-area: destinationName;
+}
+
+.dataBox {
+  grid-area: dataBox;
+  margin-top: 4%;
+}
+
+#liCatTitle {
+  font-weight: bold;
+  color: #b23a48;
+  text-transform: uppercase;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
 }
