@@ -9,7 +9,7 @@ import emptyAvatar from '../assets/emptyAvatar.png';
 function fullUserPost() {
   return (
     <div id="mainContainer">
-      <div id="fullUserPost" className="bg-melon-pink">
+      <div id="fullUserPost" className="bg-melon-pink shadow-2xl">
         <div id="userPostInfo">
           <img src={emptyAvatar} alt="avatar" id="avatar" />
           <span id="userName" className="font-bold">
@@ -30,7 +30,7 @@ function fullUserPost() {
             esse cillum dolore eu fugiat nulla pariatur.{' '}
           </p>
           {/* Carousel */}
-          <div id="slider" className="m-2">
+          <div id="slider" className="m-2 md:w-4/5">
             <figure>
               <img src={pic1} alt="" />
               <img src={pic2} alt="" />
@@ -42,7 +42,7 @@ function fullUserPost() {
           {/* Posted Comments */}
           <div
             id="postedComments"
-            className="bg-white rounded-lg inline-flex items-center p-1 m-2"
+            className="bg-apricot-pink shadow-inner rounded-lg inline-flex items-center p-1 m-2"
           >
             <div id="userInfoComment">
               <img src={emptyAvatar} alt="avatar" id="postAvatar" />
@@ -62,7 +62,7 @@ function fullUserPost() {
                   name="comments"
                   id="comments"
                   placeholder="Write something here"
-                  className="rounded-lg p-2"
+                  className="md:w-4/5 rounded-lg p-2 bg-apricot-pink"
                 />
               </div>
             </form>
@@ -72,7 +72,7 @@ function fullUserPost() {
             id="postBtn"
             type="button"
             value="Comment"
-            className="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-full shadow-sm text-white bg-dark-sienna hover:bg-english-red focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-english-red"
+            className="px-3 py-1.5 border border-transparent text-xs font-medium rounded-full shadow-sm text-white bg-dark-sienna hover:bg-english-red focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-english-red"
           />
         </div>
       </div>
