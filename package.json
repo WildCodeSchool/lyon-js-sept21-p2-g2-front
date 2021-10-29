@@ -26,7 +26,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "format": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|css|md|vue)\"",
-    "clean" :"npm-run-all format lint:fix"
+    "clean": "npm-run-all format lint:fix"
   },
   "eslintConfig": {
     "extends": [
