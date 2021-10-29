@@ -39,7 +39,7 @@ const Converter = () => {
     // return () => {
     //   cleanup;
     // };
-  }, [amount, result]);
+  }, [amount, result, from]);
 
   /* ***** GET COUNTRIES NAMES LIST AND FLAGS ***** */
   useEffect(() => {
