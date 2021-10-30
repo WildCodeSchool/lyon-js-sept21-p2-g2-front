@@ -1,5 +1,5 @@
 import React from 'react';
-import '../TagList.css';
+import '../css/TagList.css';
 
 const TagList = () => {
   return (

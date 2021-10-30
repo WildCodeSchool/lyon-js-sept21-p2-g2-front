@@ -1,5 +1,5 @@
 import React from 'react';
-import './FullUserPost.css';
+import '../css/FullUserPost.css';
 import pic1 from '../assets/Japan1.png';
 import pic2 from '../assets/Japan2.jpg';
 import pic3 from '../assets/japan3.jpeg';

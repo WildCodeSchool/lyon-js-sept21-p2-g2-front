@@ -1,6 +1,6 @@
 import React from 'react';
 import flag from '../assets/Flag_of_Japan.png';
-import './destinationBloc.css';
+import '../css/destinationBloc.css';
 
 export default function DestinationBloc() {
   return (
