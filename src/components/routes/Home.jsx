@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import homeImg from '../../assets/home-img.svg';
 import TagList from '../TagList';
 import '../../css/Home.css';
@@ -7,9 +8,19 @@ import '../../css/Home.css';
 const Home = () => {
   const [search, setSearch] = React.useState('');
   const [countryList, setCountryList] = React.useState([]);
+  const [displaySearchFilter, setDisplaySearchFilter] = React.useState(false);
+  const [countrySearch, setCountrySearch] = React.useState('');
+  const [destination, setDestination] = React.useState('/');
 
   const handleChange = (e) => {
     setSearch(e.target.value);
+    setDisplaySearchFilter(true);
+  };
+
+  const handleClick = (e) => {
+    setCountrySearch(e.target.innerHTML);
+    setSearch(countrySearch);
+    setDestination(`/destination/${countrySearch}`);
   };
 
   useEffect(() => {
@@ -36,15 +47,20 @@ const Home = () => {
             onChange={handleChange}
           />
           <button type="submit" id="search-btn">
-            Search
+            <Link to={destination}>Search</Link>
           </button>
         </label>
       </div>
-      <div className="dropdown">
+      <div
+        className="dropdown"
+        style={{ display: displaySearchFilter ? 'block' : 'none' }}
+      >
         {countryList
-          .filter((country) => country.includes(search))
+          .filter((country) => country.name.includes(search))
           .map((elem) => (
-            <div key={elem.name}>{elem.name}</div>
+            <p value={countrySearch} onClick={handleClick}>
+              {elem.name}
+            </p>
           ))}
       </div>
       <TagList />

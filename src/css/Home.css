@@ -27,3 +27,10 @@
   width: 98%;
   margin: 10% auto -3%;
 }
+
+.dropdown {
+  width: 85%;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 8px;
+}
