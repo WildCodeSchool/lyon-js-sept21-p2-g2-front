@@ -23,7 +23,8 @@
     "eject": "react-scripts eject",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "format": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|css|md|vue)\""
+    "format": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|css|md|vue)\"",
+    "clean": "npm-run-all format lint:fix"
   },
   "eslintConfig": {
     "extends": [
@@ -62,7 +63,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm-run-all format lint:fix"
+      "pre-commit": "npm run clean"
     }
   }
 }
