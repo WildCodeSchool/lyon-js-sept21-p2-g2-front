@@ -8,7 +8,7 @@
   text-align: center;
   color: white !important;
   text-shadow: 2px 2px 2px black;
-  box-shadow: 2px 2px 12px 2px black !important;
+  box-shadow: 2px 2px 12px 2px black !important; 
 }
 .fontcss {
   font-family: sans-serif;
@@ -23,4 +23,6 @@
   border-radius: 50%;
   box-shadow: 2px 2px 13px 2px white;
   width: 50px;
+  display: block;
+  margin: auto;
 }
