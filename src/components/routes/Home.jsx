@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import homeImg from '../../assets/home-img.svg';
-import TagList from '../TagList';
+// import TagList from '../TagList';
 import '../../css/Home.css';
 
 const Home = () => {
@@ -13,14 +13,27 @@ const Home = () => {
   const [destination, setDestination] = React.useState('/');
 
   const handleChange = (e) => {
-    setSearch(e.target.value);
-    setDisplaySearchFilter(true);
+    const currentSearch = e.target.value;
+    if (currentSearch.length > 1) {
+      const capitalized = currentSearch[0].toUpperCase();
+      const stuff = currentSearch.replace(currentSearch[0], capitalized);
+      setSearch(stuff);
+      setDisplaySearchFilter(true);
+    } else if (currentSearch.length === 1) {
+      const truc = currentSearch[0].toUpperCase();
+      setSearch(truc);
+      setDisplaySearchFilter(true);
+    } else {
+      setSearch('');
+      setDisplaySearchFilter(false);
+    }
   };
 
   const handleClick = (e) => {
     setCountrySearch(e.target.innerHTML);
-    setSearch(countrySearch);
-    setDestination(`/destination/${countrySearch}`);
+    setSearch(e.target.innerHTML);
+    setDestination(`/destination/${e.target.innerHTML}`);
+    setDisplaySearchFilter(false);
   };
 
   useEffect(() => {
@@ -39,16 +52,19 @@ const Home = () => {
         <h1>Trip@WILDERS</h1>
         <h2>Share the world...</h2>
         <img src={homeImg} alt="home" />
-        <label htmlFor="country">
+        <label htmlFor="country" id="truc">
           <input
             type="text"
             id="country-input"
+            autoComplete="off"
             value={search}
             onChange={handleChange}
           />
-          <button type="submit" id="search-btn">
-            <Link to={destination}>Search</Link>
-          </button>
+          <Link to={destination}>
+            <button type="submit" id="search-btn">
+              Search
+            </button>
+          </Link>
         </label>
       </div>
       <div
@@ -63,7 +79,8 @@ const Home = () => {
             </p>
           ))}
       </div>
-      <TagList />
+
+      {/* <TagList /> */}
     </>
   );
 };

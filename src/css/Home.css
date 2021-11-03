@@ -5,6 +5,7 @@
   box-shadow: -2px -2px 8px 4px rgba(43, 35, 37, 0.3);
   background-color: var(--lightShade);
   padding-left: 16px;
+  margin-top: -12px;
 }
 
 #search-btn {
