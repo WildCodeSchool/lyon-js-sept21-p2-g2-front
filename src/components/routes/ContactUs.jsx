@@ -18,10 +18,10 @@ const ContactUs = () => {
 
     emailjs
       .sendForm(
-        'service_sdc178r',
-        'template_vwjtsm9',
+        process.env.REACT_APP_EMAILJS_SERVICEID,
+        process.env.REACT_APP_EMAILJS_TEMPLATEID,
         form.current,
-        'user_mI3BrjbBLfMBBouSp6bHO'
+        process.env.REACT_APP_EMAILJS_KEYID
       )
       .then((result) => {
         console.log(result.text);
