@@ -8,9 +8,8 @@
   flex-direction: column;
   margin: 10% 5% 10% 5%;
   border-radius: 8px;
-  width: 80%;
+  width: 85%;
   padding: 1%;
-  box-shadow: 10px 10px 16px 0px rgba(0, 0, 0, 0.75);
 }
 
 #blocBody {
@@ -103,6 +102,7 @@ div#slider figure img {
   justify-content: space-around;
   flex-direction: row;
   text-align: left;
+  width: 80%;
 }
 
 #userInfoComment {
