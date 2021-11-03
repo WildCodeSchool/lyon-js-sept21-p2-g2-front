@@ -60,7 +60,7 @@ const Home = () => {
             value={search}
             onChange={handleChange}
           />
-          <Link to={destination}>
+          <Link to={destination.toLowerCase()}>
             <button type="submit" id="search-btn">
               Search
             </button>
