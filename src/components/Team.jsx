@@ -51,7 +51,7 @@ export default function Team() {
               {people.map((person) => (
                 <li
                   key={person.name}
-                  className="py-10 px-6 bg-melon-pink text-center rounded-lg xl:px-10 xl:text-left shadow-2xl"
+                  className="flex justify-center py-10 px-6 bg-melon-pink text-center rounded-lg xl:px-10 xl:text-left shadow-2xl"
                 >
                   <div className="space-y-6 xl:space-y-10">
                     <img
@@ -77,7 +77,7 @@ export default function Team() {
                           >
                             <span className="sr-only">GitHub</span>
                             <svg
-                              className="motion-safe:animate-bounce"
+                              className="animate-bounce"
                               xmlns="http://www.w3.org/2000/svg"
                               width="24"
                               height="24"
