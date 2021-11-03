@@ -29,13 +29,13 @@ const ContactUs = () => {
         setMessage('');
         setPhone('');
         setEmail('');
-        addToast('Thanks, your message will be traited quickly', {
+        addToast('Thanks, we will come back to you!', {
           appearance: 'success',
         });
       })
       .catch((error) => {
         console.log(error.text);
-        addToast('Sorry, impossible acces, try again later please!', {
+        addToast('Sorry, something wrong happened, please, try again later!', {
           appearance: 'error',
         });
       })
