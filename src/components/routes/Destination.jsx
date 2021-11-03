@@ -1,6 +1,8 @@
 import React from 'react';
 import DestinationBloc from '../DestinationBloc';
 import Weather from '../Weather';
+import Converter from '../Converter';
+
 import AbstractBlogPost from '../AbstractBlogPost';
 
 const Destination = () => {
@@ -8,6 +10,7 @@ const Destination = () => {
     <>
       <DestinationBloc />
       <Weather />
+      <Converter />
       <AbstractBlogPost />
     </>
   );
