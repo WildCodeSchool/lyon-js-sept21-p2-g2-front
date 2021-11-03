@@ -4,6 +4,7 @@ import { useToasts } from 'react-toast-notifications';
 import './ContactUs.css';
 
 const ContactUs = () => {
+  const [processing, setProcessing] = useState(false);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -13,6 +14,7 @@ const ContactUs = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
+    setProcessing(true);
 
     emailjs
       .sendForm(
@@ -21,29 +23,28 @@ const ContactUs = () => {
         form.current,
         'user_mI3BrjbBLfMBBouSp6bHO'
       )
-      .then(
-        (result) => {
-          console.log(result.text);
-          setName('');
-          setMessage('');
-          setPhone('');
-          setEmail('');
-          addToast('Thanks, your message will be traited quickly', {
-            appearance: 'success',
-          });
-        },
-        (error) => {
-          console.log(error.text);
-          addToast('Sorry, impossible acces, try again later please!', {
-            appearance: 'error',
-          });
-        }
-      );
+      .then((result) => {
+        console.log(result.text);
+        setName('');
+        setMessage('');
+        setPhone('');
+        setEmail('');
+        addToast('Thanks, your message will be traited quickly', {
+          appearance: 'success',
+        });
+      })
+      .catch((error) => {
+        console.log(error.text);
+        addToast('Sorry, impossible acces, try again later please!', {
+          appearance: 'error',
+        });
+      })
+      .finally(() => setProcessing(false));
   };
 
   return (
     <form ref={form} onSubmit={sendEmail}>
-      <div className="contact-us-form">
+      <div className="contact-us-form bg-melon-pink">
         <h2 id="title-contact-us">Contact Us</h2>
         <div className="grid-form">
           <h3>Name</h3>
@@ -55,6 +56,8 @@ const ContactUs = () => {
               autoComplete="off"
               onChange={(e) => setName(e.target.value)}
               value={name}
+              disabled={processing}
+              required
             />
           </label>
           <h3>Email</h3>
@@ -65,6 +68,8 @@ const ContactUs = () => {
               autoComplete="off"
               onChange={(e) => setEmail(e.target.value)}
               value={email}
+              disabled={processing}
+              required
             />
           </label>
           <h3>
@@ -77,6 +82,7 @@ const ContactUs = () => {
               name="phone"
               autoComplete="off"
               onChange={(e) => setPhone(e.target.value)}
+              disabled={processing}
               value={phone}
             />
           </label>
@@ -88,9 +94,16 @@ const ContactUs = () => {
             autoComplete="off"
             onChange={(e) => setMessage(e.target.value)}
             value={message}
+            disabled={processing}
+            required
           />
         </label>
-        <input type="submit" id="submit-btn" value="Send" />
+        <input
+          type="submit"
+          id="submit-btn"
+          value="Send"
+          disabled={processing}
+        />
       </div>
     </form>
   );

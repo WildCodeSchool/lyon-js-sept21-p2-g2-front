@@ -4,7 +4,7 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
-  background-color: salmon;
+
   border-radius: 7px;
   padding: 10px;
   box-shadow: -2px -2px 8px 4px rgba(43, 35, 37, 0.3);
@@ -40,7 +40,7 @@ textarea {
   height: 150px;
   width: 100%;
   border-radius: var(--smallBorderRadius);
-  cursor: pointer;
+
   padding: 10px;
 }
 
@@ -51,4 +51,14 @@ textarea {
   box-shadow: -2px -2px 8px 4px rgba(43, 35, 37, 0.3);
   color: #fff;
   width: 100%;
+  cursor: pointer;
+}
+
+#submit-btn:hover {
+  color: #461220;
+  background-color: #b23a48;
+}
+
+input {
+  padding: 5px 10px;
 }
