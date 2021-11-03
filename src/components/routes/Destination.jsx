@@ -2,6 +2,7 @@ import React from 'react';
 import DestinationBloc from '../DestinationBloc';
 import Converter from '../Converter';
 import AbstractBlogPost from '../AbstractBlogPost';
+import CreatePostBtn from '../CreatePostBtn';
 
 const Destination = () => {
   return (
@@ -9,6 +10,7 @@ const Destination = () => {
       <DestinationBloc />
       <Converter />
       <AbstractBlogPost />
+      <CreatePostBtn />
     </>
   );
 };
