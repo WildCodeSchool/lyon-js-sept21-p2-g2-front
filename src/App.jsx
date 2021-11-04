@@ -9,25 +9,29 @@ import Destination from './components/routes/Destination';
 import PostDetails from './components/routes/PostDetails';
 import Footer from './components/Footer';
 
+import { PostsContextProvider } from './components/PostsContext';
+
 function App() {
   return (
-    <Router>
-      <ToastProvider>
-        <Header />
-        <main>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/destination/:id" component={Destination} />
-            <Route path="/add-post" component={AddBlogPost} />
-            <Route path="/contact-us" component={ContactUs} />
-            <Route path="/about-us" component={AboutUs} />
-            <Route path="/posts/:id" component={PostDetails} />
-          </Switch>
-        </main>
+    <PostsContextProvider>
+      <Router>
+        <ToastProvider>
+          <Header />
+          <main>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/destination/:id" component={Destination} />
+              <Route path="/add-post" component={AddBlogPost} />
+              <Route path="/contact-us" component={ContactUs} />
+              <Route path="/about-us" component={AboutUs} />
+              <Route path="/posts/:id" component={PostDetails} />
+            </Switch>
+          </main>
 
-        <Footer />
-      </ToastProvider>
-    </Router>
+          <Footer />
+        </ToastProvider>
+      </Router>
+    </PostsContextProvider>
   );
 }
 
