@@ -1,6 +1,6 @@
 import React from 'react';
 import homeImg from '../../assets/home-img.svg';
-import TagList from '../TagList';
+
 import './Home.css';
 
 const Home = () => {
@@ -17,7 +17,6 @@ const Home = () => {
           </button>
         </label>
       </div>
-      <TagList />
     </>
   );
 };
