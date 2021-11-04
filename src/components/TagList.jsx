@@ -12,6 +12,7 @@ const TagList = () => {
       </div>
 
       <div className="cell">
+        -
         <label htmlFor="arts" className="taglist">
           <input type="checkbox" name="arts" className="taglist" /> #Arts
         </label>

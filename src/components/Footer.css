@@ -1,0 +1,29 @@
+/* *** GENERAL FOOTER *** */
+
+footer {
+  background-color: #b23a48;
+  color: white;
+  text-align: center;
+  padding: 8px 8px 2px 8px;
+}
+
+/* *** NAV *** */
+ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+li:hover {
+  cursor: pointer;
+  color: #ffe4d8;
+}
+
+.navigation {
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+/* *** COPYRIGHT *** */
+.copyright {
+  font-size: 10px;
+}
