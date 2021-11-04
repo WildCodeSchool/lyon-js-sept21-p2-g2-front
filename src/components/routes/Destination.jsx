@@ -4,6 +4,7 @@ import Weather from '../Weather';
 import Converter from '../Converter';
 
 import AbstractBlogPost from '../AbstractBlogPost';
+import CreatePostBtn from '../CreatePostBtn';
 
 const Destination = () => {
   return (
@@ -12,6 +13,7 @@ const Destination = () => {
       <Weather />
       <Converter />
       <AbstractBlogPost />
+      <CreatePostBtn />
     </>
   );
 };
