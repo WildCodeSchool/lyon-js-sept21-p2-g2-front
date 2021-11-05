@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import homeImg from '../../assets/home-img.svg';
-// import TagList from '../TagList';
 import '../../css/Home.css';
 
 const Home = () => {
@@ -15,13 +14,13 @@ const Home = () => {
   const handleChange = (e) => {
     const currentSearch = e.target.value;
     if (currentSearch.length > 1) {
-      const capitalized = currentSearch[0].toUpperCase();
-      const stuff = currentSearch.replace(currentSearch[0], capitalized);
-      setSearch(stuff);
+      const firstLetter = currentSearch[0].toUpperCase();
+      const capitalized = currentSearch.replace(currentSearch[0], firstLetter);
+      setSearch(capitalized);
       setDisplaySearchFilter(true);
     } else if (currentSearch.length === 1) {
-      const truc = currentSearch[0].toUpperCase();
-      setSearch(truc);
+      const firstLetter = currentSearch[0].toUpperCase();
+      setSearch(firstLetter);
       setDisplaySearchFilter(true);
     } else {
       setSearch('');
@@ -79,8 +78,6 @@ const Home = () => {
             </p>
           ))}
       </div>
-
-      {/* <TagList /> */}
     </>
   );
 };
