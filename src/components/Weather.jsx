@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import Paper from '@material-ui/core/Paper';
 import axios from 'axios';
+import Paper from '@material-ui/core/Paper';
 import { Button, TextField } from '@material-ui/core';
 import SendIcon from '@material-ui/icons/Send';
 import './weather.css';
-
-const weatherApiKey = `b02e1891c1a2b990344c77fb6b40c074`;
+import { useParams } from 'react-router-dom';
 
 // Define API const
 
 const Weather = () => {
+  const { id } = useParams();
+  const firstLetter = id[0].toUpperCase();
+  const rest = id.slice(1, id.length);
+  const destination = `${firstLetter}${rest}`;
+
   const [value, setValue] = useState('');
   const [temp, setTemp] = useState('');
   const [typecity, setTypeCity] = useState('');
@@ -19,13 +23,19 @@ const Weather = () => {
 
   const citySelect = (e) => {
     e.preventDefault();
-    setCity(typecity);
   };
 
   // Call API
   useEffect(() => {
+    axios(`https://countriesnow.space/api/v0.1/countries/capital`)
+      .then((resolve) => resolve.data.data)
+      .then((data) => data.filter((country) => country.name === destination))
+      .then((country) => setCity(country[0].capital));
+  }, []);
+
+  useEffect(() => {
     axios(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${weatherApiKey}`
+      `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
     )
       .then((resolve) => {
         setValue(resolve.data);
@@ -36,10 +46,12 @@ const Weather = () => {
         setdisc(resolve.data.weather[0].description);
       })
       .catch((reject) => {
+        // eslint-disable-next-line
         console.log(reject);
         setValue('City not found');
       });
   }, [city]);
+
   return (
     <div>
       <Paper className="paper">
