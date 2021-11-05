@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
+import { useParams } from 'react-router-dom';
 import usa from '../assets/united-states.png';
 import arrow from '../assets/right-arrow.png';
 import choice from '../assets/choice.png';
 import '../css/Converter.css';
 
 const Converter = () => {
+  const { name } = useParams();
   const [amount, setAmount] = React.useState(1);
   const [result, setResult] = React.useState('');
   const [firstCurrency, setFirstCurrency] = React.useState('CHOOSE CURRENCY:');
@@ -15,8 +17,16 @@ const Converter = () => {
   const [displayInput, setDisplayInput] = React.useState(false);
   const [displayToCurrency, setDisplayToCurrency] = React.useState(false);
 
+  const firstLetter = name[0].toUpperCase();
+  const restOfWord = name.slice(1, name.length);
+  const capitalized = `${firstLetter}${restOfWord}`;
+  const findToCurrency = currencies.filter(
+    (country) => country.name === capitalized
+  );
+  const toCurrency = findToCurrency[0].currency;
+
   const from = firstCurrency;
-  const to = 'USD';
+  const to = toCurrency;
 
   const handleFlagChange = (e) => {
     const currentCountry = countries.find(
@@ -61,6 +71,7 @@ const Converter = () => {
     // }
   }, []);
 
+  /* ***** GET CURRENCIES ****** */
   useEffect(() => {
     axios
       .get('https://countriesnow.space/api/v0.1/countries/currency')
