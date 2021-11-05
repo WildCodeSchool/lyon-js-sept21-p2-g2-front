@@ -24,13 +24,26 @@ export default function DestinationBloc() {
   }, []);
 
   if (!destination) {
-    return <h2>Chargement</h2>;
+    return (
+      <div className="flex justify-center items-center flex-col my-4">
+        <div
+          className="
+        animate-spin
+        rounded-full
+        h-20
+        w-20
+        border-t-2 border-b-2 border-dark-sienna my-3
+      "
+        />
+        <span className="text-dark-sienna">LOADING</span>
+      </div>
+    );
   }
   return (
     <div id="mainContainer">
       <div
         id="destinationBloc"
-        className="countryBloc bg-dark-sienna text-white shadow-2xl"
+        className="countryBloc bg-dark-sienna text-white shadow-md"
       >
         <div className="flagBox">
           <img id="flag" src={destination.flags.png} alt="Flag" />
