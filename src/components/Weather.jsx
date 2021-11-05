@@ -9,9 +9,9 @@ import { useParams } from 'react-router-dom';
 // Define API const
 
 const Weather = () => {
-  const { id } = useParams();
-  const firstLetter = id[0].toUpperCase();
-  const rest = id.slice(1, id.length);
+  const { name } = useParams();
+  const firstLetter = name[0].toUpperCase();
+  const rest = name.slice(1, name.length);
   const destination = `${firstLetter}${rest}`;
 
   const [value, setValue] = useState('');
@@ -52,6 +52,22 @@ const Weather = () => {
       });
   }, [city]);
 
+  // if (!id) {
+  //   return (
+  //     <div className="flex justify-center items-center flex-col my-4">
+  //       <div
+  //         className="
+  //       animate-spin
+  //       rounded-full
+  //       h-20
+  //       w-20
+  //       border-t-2 border-b-2 border-dark-sienna my-3
+  //     "
+  //       />
+  //       <span className="text-dark-sienna">LOADING</span>
+  //     </div>
+  //   );
+  // }
   return (
     <div>
       <Paper className="paper">

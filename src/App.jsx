@@ -17,14 +17,13 @@ function App() {
         <main>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/destination/:id" component={Destination} />
+            <Route path="/destination/:name" component={Destination} />
             <Route path="/add-post" component={AddBlogPost} />
             <Route path="/contact-us" component={ContactUs} />
             <Route path="/about-us" component={AboutUs} />
             <Route path="/posts/:id" component={PostDetails} />
           </Switch>
         </main>
-
         <Footer />
       </ToastProvider>
     </Router>

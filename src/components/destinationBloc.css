@@ -66,3 +66,10 @@ li {
   display: flex;
   justify-content: space-between;
 }
+
+.language {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  column-gap: 4px;
+}
