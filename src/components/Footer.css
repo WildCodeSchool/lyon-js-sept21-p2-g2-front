@@ -5,15 +5,18 @@ footer {
   color: white;
   text-align: center;
   padding: 8px 8px 2px 8px;
+  margin-top: 1%;
+  padding: 1%;
 }
 
 /* *** NAV *** */
-ul {
+footer ul {
   display: flex;
   justify-content: space-around;
+  font-family: 'secondaryFont';
 }
 
-li:hover {
+footer li:hover {
   cursor: pointer;
   color: #ffe4d8;
 }
@@ -25,5 +28,5 @@ li:hover {
 
 /* *** COPYRIGHT *** */
 .copyright {
-  font-size: 10px;
+  font-size: 12px;
 }

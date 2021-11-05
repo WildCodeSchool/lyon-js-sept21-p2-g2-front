@@ -1,4 +1,5 @@
 import React from 'react';
+import './MvdList.css';
 
 export default function MvdList() {
   const mvd = [
@@ -24,7 +25,7 @@ export default function MvdList() {
     },
   ];
   return (
-    <div className="flex flex-col items-center">
+    <div id="mvdBloc" className="flex flex-col items-center">
       <div id="titleMvd">
         <h3 className="text-center mt-6 mb-2">Most Valued Destinations</h3>
       </div>

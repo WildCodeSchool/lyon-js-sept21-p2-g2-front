@@ -1,14 +1,15 @@
 .paper {
-  width: 300px;
-  height: 300px;
+  width: 85%;
+  height: 85%;
   margin: auto;
-  background-image: linear-gradient(steelblue, skyblue);
-  margin-top: 100px;
-  padding-top: 30px;
+  background-image: linear-gradient(#461220, #461220);
+  margin-bottom: 5%;
+  padding: 4%;
   text-align: center;
   color: white !important;
   text-shadow: 2px 2px 2px black;
-  box-shadow: 2px 2px 12px 2px black !important;
+  /* box-shadow: 2px 2px 12px 2px black !important; */
+  font-size: 18px;
 }
 .fontcss {
   font-family: sans-serif;
@@ -22,7 +23,26 @@
   background-color: lightblue;
   border-radius: 50%;
   box-shadow: 2px 2px 13px 2px white;
-  width: 50px;
+  width: 20%;
   display: block;
   margin: auto;
+}
+
+@media only screen and (min-width: 481px) {
+  .paper {
+    width: 70%;
+    height: 70%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .paper {
+    width: 60%;
+    height: 60%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .paper {
+    width: 50%;
+    height: 50%;
+  }
 }

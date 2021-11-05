@@ -42,7 +42,7 @@ const Weather = () => {
   }, [city]);
   return (
     <div>
-      <Paper className="paper">
+      <Paper className="paper drop-shadow-md">
         <form onSubmit={citySelect}>
           <TextField
             className="elementcenter"

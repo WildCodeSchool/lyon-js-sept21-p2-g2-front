@@ -1,6 +1,7 @@
 #mainContainer {
   display: flex;
   justify-content: center;
+  font-family: 'secondaryFont';
 }
 
 #destinationBloc {
@@ -62,7 +63,7 @@
   text-transform: uppercase;
 }
 
-li {
+#liDestination {
   display: flex;
   justify-content: space-between;
 }
@@ -72,4 +73,29 @@ li {
   justify-content: flex-end;
   flex-wrap: wrap;
   column-gap: 4px;
+}
+
+/* TABLETS AND DESKTOP */
+
+@media only screen and (min-width: 481px) {
+  #destinationBloc {
+    width: 70%;
+    height: 70%;
+    margin: 5% 5% 5% 5%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #destinationBloc {
+    width: 60%;
+    height: 60%;
+    margin: 5% 5% 5% 5%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  #destinationBloc {
+    width: 50%;
+    height: 50%;
+    margin: 5% 5% 5% 5%;
+  }
 }
