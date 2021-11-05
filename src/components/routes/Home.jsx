@@ -2,13 +2,14 @@ import React, { useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import homeImg from '../../assets/home-img.svg';
+import MvdList from '../MvdList';
 import '../../css/Home.css';
 
 const Home = () => {
   const [search, setSearch] = React.useState('');
   const [countryList, setCountryList] = React.useState([]);
   const [displaySearchFilter, setDisplaySearchFilter] = React.useState(false);
-  const [countrySearch, setCountrySearch] = React.useState('');
+  // const [countrySearch, setCountrySearch] = React.useState('');
   const [destination, setDestination] = React.useState('/');
 
   const handleChange = (e) => {
@@ -29,10 +30,10 @@ const Home = () => {
   };
 
   const handleClick = (e) => {
-    setCountrySearch(e.target.innerHTML);
+    // setCountrySearch(e.target.innerHTML);
     setSearch(e.target.innerHTML);
     setDestination(`/destination/${e.target.innerHTML}`);
-    setDisplaySearchFilter(false);
+    // setDisplaySearchFilter(false);
   };
 
   useEffect(() => {
@@ -51,21 +52,21 @@ const Home = () => {
         <h1>Trip@WILDERS</h1>
         <h2>Share the world...</h2>
         <img src={homeImg} alt="home" />
-        <label htmlFor="country" id="truc">
-          <input
-            type="text"
-            id="country-input"
-            autoComplete="off"
-            value={search}
-            onChange={handleChange}
-          />
-          <Link to={destination.toLowerCase()}>
-            <button type="submit" id="search-btn">
-              Search
-            </button>
-          </Link>
-        </label>
       </div>
+      <label htmlFor="country">
+        <input
+          type="text"
+          id="country-input"
+          autoComplete="off"
+          value={search}
+          onChange={handleChange}
+        />
+        <Link to={destination.toLowerCase()}>
+          <button type="submit" id="search-btn">
+            Search
+          </button>
+        </Link>
+      </label>
       <div
         className="dropdown"
         style={{ display: displaySearchFilter ? 'block' : 'none' }}
@@ -73,11 +74,25 @@ const Home = () => {
         {countryList
           .filter((country) => country.name.includes(search))
           .map((elem) => (
-            <p value={countrySearch} onClick={handleClick}>
-              {elem.name}
-            </p>
+            <Link to={destination.toLowerCase()} onClick={handleClick}>
+              <div className="flex items-center space-x-4 filter-container">
+                <div>
+                  <img
+                    className="h-5 w-5 rounded-full"
+                    src={elem.flag}
+                    alt="flag"
+                  />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-sm font-medium text-dark-sienna">
+                    {elem.name}
+                  </p>
+                </div>
+              </div>
+            </Link>
           ))}
       </div>
+      <MvdList />
     </>
   );
 };

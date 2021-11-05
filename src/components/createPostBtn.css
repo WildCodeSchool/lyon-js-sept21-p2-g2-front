@@ -1,0 +1,12 @@
+
+.createPostBtn {
+    display: block;
+    margin: 40px auto 40px auto;
+    background-color: #461220;
+    color: #f7f8fb;
+    height: 50px;
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: -1px -1px 3px 3px rgb(43 35 37 / 30%);
+  }
+  

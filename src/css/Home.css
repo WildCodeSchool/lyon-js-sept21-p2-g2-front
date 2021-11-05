@@ -1,11 +1,13 @@
 #country-input {
-  width: 100%;
+  width: 85%;
   height: 2.5rem;
   border-radius: var(--smallBorderRadius);
   box-shadow: -2px -2px 8px 4px rgba(43, 35, 37, 0.3);
   background-color: var(--lightShade);
   padding-left: 16px;
-  margin-top: -12px;
+  margin-left: 7.5%;
+  margin-top: -14px;
+  color: var(--drakestShade);
 }
 
 #search-btn {
@@ -26,12 +28,44 @@
 
 .home-container img {
   width: 98%;
-  margin: 10% auto -3%;
+  margin: 6% auto -3%;
 }
 
 .dropdown {
   width: 85%;
+  max-height: 9rem;
   margin: auto;
-  background-color: #fff;
+  background-color: #f2f2f2;
   border-radius: 8px;
+  overflow-y: scroll;
+  z-index: 3;
+  position: fixed;
+  left: 7.5%;
+}
+
+.destination-filter {
+  margin-left: 7%;
+  width: 60%;
+}
+
+.filter-container {
+  padding: 8px 16px;
+}
+
+.dropdown::-webkit-scrollbar {
+  width: 12px;
+}
+
+.dropdown::-webkit-scrollbar-track {
+  /* border: 1px solid var(--drakestShade); */
+  padding: 2px 0;
+  background-color: rgb(230, 227, 227);
+  border-radius: 3px;
+}
+
+.dropdown::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: var(--drakestShade);
+  border: 1px solid #000;
 }
