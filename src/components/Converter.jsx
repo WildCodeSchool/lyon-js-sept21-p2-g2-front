@@ -81,7 +81,7 @@ const Converter = () => {
           <img src={flag} alt="flag" />
           <p
             className="currencies"
-            style={{ fontSize: displayInput ? '16px' : '12px' }}
+            // style={{ fontSize: displayInput ? '16px' : '12px' }}
           >
             {from}
           </p>
