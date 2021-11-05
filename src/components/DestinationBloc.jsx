@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import './destinationBloc.css';
+import '../css/destinationBloc.css';
 
 export default function DestinationBloc() {
   const [destination, setDestination] = React.useState();

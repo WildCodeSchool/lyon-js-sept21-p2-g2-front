@@ -25,13 +25,13 @@ export default function MvdList() {
     },
   ];
   return (
-    <div id="mvdBloc" className="flex flex-col items-center">
+    <div className="flex flex-col items-center mvd">
       <div id="titleMvd">
-        <h3 className="text-center mt-6 mb-2">Most Valued Destinations</h3>
+        <h3 className="text-center mt-6">Most Valued Destinations</h3>
       </div>
 
       {mvd.map((country) => (
-        <span className="py-4 my-2 w-4/5 sm:w-1/3 md:w-1/4 mt-2 bg-dark-sienna text-white shadow-2xl rounded-3xl p-2">
+        <span className="w-4/5 sm:w-1/3 md:w-1/4 mt-2 bg-dark-sienna text-white shadow-2xl rounded-full p-3">
           <a
             href={`http://localhost:3001/destination/${country.name}`}
             id="link"

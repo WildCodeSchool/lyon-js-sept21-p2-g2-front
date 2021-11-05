@@ -22,15 +22,15 @@ main {
 
 @font-face {
   font-family: 'title';
-  src: url('./assets/galactic_vanguardian_ncv.otf');
+  src: url('../assets/galactic_vanguardian_ncv.otf');
 }
 @font-face {
   font-family: 'mainFont';
-  src: url('./assets/Zag\ Regular.otf');
+  src: url('../assets/Zag\ Regular.otf');
 }
 @font-face {
   font-family: 'secondaryFont';
-  src: url('./assets/Mont-Heavy.otf');
+  src: url('../assets/Mont-Heavy.otf');
 }
 :root {
   --lightestShade: #ffe4d8;
