@@ -43,7 +43,7 @@ export default function DestinationBloc() {
     <div id="mainContainer">
       <div
         id="destinationBloc"
-        className="countryBloc bg-dark-sienna text-white shadow-2xl"
+        className="countryBloc bg-dark-sienna text-white shadow-md"
       >
         <div className="flagBox">
           <img id="flag" src={destination.flags.png} alt="Flag" />
