@@ -1,0 +1,32 @@
+.select-tag {
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+
+  border-radius: var(--smallBorderRadius);
+  box-shadow: -2px -2px 8px 4px rgb(43 35 37 / 30%);
+  background-color: var(--lightShade);
+  height: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.basic-multi-select {
+  width: 90%;
+  height: 100%;
+  border-radius: var(--smallBorderRadius);
+}
+
+#tag-btn {
+  background-color: var(--drakestShade);
+  height: auto;
+  width: 15%;
+  border-radius: var(--smallBorderRadius);
+  box-shadow: -2px -2px 8px 4px rgba(43, 35, 37, 0.3);
+  color: #fff;
+}
+
+input {
+  background-color: var(--lightShade);
+}
