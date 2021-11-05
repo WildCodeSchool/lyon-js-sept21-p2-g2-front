@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import Paper from '@material-ui/core/Paper';
 import axios from 'axios';
+
+import Paper from '@material-ui/core/Paper';
 import { Button, TextField } from '@material-ui/core';
 import SendIcon from '@material-ui/icons/Send';
 import './weather.css';
