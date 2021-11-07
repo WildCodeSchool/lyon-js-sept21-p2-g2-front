@@ -16,7 +16,7 @@ function fullUserPost() {
             UserName
           </span>
           <span id="date" className="font-semibold">
-            26/08/2021
+            26.08.2021
           </span>
         </div>
         <div id="blocBody">
@@ -57,12 +57,12 @@ function fullUserPost() {
           {/* Comment Form */}
           <div id="commentForm">
             <form action="/html/tags/html_form_tag_action.cfm" method="post">
-              <div>
+              <div id="textArea">
                 <textarea
                   name="comments"
                   id="comments"
                   placeholder="Write something here"
-                  className="md:w-4/5 rounded-lg p-2 bg-apricot-pink"
+                  className="md:w-4/5 lg:4/5 rounded-lg p-2 bg-apricot-pink"
                 />
               </div>
             </form>
