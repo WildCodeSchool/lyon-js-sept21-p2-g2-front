@@ -1,9 +1,8 @@
 .paper {
   width: 85%;
   height: 85%;
-  margin: auto;
   background-image: linear-gradient(#461220, #461220);
-  margin-bottom: 5%;
+  /* margin: 5% 5% 5% 5%; */
   padding: 4%;
   text-align: center;
   color: white !important;
@@ -20,12 +19,16 @@
   justify-content: space-around;
 }
 .imgcss {
-  background-color: lightblue;
   border-radius: 50%;
-  box-shadow: 2px 2px 13px 2px white;
   width: 20%;
   display: block;
-  margin: auto;
+  margin: 5% 40%;
+}
+
+#paperContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media only screen and (min-width: 481px) {
@@ -42,7 +45,13 @@
 }
 @media only screen and (min-width: 1024px) {
   .paper {
-    width: 50%;
-    height: 50%;
+    width: 85%;
+    height: 85%;
+  }
+  #paperContainer {
+    width: 40%;
+  }
+  div.elementcenter {
+    margin: 8%;
   }
 }

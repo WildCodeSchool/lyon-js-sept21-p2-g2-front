@@ -2,13 +2,13 @@
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
-  margin: auto;
-  margin-top: 16px;
+  margin: 5% auto 0;
 }
 
 .converter-container button {
   grid-column: 2;
   grid-row: 1;
+  margin: 5% auto 0;
 }
 
 .converter-container button img {
@@ -17,10 +17,15 @@
 
 .converter-container {
   width: 85%;
-  margin: auto;
+  height: 85%;
+  margin: 5% 5% 5% 5%;
   background-color: #461220;
   border-radius: 8px;
   color: #fff;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4%;
 }
 
 #convertion-result {
@@ -59,14 +64,28 @@
   width: 80%;
   grid-column: 1 / span 2;
   justify-self: center;
+  margin: 5%;
 }
 
 .currencies {
-  margin: 8px auto;
+  margin: 2% auto;
   /* height: 16px; */
 }
 
 .toCurrency {
   grid-row: 1;
   grid-column: 3;
+}
+
+#primeContainer {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+@media only screen and (min-width: 1024px) {
+  #primeContainer {
+    width: 60%;
+  }
 }

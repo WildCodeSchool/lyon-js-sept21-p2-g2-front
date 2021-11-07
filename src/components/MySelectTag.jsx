@@ -17,7 +17,7 @@ const tags = [
 ];
 
 const MySelectTag = () => (
-  <div className="select-tag">
+  <div className="select-tag shadow-2xl">
     <Select
       isMulti
       name="tags"
@@ -27,7 +27,7 @@ const MySelectTag = () => (
       classNamePrefix="select"
     />
     <button type="submit" id="tag-btn">
-      Add #
+      ADD #
     </button>
   </div>
 );
