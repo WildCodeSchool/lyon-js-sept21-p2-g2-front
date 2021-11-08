@@ -1,13 +1,16 @@
-import logo from '../assets/logoV2.png';
-
-import '../wll.css';
-import '../index.css';
+import { Link } from 'react-router-dom';
+import '../css/Header.css';
+import '../css/index.css';
+import logo from '../assets/logoV5.png';
 
 const Header = () => {
   return (
-    <div>
+    <header>
       <nav className="navBar">
-        <img id="logo" src={logo} alt="Logo" />
+        <Link to="/">
+          {' '}
+          <img id="logo" src={logo} alt="Logo" />{' '}
+        </Link>
         <button
           className="bg-melon-pink hover:bg-dark-sienna text-black hover:text-white font-bold px-2 py-2 m-5"
           type="button"
@@ -16,7 +19,7 @@ const Header = () => {
           LOGiN
         </button>
       </nav>
-    </div>
+    </header>
   );
 };
 
