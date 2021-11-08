@@ -57,10 +57,12 @@ h3 {
 }
 
 #downloadPict {
-  background-color: skyblue;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   border-radius: var(--smallBorderRadius);
-  text-align: center;
-  height: 130px;
+  height: 1o0px;
   width: 100%;
 }
 

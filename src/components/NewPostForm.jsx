@@ -1,9 +1,9 @@
 import React from 'react';
 import DatePicker from './DatePicker';
-import TagList from './TagList';
 
 import '../css/NewPostForm.css';
 import UploadImgModule from './UploadImgModule';
+import MySelectTag from './MySelectTag';
 
 const NewPostForm = () => {
   return (
@@ -24,8 +24,8 @@ const NewPostForm = () => {
       </div>
       <h3>Decription of your post</h3>
       <textarea name="new-post" id="new-post-area" />
-      <TagList />
-      <h3>Uploar your pictures</h3>
+      <MySelectTag />
+      <h3>Upload your pictures</h3>
       <div id="downloadPict">
         {' '}
         <UploadImgModule />{' '}
