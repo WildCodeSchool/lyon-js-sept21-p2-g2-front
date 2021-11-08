@@ -47,53 +47,56 @@ const Home = () => {
   }, []);
 
   return (
-    <>
-      <div className="home-container">
+    <div id="homeContainer">
+      <div id="titleHome">
         <h1>Trip@WILDERS</h1>
-        <h2>Share the world...</h2>
-        <img src={homeImg} alt="home" />
       </div>
-      <label htmlFor="country">
-        <input
-          type="text"
-          id="country-input"
-          autoComplete="off"
-          value={search}
-          onChange={handleChange}
-        />
-        <Link to={destination.toLowerCase()}>
-          <button type="submit" id="search-btn">
-            Search
-          </button>
-        </Link>
-      </label>
-      <div
-        className="dropdown"
-        style={{ display: displaySearchFilter ? 'block' : 'none' }}
-      >
-        {countryList
-          .filter((country) => country.name.includes(search))
-          .map((elem) => (
-            <Link to={destination.toLowerCase()} onClick={handleClick}>
-              <div className="flex items-center space-x-4 filter-container">
-                <div>
-                  <img
-                    className="h-5 w-5 rounded-full"
-                    src={elem.flag}
-                    alt="flag"
-                  />
+      <h2>Share the world...</h2>
+      <div className="home-image">
+        <img src={homeImg} alt="home" />
+
+        <label htmlFor="country">
+          <input
+            type="text"
+            id="country-input"
+            autoComplete="off"
+            value={search}
+            onChange={handleChange}
+          />
+          <Link to={destination.toLowerCase()}>
+            <button type="submit" id="search-btn">
+              Search
+            </button>
+          </Link>
+        </label>
+        <div
+          className="dropdown"
+          style={{ display: displaySearchFilter ? 'block' : 'none' }}
+        >
+          {countryList
+            .filter((country) => country.name.includes(search))
+            .map((elem) => (
+              <Link to={destination.toLowerCase()} onClick={handleClick}>
+                <div className="flex items-center space-x-4 filter-container">
+                  <div>
+                    <img
+                      className="h-5 w-5 rounded-full"
+                      src={elem.flag}
+                      alt="flag"
+                    />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-sm font-medium text-dark-sienna">
+                      {elem.name}
+                    </p>
+                  </div>
                 </div>
-                <div className="min-w-0">
-                  <p className="text-sm font-medium text-dark-sienna">
-                    {elem.name}
-                  </p>
-                </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            ))}
+        </div>
       </div>
       <MvdList />
-    </>
+    </div>
   );
 };
 

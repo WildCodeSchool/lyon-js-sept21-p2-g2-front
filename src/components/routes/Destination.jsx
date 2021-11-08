@@ -5,17 +5,20 @@ import Converter from '../Converter';
 import MySelectTag from '../MySelectTag';
 import AbstractBlogPost from '../AbstractBlogPost';
 import CreatePostBtn from '../CreatePostBtn';
+import Divider from '../Divider';
+import './Destination.css';
 
 const Destination = () => {
   return (
-    <>
+    <div id="destinationPage">
       <DestinationBloc />
       <Weather />
       <Converter />
+      <Divider />
       <MySelectTag />
       <AbstractBlogPost />
       <CreatePostBtn />
-    </>
+    </div>
   );
 };
 

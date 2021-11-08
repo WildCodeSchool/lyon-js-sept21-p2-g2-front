@@ -1,16 +1,15 @@
 .select-tag {
   width: 85%;
-  margin-left: auto;
-  margin-right: auto;
-
   border-radius: var(--smallBorderRadius);
-  box-shadow: -2px -2px 8px 4px rgb(43 35 37 / 30%);
   background-color: var(--lightShade);
   height: auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 5%;
+  margin-bottom: 5%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 .basic-multi-select {
   width: 90%;
@@ -23,10 +22,43 @@
   height: auto;
   width: 15%;
   border-radius: var(--smallBorderRadius);
-  box-shadow: -2px -2px 8px 4px rgba(43, 35, 37, 0.3);
   color: #fff;
+  position: relative;
+  overflow: hidden;
+  transition: 0.5s;
+  font-size: 14px;
 }
 
 input {
   background-color: var(--lightShade);
+}
+
+@media only screen and (min-width: 1024px) {
+  .select-tag {
+    width: 50%;
+  }
+  #tag-btn {
+    font-size: 16px;
+  }
+  #tag-btn:hover {
+    background-color: var(--accentShade);
+  }
+  #tag-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--lightShade),
+      transparent
+    );
+    transition: 0.5s;
+  }
+  #tag-btn:hover::before {
+    left: 100%;
+  }
 }
