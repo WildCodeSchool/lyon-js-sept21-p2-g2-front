@@ -69,8 +69,8 @@ const Weather = () => {
   //   );
   // }
   return (
-    <div>
-      <Paper className="paper">
+    <div id="paperContainer">
+      <Paper className="paper drop-shadow-md">
         <form onSubmit={citySelect}>
           <TextField
             className="elementcenter"

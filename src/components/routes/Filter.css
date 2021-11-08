@@ -1,0 +1,9 @@
+button {
+  width: 64px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 2px 4px;
+}

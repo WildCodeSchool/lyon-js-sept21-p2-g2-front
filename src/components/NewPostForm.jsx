@@ -2,7 +2,7 @@ import React from 'react';
 import DatePicker from './DatePicker';
 import TagList from './TagList';
 
-import './NewPostForm.css';
+import '../css/NewPostForm.css';
 
 const NewPostForm = () => {
   return (

@@ -75,44 +75,46 @@ const Converter = () => {
   }, []);
 
   return (
-    <div className="converter-container">
-      <div className="devise-container">
-        <div>
-          <img src={flag} alt="flag" />
+    <div id="primeContainer">
+      <div className="converter-container">
+        <div className="devise-container">
+          <div>
+            <img src={flag} alt="flag" />
+            <p
+              className="currencies"
+              // style={{ fontSize: displayInput ? '16px' : '12px' }}
+            >
+              {from}
+            </p>
+          </div>
+          <select name="" id="" onChange={handleFlagChange}>
+            <option value="">--Select currency--</option>
+            {countries.map((country) => (
+              <option key={country.name} value={country.name}>
+                {country.name}
+              </option>
+            ))}
+          </select>
+          <button type="button">
+            <img src={arrow} alt="arrow" />
+          </button>
+          <div className="toCurrency">
+            <img src={usa} alt="usa flag" />
+            <p className="currencies">USD</p>
+          </div>
+          <input
+            type="text"
+            value={amount}
+            style={{ display: displayInput ? 'block' : 'none' }}
+            onChange={handleAmountChange}
+          />
           <p
-            className="currencies"
-            style={{ fontSize: displayInput ? '16px' : '12px' }}
+            id="convertion-result"
+            style={{ display: displayToCurrency ? 'block' : 'none' }}
           >
-            {from}
+            {result}$
           </p>
         </div>
-        <select name="" id="" onChange={handleFlagChange}>
-          <option value="">--Select currency--</option>
-          {countries.map((country) => (
-            <option key={country.name} value={country.name}>
-              {country.name}
-            </option>
-          ))}
-        </select>
-        <button type="button">
-          <img src={arrow} alt="arrow" />
-        </button>
-        <div className="toCurrency">
-          <img src={usa} alt="usa flag" />
-          <p className="currencies">USD</p>
-        </div>
-        <input
-          type="text"
-          value={amount}
-          style={{ display: displayInput ? 'block' : 'none' }}
-          onChange={handleAmountChange}
-        />
-        <p
-          id="convertion-result"
-          style={{ display: displayToCurrency ? 'block' : 'none' }}
-        >
-          {result}$
-        </p>
       </div>
     </div>
   );
