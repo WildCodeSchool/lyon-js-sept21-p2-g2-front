@@ -1,0 +1,8 @@
+@media only screen and (min-width: 1024px) {
+  #postsPage {
+    display: flex;
+    flex-direction: column;
+    padding: 0 30%;
+    justify-content: center;
+  }
+}
