@@ -39,7 +39,7 @@
   border-radius: 8px;
   overflow-y: scroll;
   z-index: 3;
-  position: fixed;
+  position: relative;
   left: 7.5%;
 }
 
