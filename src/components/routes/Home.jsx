@@ -9,8 +9,6 @@ const Home = () => {
   const [search, setSearch] = React.useState('');
   const [countryList, setCountryList] = React.useState([]);
   const [displaySearchFilter, setDisplaySearchFilter] = React.useState(false);
-  // const [countrySearch, setCountrySearch] = React.useState('');
-  const [destination, setDestination] = React.useState('/');
 
   const handleChange = (e) => {
     const currentSearch = e.target.value;
@@ -29,21 +27,10 @@ const Home = () => {
     }
   };
 
-  const handleClick = (e) => {
-    // setCountrySearch(e.target.innerHTML);
-    setSearch(e.target.innerHTML);
-    setDestination(`/destination/${e.target.innerHTML}`);
-    // setDisplaySearchFilter(false);
-  };
-
   useEffect(() => {
     axios
-      .get('https://countriesnow.space/api/v0.1/countries/flag/images')
-      .then((res) => res.data.data)
-      .then((data) => setCountryList(data));
-    // return () => {
-    //   cleanup
-    // }
+      .get(`https://restcountries.com/v2/all?fields=flags,name,currencies`)
+      .then((res) => setCountryList(res.data));
   }, []);
 
   return (
@@ -61,7 +48,7 @@ const Home = () => {
           value={search}
           onChange={handleChange}
         />
-        <Link to={destination.toLowerCase()}>
+        <Link to={`/destination/${search.toLowerCase()}`}>
           <button type="submit" id="search-btn">
             Search
           </button>
@@ -74,12 +61,12 @@ const Home = () => {
         {countryList
           .filter((country) => country.name.includes(search))
           .map((elem) => (
-            <Link to={destination.toLowerCase()} onClick={handleClick}>
+            <Link to={`/destination/${elem.name.toLowerCase()}`}>
               <div className="flex items-center space-x-4 filter-container">
                 <div>
                   <img
                     className="h-5 w-5 rounded-full"
-                    src={elem.flag}
+                    src={elem.flags.png}
                     alt="flag"
                   />
                 </div>
