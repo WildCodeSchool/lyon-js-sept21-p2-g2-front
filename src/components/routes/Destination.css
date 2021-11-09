@@ -1,0 +1,8 @@
+@media only screen and (min-width: 1024px) {
+  #destinationPage {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 10%;
+    justify-content: center;
+  }
+}

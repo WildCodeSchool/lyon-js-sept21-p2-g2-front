@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import './destinationBloc.css';
+import '../css/destinationBloc.css';
 
 export default function DestinationBloc() {
   const [destination, setDestination] = React.useState();
 
   const { name } = useParams();
 
-  console.log(destination);
+  // console.log(destination);
 
   function numberWithSpace(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
@@ -24,13 +24,26 @@ export default function DestinationBloc() {
   }, []);
 
   if (!destination) {
-    return <h2>Chargement</h2>;
+    return (
+      <div className="flex justify-center items-center flex-col my-4">
+        <div
+          className="
+        animate-spin
+        rounded-full
+        h-20
+        w-20
+        border-t-2 border-b-2 border-dark-sienna my-3
+      "
+        />
+        <span className="text-dark-sienna">LOADING</span>
+      </div>
+    );
   }
   return (
     <div id="mainContainer">
       <div
         id="destinationBloc"
-        className="countryBloc bg-dark-sienna text-white shadow-2xl"
+        className="countryBloc bg-dark-sienna text-white drop-shadow-md"
       >
         <div className="flagBox">
           <img id="flag" src={destination.flags.png} alt="Flag" />
@@ -45,15 +58,15 @@ export default function DestinationBloc() {
         </div>
         <div className="dataBox">
           <ul id="dataList">
-            <li className="md:mx-40 md:my-1 md:text-xl">
+            <li id="liDestination" className="md:my-1 md:text-xl">
               <span id="liCatTitle">capital: </span>{' '}
               <span id="liCatResult">{destination.capital}</span>
             </li>
-            <li className="md:mx-40 md:my-1 md:text-xl">
+            <li id="liDestination" className="md:my-1 md:text-xl">
               <span id="liCatTitle">region: </span>{' '}
               <span id="liCatResult">{destination.region}</span>
             </li>
-            <li className="md:mx-40 md:my-1 md:text-xl">
+            <li id="liDestination" className="md:my-1 md:text-xl">
               <span id="liCatTitle">population: </span>{' '}
               <span id="liCatResult">
                 {numberWithSpace(destination.population)}
@@ -62,8 +75,8 @@ export default function DestinationBloc() {
           </ul>{' '}
           <ul id="dataList">
             {' '}
-            <li className="md:mx-40 md:my-1 md:text-xl">
-              <span id="liCatTitle">curency: </span>{' '}
+            <li id="liDestination" className="md:my-1 md:text-xl">
+              <span id="liCatTitle">currency: </span>{' '}
               <span id="liCatResult">
                 {
                   destination.currencies[Object.keys(destination.currencies)[0]]
@@ -75,7 +88,7 @@ export default function DestinationBloc() {
                 }
               </span>
             </li>
-            <li className="md:mx-40 md:my-1 md:text-xl">
+            <li id="liDestination" className="md:my-1 md:text-xl">
               <span id="liCatTitle">languages: </span>{' '}
               <span id="liCatResult" className="language">
                 {Object.values(destination.languages).map((language) => (
