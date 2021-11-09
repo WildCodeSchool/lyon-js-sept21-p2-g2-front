@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
 import FullUserPost from '../FullUserPost';
+import './PostDetails.css';
 
 const PostDetails = () => {
   useEffect(() => {
@@ -14,7 +15,7 @@ const PostDetails = () => {
   }, []);
 
   return (
-    <div>
+    <div id="postsPage">
       <FullUserPost />
     </div>
   );
