@@ -9,8 +9,6 @@ import Destination from './components/routes/Destination';
 import PostDetails from './components/routes/PostDetails';
 import Footer from './components/Footer';
 
-import { PostsContextProvider } from './components/PostsContext';
-
 function App() {
   return (
     <Router>

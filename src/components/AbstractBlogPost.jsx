@@ -1,24 +1,47 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 import '../css/AbstractBlogPost.css';
 
 const AbstractBlogPost = () => {
-  return (
+  const { name } = useParams();
+  const [posts, setPosts] = React.useState(null);
+  // console.log(posts.map((post) => post.message));
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/destinations/${name}/blog-posts`)
+      .then((res) => setPosts(res.data));
+    // return () => {
+    //   cleanup
+    // }
+  }, []);
+
+  if (!posts) {
+    return (
+      <div className="flex justify-center items-center flex-col my-4">
+        <div
+          className="
+        animate-spin
+        rounded-full
+        h-20
+        w-20
+        border-t-2 border-b-2 border-dark-sienna my-3
+      "
+        />
+        <span className="text-dark-sienna">LOADING</span>
+      </div>
+    );
+  }
+  return posts.map((post) => (
     <div className="reducedPost lg:w-full">
       <div className="miniatureBlogPost">
-        <div className="avatarCell"> </div>
-        <div className="userText">
-          {' '}
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
-          totam quis nam. Placeat modi error non eveniet eligendi expedita autem
-          officia? Aperiam soluta, iste sequi, perferendis aliquam molestiae
-          expedita nisi molestias asperiores quidem, omnis veritatis. Commodi
-          cupiditate nulla quo ab quod accusamus ex? Aperiam fugiat dolores
-          quaerat nam rem, a nihil ex? Pariatur in ullam delectus eius. Ad,
-          illum neque.{' '}
-        </div>
+        <p>{post.name}</p>
+        <img src={post.avatar} alt="" />
+        <div className="userText">{`${post.message.slice(0, 160)}...`}</div>
       </div>
     </div>
-  );
+  ));
 };
 
 export default AbstractBlogPost;
