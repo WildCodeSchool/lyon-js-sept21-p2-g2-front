@@ -21,7 +21,7 @@ const MySelectTag = () => (
     <Select
       isMulti
       name="tags"
-      onChange={console.log}
+      onChange={console.log()}
       options={tags}
       className="basic-multi-select"
       classNamePrefix="select"

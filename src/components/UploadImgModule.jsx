@@ -8,13 +8,14 @@ const UploadImgModule = () => {
 
   const fileSelectHander = (e) => {
     setSelectedFiles(e.target.files[0]);
+    console.log(e.target.files[0]);
   };
 
   const fileUploadHandler = () => {
     const fd = new FormData();
     fd.append('image', selectedFiles, selectedFiles.name);
     axios
-      .post('http://localhost:500/ VOIR LEA POUR POST LA PHOTO SUR API', fd, {
+      .post('http://localhost:5000/ VOIR LEA POUR POST LA PHOTO SUR API', fd, {
         // onUploadProgress: (progressEvent) => {
         //   console.log(
         //     'upload progress' +

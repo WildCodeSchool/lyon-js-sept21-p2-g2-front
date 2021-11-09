@@ -62,7 +62,7 @@ h3 {
   justify-content: center;
   align-items: center;
   border-radius: var(--smallBorderRadius);
-  height: 1o0px;
+  height: 100px;
   width: 100%;
 }
 
@@ -86,4 +86,12 @@ h3 {
     color: #461220;
     box-shadow: -2px -2px 8px 4px rgba(43, 35, 37, 0.3);
   }
+}
+
+#input-img-temp {
+  border-radius: var(--smallBorderRadius);
+  width: 100%;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: -2px -2px 8px 4px rgba(43, 35, 37, 0.3);
 }
