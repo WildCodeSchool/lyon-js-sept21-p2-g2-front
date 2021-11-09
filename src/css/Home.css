@@ -77,7 +77,10 @@
 #homeContainer h2 {
   font-size: 1rem;
   text-align: center;
+  font-family: 'title';
 }
+
+/* RESPONSIVE */
 
 @media only screen and (min-width: 1024px) {
   #homeContainer {
@@ -90,7 +93,7 @@
     width: 50%;
   }
   #homeContainer h1 {
-    font-size: 3rem;
+    font-size: 3vw;
     z-index: 10;
     position: relative;
   }
@@ -99,6 +102,7 @@
     z-index: 10;
     position: relative;
     margin: 0.5%;
+    font-family: 'title';
   }
   #titleHome {
     position: relative;
@@ -119,12 +123,13 @@
     inset: 8px;
     border-radius: 12px 0;
     background: var(--lightestShade);
+    width: 100%;
   }
   #titleHome::before {
     content: '';
     position: absolute;
     width: 80px;
-    height: 510px;
+    height: 800px;
     background: linear-gradient(#b23a48, #fcb9b2);
     animation: animate 6s linear infinite;
   }
@@ -135,7 +140,7 @@
       width: 0%;
     }
     50% {
-      width: 20%;
+      width: 10%;
     }
     100% {
       transform: rotate(360deg);
@@ -143,3 +148,70 @@
     }
   }
 }
+
+/* @media (min-width: 768px) and (max-width: 1023px) {
+  #homeContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 0 5%;
+    justify-content: center;
+  }
+  .home-image {
+    width: 70%;
+  }
+  #homeContainer h1 {
+    font-size: 4vw;
+    z-index: 10;
+    position: relative;
+  }
+  #homeContainer h2 {
+    font-size: 2vw;
+    z-index: 10;
+    position: relative;
+    margin: 0.5%;
+    font-family: 'title';
+  }
+  #titleHome {
+    position: relative;
+    width: 55%;
+    height: 70px;
+    background: var(--lightestShade);
+    overflow: hidden;
+    border-radius: 20px 0;
+    text-decoration: none;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #titleHome::after {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border-radius: 12px 0;
+    background: var(--lightestShade);
+    width: 100%;
+  }
+  #titleHome::before {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 800px;
+    background: linear-gradient(#b23a48, #fcb9b2);
+    animation: animate 6s linear infinite;
+  }
+
+  @keyframes animate {
+    0% {
+      transform: rotate(0deg);
+      width: 0%;
+    }
+    50% {
+      width: 10%;
+    }
+    100% {
+      transform: rotate(360deg);
+      width: 0%;
+    }
+  }
+} */
