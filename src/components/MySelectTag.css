@@ -29,10 +29,6 @@
   font-size: 14px;
 }
 
-input {
-  background-color: var(--lightShade);
-}
-
 @media only screen and (min-width: 1024px) {
   .select-tag {
     width: 50%;
