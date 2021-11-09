@@ -18,9 +18,9 @@ const people = [
       'https://www.linkedin.com/in/jordane-laurent-mandim-sobral-5b0b0020a/',
   },
   {
-    name: 'Léa Weibel ',
+    name: 'Lea Weibel ',
     role: 'Fake Student / Senior Lead Developer',
-    imageUrl: 'https://i.ibb.co/kB3pjmg/empty-Avatar.png',
+    imageUrl: 'https://i.ibb.co/cNk1d6L/lea.png',
     githubUrl: 'https://github.com/lea-weibel',
     linkedinUrl: 'https://www.linkedin.com/in/l%C3%A9a-weibel/',
   },
@@ -35,19 +35,19 @@ const people = [
 
 export default function Team() {
   return (
-    <div>
+    <div id="teamContainer">
       <div className="bg-apricot-pink">
         <div className="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
           <div className="space-y-12">
             <div className="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
               <h2 className="text-3xl font-extrabold text-dark-sienna tracking-tight sm:text-4xl">
-                Meet our team
+                MEET OUR TEAM
               </h2>
-              <p className="text-xl text-english-red">
+              <h4 className="text-xl text-english-red">
                 The Trip@Wilders development crew.
-              </p>
+              </h4>
             </div>
-            <ul className="space-y-4 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-3 lg:gap-8">
+            <ul className="space-y-4 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-2 lg:gap-12">
               {people.map((person) => (
                 <li
                   key={person.name}
@@ -60,7 +60,10 @@ export default function Team() {
                       alt=""
                     />
                     <div className="space-y-2 xl:flex xl:items-center xl:justify-between">
-                      <div className="font-medium text-lg leading-6 space-y-1">
+                      <div
+                        id="teamMember"
+                        className="font-medium text-lg leading-6 space-y-1"
+                      >
                         <h3 className="text-dark-sienna transform hover:scale-110 motion-reduce:transform-none">
                           {person.name}
                         </h3>

@@ -77,7 +77,10 @@
 #homeContainer h2 {
   font-size: 1rem;
   text-align: center;
+  font-family: 'title';
 }
+
+/* RESPONSIVE */
 
 @media only screen and (min-width: 1024px) {
   #homeContainer {
@@ -90,7 +93,7 @@
     width: 50%;
   }
   #homeContainer h1 {
-    font-size: 3rem;
+    font-size: 3vw;
     z-index: 10;
     position: relative;
   }
@@ -99,6 +102,7 @@
     z-index: 10;
     position: relative;
     margin: 0.5%;
+    font-family: 'title';
   }
   #titleHome {
     position: relative;
@@ -119,12 +123,13 @@
     inset: 8px;
     border-radius: 12px 0;
     background: var(--lightestShade);
+    width: 100%;
   }
   #titleHome::before {
     content: '';
     position: absolute;
     width: 80px;
-    height: 510px;
+    height: 800px;
     background: linear-gradient(#b23a48, #fcb9b2);
     animation: animate 6s linear infinite;
   }
@@ -135,7 +140,7 @@
       width: 0%;
     }
     50% {
-      width: 20%;
+      width: 10%;
     }
     100% {
       transform: rotate(360deg);
