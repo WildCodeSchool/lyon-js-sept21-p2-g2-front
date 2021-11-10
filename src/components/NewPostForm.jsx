@@ -1,26 +1,29 @@
 import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import '../css/NewPostForm.css';
-// import UploadImgModule from './UploadImgModule';
 import MySelectTag from './MySelectTag';
 
 const NewPostForm = () => {
-  const [newName, setNewName] = useState('');
-  const [newMessage, setNewMessage] = useState('');
-  const [newDate, setNewDate] = useState('');
-  const [newPhotos, setNewPhotos] = useState('');
+  const [newName, setNewName] = useState(null);
+  const [newMessage, setNewMessage] = useState(null);
+  const [newDate, setNewDate] = useState(null);
+  const [newPhotos, setNewPhotos] = useState(null);
+  const { destination } = useParams();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios
-      .post('/destinations/:destination/blog-posts', {
-        name: newName,
-        message: newMessage,
-        date: newDate,
-        photos: newPhotos,
-      })
-      .then((resp) => console.log(resp.data));
+    if (newName) {
+      axios
+        .post(`http://localhost:5000/destinations/${destination}/blog-posts`, {
+          name: newName,
+          message: newMessage,
+          date: newDate,
+          photos: newPhotos,
+        })
+        .then((resp) => console.log(resp.data));
+    }
     // revoir le .then avec les bon éléments de la database....
   };
 
