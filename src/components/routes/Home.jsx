@@ -9,8 +9,6 @@ const Home = () => {
   const [search, setSearch] = React.useState('');
   const [countryList, setCountryList] = React.useState([]);
   const [displaySearchFilter, setDisplaySearchFilter] = React.useState(false);
-  // const [countrySearch, setCountrySearch] = React.useState('');
-  const [destination, setDestination] = React.useState('/');
 
   const handleChange = (e) => {
     const currentSearch = e.target.value;
@@ -29,21 +27,10 @@ const Home = () => {
     }
   };
 
-  const handleClick = (e) => {
-    // setCountrySearch(e.target.innerHTML);
-    setSearch(e.target.innerHTML);
-    setDestination(`/destination/${e.target.innerHTML}`);
-    // setDisplaySearchFilter(false);
-  };
-
   useEffect(() => {
     axios
-      .get('https://countriesnow.space/api/v0.1/countries/flag/images')
-      .then((res) => res.data.data)
-      .then((data) => setCountryList(data));
-    // return () => {
-    //   cleanup
-    // }
+      .get(`https://restcountries.com/v2/all?fields=flags,name,currencies`)
+      .then((res) => setCountryList(res.data));
   }, []);
 
   return (
@@ -51,49 +38,45 @@ const Home = () => {
       <div id="titleHome">
         <h1>Trip@WILDERS</h1>
       </div>
-      <h2>Share the world...</h2>
-      <div className="home-image">
-        <img src={homeImg} alt="home" />
-
-        <label htmlFor="country">
-          <input
-            type="text"
-            id="country-input"
-            autoComplete="off"
-            value={search}
-            onChange={handleChange}
-          />
-          <Link to={destination.toLowerCase()}>
-            <button type="submit" id="search-btn">
-              Search
-            </button>
-          </Link>
-        </label>
-        <div
-          className="dropdown"
-          style={{ display: displaySearchFilter ? 'block' : 'none' }}
-        >
-          {countryList
-            .filter((country) => country.name.includes(search))
-            .map((elem) => (
-              <Link to={destination.toLowerCase()} onClick={handleClick}>
-                <div className="flex items-center space-x-4 filter-container">
-                  <div>
-                    <img
-                      className="h-5 w-5 rounded-full"
-                      src={elem.flag}
-                      alt="flag"
-                    />
-                  </div>
-                  <div className="min-w-0">
-                    <p className="text-sm font-medium text-dark-sienna">
-                      {elem.name}
-                    </p>
-                  </div>
+      <img src={homeImg} alt="" className="home-image" />
+      <label htmlFor="country">
+        <input
+          type="text"
+          id="country-input"
+          autoComplete="off"
+          value={search}
+          onChange={handleChange}
+        />
+        <Link to={`/destination/${search.toLowerCase()}`}>
+          <button type="submit" id="search-btn">
+            Search
+          </button>
+        </Link>
+      </label>
+      <div
+        className="dropdown"
+        style={{ display: displaySearchFilter ? 'block' : 'none' }}
+      >
+        {countryList
+          .filter((country) => country.name.includes(search))
+          .map((elem) => (
+            <Link to={`/destination/${elem.name.toLowerCase()}`}>
+              <div className="flex items-center space-x-4 filter-container">
+                <div>
+                  <img
+                    className="h-5 w-5 rounded-full"
+                    src={elem.flags.png}
+                    alt="flag"
+                  />
                 </div>
-              </Link>
-            ))}
-        </div>
+                <div className="min-w-0">
+                  <p className="text-sm font-medium text-dark-sienna">
+                    {elem.name}
+                  </p>
+                </div>
+              </div>
+            </Link>
+          ))}
       </div>
       <MvdList />
     </div>

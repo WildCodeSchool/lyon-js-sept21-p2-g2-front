@@ -23,11 +23,6 @@
 .home-image {
   text-align: center;
   width: 85%;
-  margin: auto;
-}
-
-.home-image img {
-  width: 98%;
   margin: 6% auto -3%;
 }
 
@@ -39,7 +34,7 @@
   border-radius: 8px;
   overflow-y: scroll;
   z-index: 3;
-  position: fixed;
+  position: relative;
   left: 7.5%;
 }
 
