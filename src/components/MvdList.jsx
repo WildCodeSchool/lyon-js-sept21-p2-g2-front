@@ -33,7 +33,7 @@ export default function MvdList() {
       {mvd.map((country) => (
         <span
           id="countrySpan"
-          className="w-4/5 sm:w-1/3 md:w-1/4 mt-2 bg-dark-sienna text-white shadow-2xl rounded-full p-3"
+          className="w-4/5 sm:w-1/3 md:w-2/4 mt-2 bg-dark-sienna text-white shadow-2xl rounded-full p-3"
         >
           <a href={`/destination/${country.name}`} id="link">
             <div className="flex items-center space-x-4">
