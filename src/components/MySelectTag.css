@@ -1,5 +1,5 @@
 .select-tag {
-  width: 85%;
+  width: 100%;
   border-radius: var(--smallBorderRadius);
   background-color: var(--lightShade);
   height: auto;
