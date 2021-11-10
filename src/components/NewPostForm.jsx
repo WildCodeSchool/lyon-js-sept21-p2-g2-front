@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
+import { Widget } from '@uploadcare/react-widget';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+// import DatePicker from './DatePicker';
+// import TagList from './TagList';
+
 import '../css/NewPostForm.css';
 import MySelectTag from './MySelectTag';
 
@@ -8,7 +12,7 @@ const NewPostForm = () => {
   const [newName, setNewName] = useState(null);
   const [newMessage, setNewMessage] = useState(null);
   const [newDate, setNewDate] = useState(null);
-  const [newPhotos, setNewPhotos] = useState(null);
+  const [picturesGroupUUID, setPicturesGroupUUID] = useState(null);
   const { destination } = useParams();
 
   const [selectedTags, setSelectedTags] = React.useState(null);
@@ -19,13 +23,16 @@ const NewPostForm = () => {
 
     if (newName) {
       axios
-        .post(`http://localhost:5000/destinations/${destination}/blog-posts`, {
-          name: newName,
-          date: newDate,
-          message: newMessage,
-          tags: selectedTags,
-          photos: newPhotos,
-        })
+        .post(
+          `${process.env.REACT_APP_API_BASE_URL}/destinations/${destination}/blog-posts`,
+          {
+            name: newName,
+            date: newDate,
+            message: newMessage,
+            tags: selectedTags,
+            photos: picturesGroupUUID,
+          }
+        )
         .then((resp) => console.log(resp.data));
     }
     // revoir le .then avec les bon éléments de la database....
@@ -43,10 +50,6 @@ const NewPostForm = () => {
   const handleDateChange = (e) => {
     setNewDate(e.target.value);
     // console.log(newDate);
-  };
-  const handlePhotosChange = (e) => {
-    setNewPhotos(e.target.value);
-    // console.log(newPhotos);
   };
 
   return (
@@ -86,8 +89,19 @@ const NewPostForm = () => {
       <h3>Upload your pictures</h3>
 
       {/* ZONE DE TELECHARGEMENT IMAGE TEMPORAIRE */}
-
-      <label htmlFor="url-image" data-translatable>
+      <div id="picturesUpload">
+        <p>
+          <label htmlFor="file">Your file:</label>{' '}
+          <Widget
+            publicKey="383c2db2fc40ae1ac595"
+            id="file"
+            onChange={(info) => setPicturesGroupUUID(info.uuid)}
+            multiple
+            crop
+          />
+        </p>
+      </div>
+      {/* <label htmlFor="url-image" data-translatable>
         <h3>Insertion of the URL </h3>
 
         <input
@@ -96,7 +110,7 @@ const NewPostForm = () => {
           value={newPhotos}
           onChange={handlePhotosChange}
         />
-      </label>
+      </label> */}
       {/* FIN DE ZONE DE TELECHARGEMENT IMAGE TEMPORAIRE */}
 
       <button type="submit" id="add-post-btn">
