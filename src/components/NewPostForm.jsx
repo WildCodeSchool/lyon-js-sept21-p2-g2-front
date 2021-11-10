@@ -11,6 +11,9 @@ const NewPostForm = () => {
   const [newPhotos, setNewPhotos] = useState(null);
   const { destination } = useParams();
 
+  const [selectedTags, setSelectedTags] = React.useState(null);
+  console.log(selectedTags);
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -18,8 +21,9 @@ const NewPostForm = () => {
       axios
         .post(`http://localhost:5000/destinations/${destination}/blog-posts`, {
           name: newName,
-          message: newMessage,
           date: newDate,
+          message: newMessage,
+          tags: selectedTags,
           photos: newPhotos,
         })
         .then((resp) => console.log(resp.data));
@@ -78,7 +82,7 @@ const NewPostForm = () => {
         onChange={handleMessageChange}
         required
       />
-      <MySelectTag />
+      <MySelectTag setSelectedTags={setSelectedTags} />
       <h3>Upload your pictures</h3>
 
       {/* ZONE DE TELECHARGEMENT IMAGE TEMPORAIRE */}
