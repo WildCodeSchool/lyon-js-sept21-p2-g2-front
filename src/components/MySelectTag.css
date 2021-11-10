@@ -1,5 +1,5 @@
 .select-tag {
-  width: 85%;
+  width: 100%;
   border-radius: var(--smallBorderRadius);
   background-color: var(--lightShade);
   height: auto;
@@ -27,10 +27,6 @@
   overflow: hidden;
   transition: 0.5s;
   font-size: 14px;
-}
-
-input {
-  background-color: var(--lightShade);
 }
 
 @media only screen and (min-width: 1024px) {
