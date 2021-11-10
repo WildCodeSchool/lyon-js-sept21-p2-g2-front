@@ -12,7 +12,7 @@ const NewPostForm = () => {
   const [newName, setNewName] = useState(null);
   const [newMessage, setNewMessage] = useState(null);
   const [newDate, setNewDate] = useState(null);
-  // const [newPhotos, setNewPhotos] = useState(null);
+  const [picturesGroupUUID, setPicturesGroupUUID] = useState(null);
   const { destination } = useParams();
 
   const [selectedTags, setSelectedTags] = React.useState(null);
@@ -23,13 +23,16 @@ const NewPostForm = () => {
 
     if (newName) {
       axios
-        .post(`http://localhost:5000/destinations/${destination}/blog-posts`, {
-          name: newName,
-          date: newDate,
-          message: newMessage,
-          tags: selectedTags,
-          // photos: newPhotos,
-        })
+        .post(
+          `${process.env.REACT_APP_API_BASE_URL}/destinations/${destination}/blog-posts`,
+          {
+            name: newName,
+            date: newDate,
+            message: newMessage,
+            tags: selectedTags,
+            photos: picturesGroupUUID,
+          }
+        )
         .then((resp) => console.log(resp.data));
     }
     // revoir le .then avec les bon éléments de la database....
@@ -92,7 +95,7 @@ const NewPostForm = () => {
           <Widget
             publicKey="383c2db2fc40ae1ac595"
             id="file"
-            onChange={(info) => console.log('Upload completed:', info)}
+            onChange={(info) => setPicturesGroupUUID(info.uuid)}
             multiple
             crop
           />
