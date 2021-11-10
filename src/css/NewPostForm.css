@@ -1,10 +1,8 @@
 .contact-form {
   height: auto;
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
-  background-color: salmon;
+  width: 85%;
+  margin: 1% auto;
+  background-color: var(--lightShade);
   border-radius: 7px;
   padding: 10px;
   box-shadow: -2px -2px 8px 4px rgba(43, 35, 37, 0.3);
@@ -21,12 +19,12 @@ h3 {
   letter-spacing: 2px;
   font-weight: 500;
 }
-.react-datepicker__input-container input {
+#dateArea {
   border-radius: var(--smallBorderRadius);
   width: 25%;
   cursor: pointer;
   text-align: center;
-  color: #461220;
+  color: var(--drakestShade);
   box-shadow: -2px -2px 8px 4px rgba(43, 35, 37, 0.3);
 }
 
@@ -57,10 +55,12 @@ h3 {
 }
 
 #downloadPict {
-  background-color: skyblue;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   border-radius: var(--smallBorderRadius);
-  text-align: center;
-  height: 130px;
+  height: 100px;
   width: 100%;
 }
 
@@ -72,16 +72,48 @@ h3 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(6, 1fr);
-    background-color: salmon;
+    background-color: var(--lightShade);
     border-radius: 7px;
     cursor: pointer;
   }
-  .react-datepicker__input-container input {
+  #dateArea {
     border-radius: var(--smallBorderRadius);
     width: 100%;
     cursor: pointer;
     text-align: center;
-    color: #461220;
+    color: var(--drakestShade);
     box-shadow: -2px -2px 8px 4px rgba(43, 35, 37, 0.3);
   }
+}
+
+#picturesUpload button {
+  background-color: var(--drakestShade);
+  margin-bottom: 5%;
+}
+#picturesUpload {
+  display: flex;
+  justify-content: center;
+}
+#picturesUpload label {
+  font-family: 'secondaryFont';
+  color: var(--drakestShade);
+}
+.uploadcare--button {
+  background-color: var(--drakestShade);
+  color: white;
+}
+.uploadcare--button:hover {
+  background-color: var(--accentShade);
+  color: white;
+}
+.uploadcare--menu__item:hover {
+  background-color: var(--accentShade);
+  color: white;
+}
+#input-img-temp {
+  border-radius: var(--smallBorderRadius);
+  width: 100%;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: -2px -2px 8px 4px rgba(43, 35, 37, 0.3);
 }

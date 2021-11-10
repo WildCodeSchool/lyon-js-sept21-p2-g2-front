@@ -76,7 +76,7 @@ export default function DestinationBloc() {
           <ul id="dataList">
             {' '}
             <li id="liDestination" className="md:my-1 md:text-xl">
-              <span id="liCatTitle">curency: </span>{' '}
+              <span id="liCatTitle">currency: </span>{' '}
               <span id="liCatResult">
                 {
                   destination.currencies[Object.keys(destination.currencies)[0]]

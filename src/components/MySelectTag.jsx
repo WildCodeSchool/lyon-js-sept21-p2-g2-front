@@ -6,7 +6,7 @@ const tags = [
   { value: '#Gastronomy', label: '#Gastronomy' },
   { value: '#Music', label: '#Music' },
   { value: '#Architecture', label: '#Architecture' },
-  { value: '#Trills', label: '#Trills' },
+  { value: '#Thrills', label: '#Thrills' },
   { value: '#Arts', label: '#Arts' },
   { value: '#Religion', label: '#Religion' },
   { value: '#Hiking', label: '#Hiking' },
@@ -16,20 +16,24 @@ const tags = [
   { value: '#Sport', label: '#Sport' },
 ];
 
-const MySelectTag = () => (
-  <div className="select-tag shadow-2xl">
-    <Select
-      isMulti
-      name="tags"
-      onChange={console.log}
-      options={tags}
-      className="basic-multi-select"
-      classNamePrefix="select"
-    />
-    <button type="submit" id="tag-btn">
-      ADD #
-    </button>
-  </div>
-);
+const MySelectTag = ({ setSelectedTags }) => {
+  return (
+    <div className="select-tag shadow-2xl">
+      <Select
+        isMulti
+        name="tags"
+        options={tags}
+        onChange={(e) =>
+          setSelectedTags(e.map((tag) => tag.value.slice(1, tag.length)))
+        }
+        className="basic-multi-select"
+        classNamePrefix="select"
+      />
+      <button type="submit" id="tag-btn">
+        ADD #
+      </button>
+    </div>
+  );
+};
 
 export default MySelectTag;
