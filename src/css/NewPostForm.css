@@ -21,7 +21,7 @@ h3 {
   letter-spacing: 2px;
   font-weight: 500;
 }
-.react-datepicker__input-container input {
+#dateArea {
   border-radius: var(--smallBorderRadius);
   width: 25%;
   cursor: pointer;
@@ -78,7 +78,7 @@ h3 {
     border-radius: 7px;
     cursor: pointer;
   }
-  .react-datepicker__input-container input {
+  #dateArea {
     border-radius: var(--smallBorderRadius);
     width: 100%;
     cursor: pointer;

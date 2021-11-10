@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import DatePicker from './DatePicker';
 import '../css/NewPostForm.css';
 // import UploadImgModule from './UploadImgModule';
 import MySelectTag from './MySelectTag';
@@ -9,8 +8,7 @@ const NewPostForm = () => {
   const [newName, setNewName] = useState('');
   const [newMessage, setNewMessage] = useState('');
   const [newDate, setNewDate] = useState('');
-  const [newImage, setNewImage] = useState('');
-  const [newCountry, setNewCountry] = useState('');
+  const [newPhotos, setNewPhotos] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,8 +18,7 @@ const NewPostForm = () => {
         name: newName,
         message: newMessage,
         date: newDate,
-        country: newCountry,
-        image: newImage,
+        photos: newPhotos,
       })
       .then((resp) => console.log(resp.data));
     // revoir le .then avec les bon éléments de la database....
@@ -29,24 +26,20 @@ const NewPostForm = () => {
 
   const handleNameChange = (e) => {
     setNewName(e.target.value);
-    console.log(newName);
+    // console.log(newName);
   };
 
   const handleMessageChange = (e) => {
     setNewMessage(e.target.value);
-    console.log(newMessage);
+    // console.log(newMessage);
   };
   const handleDateChange = (e) => {
     setNewDate(e.target.value);
-    console.log(newDate);
+    // console.log(newDate);
   };
-  const handleImageChange = (e) => {
-    setNewImage(e.target.value);
-    console.log(newImage);
-  };
-  const handleCountryChange = (e) => {
-    setNewCountry(e.target.value);
-    console.log(newCountry);
+  const handlePhotosChange = (e) => {
+    setNewPhotos(e.target.value);
+    // console.log(newPhotos);
   };
 
   return (
@@ -63,14 +56,15 @@ const NewPostForm = () => {
         autoComplete="off"
         required
       />
-      <div id="dateArea">
+      <div>
         <h3>Date :</h3>
-        {/* <input type="date" value={newDate} onChange={handleDateChange} /> */}
-        <DatePicker value={newDate} onChange={handleDateChange} />
-      </div>
-      <div id="countryArea">
-        <h3>Country :</h3>
-        <input type="text" value={newCountry} onChange={handleCountryChange} />
+
+        <input
+          type="date"
+          id="dateArea"
+          value={newDate}
+          onChange={handleDateChange}
+        />
       </div>
 
       <h3>Decription of your post</h3>
@@ -92,15 +86,12 @@ const NewPostForm = () => {
         <input
           type="text"
           id="input-img-temp"
-          value={newImage}
-          onChange={handleImageChange}
+          value={newPhotos}
+          onChange={handlePhotosChange}
         />
       </label>
       {/* FIN DE ZONE DE TELECHARGEMENT IMAGE TEMPORAIRE */}
-      {/* <div id="downloadPict">
-        {' '}
-        <UploadImgModule />{' '}
-      </div> */}
+
       <button type="submit" id="add-post-btn">
         POST
       </button>
