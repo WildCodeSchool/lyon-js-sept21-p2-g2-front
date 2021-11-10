@@ -4,7 +4,7 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
-
+  font-family: 'secondaryFont';
   border-radius: 7px;
   padding: 20px;
   box-shadow: -2px -2px 8px 4px rgba(43, 35, 37, 0.3);
@@ -61,4 +61,10 @@ textarea {
 
 input {
   padding: 5px 10px;
+}
+
+@media only screen and (min-width: 1024px) {
+  #contactFormContainer {
+    padding: 0 20%;
+  }
 }

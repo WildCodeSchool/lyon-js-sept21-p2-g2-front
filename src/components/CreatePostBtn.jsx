@@ -4,7 +4,7 @@ import './createPostBtn.css';
 
 const CreatePostBtn = () => {
   return (
-    <div>
+    <div className="lg:w-full">
       <Link to="/add-post">
         <button type="button" className="createPostBtn">
           Create new post

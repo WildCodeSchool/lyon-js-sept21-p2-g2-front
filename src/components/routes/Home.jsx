@@ -34,12 +34,11 @@ const Home = () => {
   }, []);
 
   return (
-    <>
-      <div className="home-container">
+    <div id="homeContainer">
+      <div id="titleHome">
         <h1>Trip@WILDERS</h1>
-        <h2>Share the world...</h2>
-        <img src={homeImg} alt="home" />
       </div>
+      <img src={homeImg} alt="" className="home-image" />
       <label htmlFor="country">
         <input
           type="text"
@@ -80,7 +79,7 @@ const Home = () => {
           ))}
       </div>
       <MvdList />
-    </>
+    </div>
   );
 };
 
