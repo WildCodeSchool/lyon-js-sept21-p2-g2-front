@@ -32,15 +32,15 @@
 }
 
 .dropdown {
-  width: 85%;
+  width: 72%;
   max-height: 9rem;
   margin: auto;
   background-color: #f2f2f2;
   border-radius: 8px;
   overflow-y: scroll;
   z-index: 3;
-  position: fixed;
-  left: 7.5%;
+  position: absolute;
+  left: 17.5%;
 }
 
 .destination-filter {
@@ -78,6 +78,10 @@
   font-size: 1rem;
   text-align: center;
   font-family: 'title';
+}
+
+#homeContainer {
+  position: relative;
 }
 
 /* RESPONSIVE */
@@ -146,5 +150,10 @@
       transform: rotate(360deg);
       width: 0%;
     }
+  }
+
+  .dropdown {
+    width: 35%;
+    left: 34%;
   }
 }
