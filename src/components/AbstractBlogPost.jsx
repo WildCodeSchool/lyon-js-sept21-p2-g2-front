@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import '../css/AbstractBlogPost.css';
 
@@ -34,13 +34,15 @@ const AbstractBlogPost = () => {
     );
   }
   return posts.map((post) => (
-    <div className="reducedPost lg:w-full">
-      <div className="miniatureBlogPost">
-        <p>{post.name}</p>
-        <img src={post.avatar} alt="" />
-        <div className="userText">{`${post.message.slice(0, 160)}...`}</div>
+    <Link to={`/posts/${post.id}`}>
+      <div className="reducedPost lg:w-full">
+        <div className="miniatureBlogPost">
+          <p>{post.name}</p>
+          <img src={post.avatar} alt="" />
+          <div className="userText">{`${post.message.slice(0, 160)}...`}</div>
+        </div>
       </div>
-    </div>
+    </Link>
   ));
 };
 
