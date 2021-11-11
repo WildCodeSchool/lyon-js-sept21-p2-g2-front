@@ -1,3 +1,15 @@
-h2 {
-  font-family: title;
+#teamContainer h2 {
+  font-family: 'title';
+}
+#teamContainer h4 {
+  font-family: 'secondaryFont';
+  font-size: medium;
+}
+#teamMember h3 {
+  font-family: 'secondaryFont';
+  margin-right: 8px;
+}
+
+#teamContainer {
+  margin: 5% 0;
 }
