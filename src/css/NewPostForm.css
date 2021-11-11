@@ -1,14 +1,16 @@
 .contact-form {
   height: auto;
   width: 85%;
-  margin: 1% auto;
+  margin: 5% auto;
   background-color: var(--lightShade);
   border-radius: 7px;
   padding: 10px;
   box-shadow: -2px -2px 8px 4px rgba(43, 35, 37, 0.3);
+  display: flex;
+  flex-direction: column;
 }
 
-h3 {
+.contact-form h3 {
   font-weight: 400;
   margin-top: 15px;
 }
@@ -16,16 +18,15 @@ h3 {
 #post-title {
   text-align: left;
   margin: var(--smallBorderRadius);
-  letter-spacing: 2px;
-  font-weight: 500;
+  font-family: 'secondaryFont';
 }
 #dateArea {
   border-radius: var(--smallBorderRadius);
-  width: 25%;
+  width: 100%;
   cursor: pointer;
   text-align: center;
   color: var(--drakestShade);
-  box-shadow: -2px -2px 8px 4px rgba(43, 35, 37, 0.3);
+  /* box-shadow: -2px -2px 8px 4px rgba(43, 35, 37, 0.3); */
 }
 
 #name {
@@ -33,18 +34,43 @@ h3 {
   width: 100%;
   cursor: pointer;
   text-align: center;
-  box-shadow: -2px -2px 8px 4px rgba(43, 35, 37, 0.3);
+  /* box-shadow: -2px -2px 8px 4px rgba(43, 35, 37, 0.3); */
 }
 
 #add-post-btn {
   background-color: var(--drakestShade);
-  margin-top: 1em;
+  margin: 1em auto 0;
   height: 2.5rem;
-  width: 100%;
+  width: 60%;
   border-radius: var(--smallBorderRadius);
-  box-shadow: -2px -2px 8px 4px rgba(43, 35, 37, 0.3);
+  /* box-shadow: -2px -2px 8px 4px rgba(43, 35, 37, 0.3); */
   color: #fff;
+  position: relative;
+  overflow: hidden;
 }
+
+#add-post-btn:hover {
+  background-color: var(--accentShade);
+}
+#add-post-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--lightShade),
+    transparent
+  );
+  transition: 0.5s;
+}
+#add-post-btn:hover::before {
+  left: 100%;
+}
+
 #new-post-area {
   resize: none;
   height: 130px;
@@ -64,7 +90,7 @@ h3 {
   width: 100%;
 }
 
-@media screen and (max-width: 500px) {
+/* @media screen and (max-width: 500px) {
   .allTags {
     width: 85%;
     height: 200px;
@@ -82,14 +108,39 @@ h3 {
     cursor: pointer;
     text-align: center;
     color: var(--drakestShade);
-    box-shadow: -2px -2px 8px 4px rgba(43, 35, 37, 0.3);
   }
-}
+} */
 
 #picturesUpload button {
   background-color: var(--drakestShade);
   margin-bottom: 5%;
+  margin-top: 5%;
+  position: relative;
+  overflow: hidden;
 }
+
+#picturesUpload button:hover {
+  background-color: var(--accentShade);
+}
+#picturesUpload button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--lightShade),
+    transparent
+  );
+  transition: 0.5s;
+}
+#picturesUpload button:hover::before {
+  left: 100%;
+}
+
 #picturesUpload {
   display: flex;
   justify-content: center;
@@ -108,7 +159,7 @@ h3 {
 }
 .uploadcare--menu__item:hover {
   background-color: var(--accentShade);
-  color: white;
+  color: var(--lightShade);
 }
 #input-img-temp {
   border-radius: var(--smallBorderRadius);
@@ -116,4 +167,21 @@ h3 {
   cursor: pointer;
   text-align: center;
   box-shadow: -2px -2px 8px 4px rgba(43, 35, 37, 0.3);
+}
+
+.uploadcare--tab__content {
+  position: relative;
+  overflow: hidden;
+}
+
+@media only screen and (min-width: 1024px) {
+  .contact-form {
+    width: 60%;
+    padding: 1% 2%;
+    margin: 3% auto;
+  }
+
+  #add-post-btn {
+    width: 40%;
+  }
 }

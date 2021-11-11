@@ -88,10 +88,9 @@ const NewPostForm = () => {
       <MySelectTag setSelectedTags={setSelectedTags} />
       <h3>Upload your pictures</h3>
 
-      {/* ZONE DE TELECHARGEMENT IMAGE TEMPORAIRE */}
+      {/* PICTURES UPLOAD */}
       <div id="picturesUpload">
         <p>
-          <label htmlFor="file">Your file:</label>{' '}
           <Widget
             publicKey="383c2db2fc40ae1ac595"
             id="file"
@@ -101,18 +100,8 @@ const NewPostForm = () => {
           />
         </p>
       </div>
-      {/* <label htmlFor="url-image" data-translatable>
-        <h3>Insertion of the URL </h3>
 
-        <input
-          type="text"
-          id="input-img-temp"
-          value={newPhotos}
-          onChange={handlePhotosChange}
-        />
-      </label> */}
-      {/* FIN DE ZONE DE TELECHARGEMENT IMAGE TEMPORAIRE */}
-
+      {/* POST BUTTON */}
       <button type="submit" id="add-post-btn">
         POST
       </button>

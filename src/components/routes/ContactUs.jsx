@@ -102,7 +102,7 @@ const ContactUs = () => {
           <input
             type="submit"
             id="submit-btn"
-            value="Send"
+            value="SEND"
             disabled={processing}
           />
         </div>
