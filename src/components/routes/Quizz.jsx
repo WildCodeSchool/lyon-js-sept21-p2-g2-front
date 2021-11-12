@@ -17,15 +17,14 @@ function Quizz() {
     Axios.get(API_URL)
       .then((res) => res.data)
       .then((data) => {
-        // eslint-disable-next-line no-shadow
-        const questions = data.results.map((question) => ({
+        const quieries = data.results.map((question) => ({
           ...question,
           answers: [
             question.correct_answer,
             ...question.incorrect_answers,
           ].sort(() => Math.random() - 0.5),
         }));
-        setQuestions(questions);
+        setQuestions(quieries);
       });
   }, []);
 

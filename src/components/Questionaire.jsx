@@ -1,7 +1,5 @@
 /* eslint-disable camelcase */
-/* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/control-has-associated-label */
-/* eslint-disable react/no-danger */
 /* eslint-disable no-nested-ternary */
 import React from 'react';
 
@@ -17,7 +15,7 @@ function Questionaire({
         <h5 dangerouslySetInnerHTML={{ __html: question }} />
       </div>
       <div className="button-overall">
-        {answers.map((answer, idx) => {
+        {answers.map((answer) => {
           const specialClassName = showAnswers
             ? answer === correct_answer
               ? 'green-button'
