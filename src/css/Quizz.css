@@ -39,7 +39,7 @@
   width: 85%;
   text-align: center;
   color: var(--lightShade);
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .button-overall {
@@ -92,13 +92,51 @@
   outline: none;
 }
 
+#homeLink {
+  background-color: var(--drakestShade);
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  margin: 25% auto 0;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+#homeLink:hover {
+  background-color: var(--accentShade);
+  color: white;
+}
+
+#homeLink::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--lightShade),
+    transparent
+  );
+  transition: 0.5s;
+}
+#homeLink:hover::before {
+  left: 100%;
+}
+
 @media only screen and (min-width: 1024px) {
   #quizzContainer {
     padding: 0 20%;
   }
   .next-question {
-    margin: 10% auto 0;
+    margin: 0 auto 0;
     padding: 8px 0;
     width: 40%;
+  }
+  .questionClass {
+    font-size: 1.5rem;
   }
 }
