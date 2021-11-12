@@ -1,7 +1,7 @@
 /* mist class colors from taiwind */
 
 .miniatureBlogPost {
-  background-color: salmon;
+  background-color: var(--lightShade);
   height: 120px;
   width: 85%;
   margin-left: auto;

@@ -1,6 +1,6 @@
 import React from 'react';
 import FullUserPost from '../FullUserPost';
-import './PostDetails.css';
+import '../../css/PostDetails.css';
 
 const PostDetails = () => {
   return (
