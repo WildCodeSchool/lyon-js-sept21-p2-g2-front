@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-// import usa from '../assets/united-states.png';
 import arrow from '../assets/right-arrow.png';
 import choice from '../assets/choice.png';
 import '../css/Converter.css';

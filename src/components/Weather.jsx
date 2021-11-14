@@ -5,8 +5,12 @@ import { Button, TextField } from '@material-ui/core';
 import SendIcon from '@material-ui/icons/Send';
 import './weather.css';
 import { useParams } from 'react-router-dom';
+import dotenv from 'dotenv';
 
+dotenv.config();
 // Define API const
+
+console.log(process.env.REACT_APP_WEATHER_API_KEY);
 
 const Weather = () => {
   const { name } = useParams();
@@ -38,6 +42,7 @@ const Weather = () => {
       `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
     )
       .then((resolve) => {
+        console.log(resolve);
         setValue(resolve.data);
         setTemp(resolve.data.main);
         setimg(
@@ -68,6 +73,7 @@ const Weather = () => {
   //     </div>
   //   );
   // }
+
   return (
     <div id="paperContainer">
       <Paper className="paper drop-shadow-md">

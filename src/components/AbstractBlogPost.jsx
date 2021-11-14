@@ -37,9 +37,18 @@ const AbstractBlogPost = () => {
     <Link to={`/posts/${post.id}`}>
       <div className="reducedPost lg:w-full">
         <div className="miniatureBlogPost">
-          <p>{post.name}</p>
-          <img src={post.avatar} alt="" />
-          <div className="userText">{`${post.message.slice(0, 160)}...`}</div>
+          <div
+            className="avatar"
+            style={{ backgroundImage: `url(${post.avatar})` }}
+          >
+            .
+          </div>
+          <div className="userinfo">
+            <p>{post.name}</p>
+            <p>{post.date.beginning}</p>
+            <p>{post.date.end}</p>
+          </div>
+          <div className="userText">{`${post.message.slice(0, 200)}...`}</div>
         </div>
       </div>
     </Link>

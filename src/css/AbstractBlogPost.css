@@ -1,7 +1,7 @@
 /* mist class colors from taiwind */
 
 .miniatureBlogPost {
-  background-color: salmon;
+  background-color: var(--lightShade);
   height: 120px;
   width: 85%;
   margin-left: auto;
@@ -18,27 +18,37 @@
   overflow: hidden;
 }
 
-.avatarCell {
-  height: 90px;
-  width: 90px;
-  border-radius: 50%;
-  background-color: black;
+.userinfo {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: left;
+  margin-left: 16px;
+}
 
-  position: absolute;
+.username {
+  margin: 16px 0 0 32px;
+  font-weight: 900;
 }
 
 .userText {
-  font-size: 1em;
-  margin-left: 100px;
-  margin-top: 5px;
-  margin-bottom: 10px;
-
-  overflow: hidden;
+  font-size: 1rem;
+  width: 60%;
+  margin: auto;
 }
 
-.reducedPost img {
+.avatar {
   border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  background-size: cover;
+  background-color: #fff;
+  color: var(--lightShade);
 }
+
+/* .reducedPost img {
+  border-radius: 50%;
+} */
 
 @media only screen and (min-width: 1024px) {
   .miniatureBlogPost {
