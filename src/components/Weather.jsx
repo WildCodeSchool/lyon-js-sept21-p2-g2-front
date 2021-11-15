@@ -17,7 +17,7 @@ const Weather = () => {
   const [value, setValue] = useState('');
   const [temp, setTemp] = useState('');
   const [typecity, setTypeCity] = useState('');
-  const [city, setCity] = useState('Paris');
+  const [city, setCity] = useState('');
   const [img, setimg] = useState('');
   const [disc, setdisc] = useState('');
 
@@ -52,22 +52,6 @@ const Weather = () => {
       });
   }, [city]);
 
-  // if (!id) {
-  //   return (
-  //     <div className="flex justify-center items-center flex-col my-4">
-  //       <div
-  //         className="
-  //       animate-spin
-  //       rounded-full
-  //       h-20
-  //       w-20
-  //       border-t-2 border-b-2 border-dark-sienna my-3
-  //     "
-  //       />
-  //       <span className="text-dark-sienna">LOADING</span>
-  //     </div>
-  //   );
-  // }
   return (
     <div id="paperContainer">
       <Paper className="paper drop-shadow-md">
@@ -79,7 +63,7 @@ const Weather = () => {
             onChange={(e) => setTypeCity(e.target.value)}
           />
           <Button type="submit" name="btn">
-            <SendIcon style={{ outline: 'none' }} />
+            <SendIcon className="sendBtn" style={{ outline: 'none' }} />
           </Button>
         </form>
         <br />

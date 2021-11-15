@@ -19,7 +19,7 @@
   width: 85%;
   height: 85%;
   margin: 5% 5% 5% 5%;
-  background-color: #461220;
+  background-image: linear-gradient(#461220, #b23a48);
   border-radius: 8px;
   color: #fff;
   display: inline-flex;
