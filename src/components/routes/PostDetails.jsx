@@ -1,19 +1,20 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-// import FullUserPost from '../FullUserPost';
+import dotenv from 'dotenv';
 import './PostDetails.css';
 import '../../css/FullUserPost.css';
 import emptyAvatar from '../../assets/emptyAvatar.png';
 
+dotenv.config();
+
 const PostDetails = () => {
   const { id } = useParams();
   const [post, setPost] = React.useState(null);
-  console.log(post);
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/posts/${id}`)
+      .get(`${process.env.REACT_APP_API_BASE_URL}/posts/${id}`)
       .then((res) => setPost(res.data[0]));
     // return () => {
     //   cleanup

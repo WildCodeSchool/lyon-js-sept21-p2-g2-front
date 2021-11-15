@@ -1,16 +1,20 @@
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
+import dotenv from 'dotenv';
 import '../css/AbstractBlogPost.css';
+
+dotenv.config();
 
 const AbstractBlogPost = () => {
   const { name } = useParams();
   const [posts, setPosts] = React.useState(null);
-  // console.log(posts.map((post) => post.message));
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/destinations/${name}/blog-posts`)
+      .get(
+        `${process.env.REACT_APP_API_BASE_URL}/destinations/${name}/blog-posts`
+      )
       .then((res) => setPosts(res.data));
     // return () => {
     //   cleanup
