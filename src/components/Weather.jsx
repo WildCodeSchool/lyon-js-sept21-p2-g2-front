@@ -5,9 +5,11 @@ import { Button, TextField } from '@material-ui/core';
 import SendIcon from '@material-ui/icons/Send';
 import '../css/weather.css';
 import { useParams } from 'react-router-dom';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 // Define API const
-
 const Weather = () => {
   const { name } = useParams();
   const firstLetter = name[0].toUpperCase();
@@ -38,6 +40,7 @@ const Weather = () => {
       `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
     )
       .then((resolve) => {
+        console.log(resolve);
         setValue(resolve.data);
         setTemp(resolve.data.main);
         setimg(

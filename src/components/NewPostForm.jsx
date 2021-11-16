@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { Widget } from '@uploadcare/react-widget';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-// import DatePicker from './DatePicker';
-// import TagList from './TagList';
 
 import '../css/NewPostForm.css';
 import MySelectTag from './MySelectTag';
