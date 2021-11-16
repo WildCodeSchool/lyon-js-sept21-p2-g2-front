@@ -133,7 +133,7 @@
     padding: 0 10%;
   }
   .home-image {
-    width: 50%;
+    width: 40%;
   }
   #homeContainer h1 {
     font-size: 3vw;
@@ -197,7 +197,13 @@
   }
 
   #search-btn {
-    width: 15%;
-    margin-left: -15%;
+    width: 10%;
+    margin-left: -10%;
+  }
+  #country-input {
+    width: 50%;
+    margin-left: 25%;
+    height: 2.5rem;
+    margin-top: 10px;
   }
 }
