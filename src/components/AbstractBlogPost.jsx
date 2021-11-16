@@ -15,11 +15,7 @@ const AbstractBlogPost = () => {
       .get(
         `${process.env.REACT_APP_API_BASE_URL}/destinations/${name}/blog-posts`
       )
-      // .then((res) => console.log(res.data))
       .then((res) => setPosts(res.data));
-    // return () => {
-    //   cleanup
-    // }
   }, []);
 
   if (!posts) {
@@ -50,10 +46,9 @@ const AbstractBlogPost = () => {
           </div>
           <div className="userinfo">
             <p>{post.username}</p>
-            <p>{post.tripDate}</p>
+            <p>{post.tripDate.slice(0, 10)}</p>
           </div>
-          <div className="userText">{post.postContent}</div>
-          {/* <div className="userText">{`${post.message.slice(0, 200)}...`}</div> */}
+          <div className="userText">{post.postContent.slice(0, 120)}...</div>
         </div>
       </div>
     </Link>

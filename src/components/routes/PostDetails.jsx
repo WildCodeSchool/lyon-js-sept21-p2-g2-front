@@ -16,9 +16,6 @@ const PostDetails = () => {
     axios
       .get(`${process.env.REACT_APP_API_BASE_URL}/posts/${id}`)
       .then((res) => setPost(res.data[0]));
-    // return () => {
-    //   cleanup
-    // }
   }, []);
 
   if (!post) {
@@ -47,7 +44,7 @@ const PostDetails = () => {
               {post.username}
             </span>
             <p id="date" className="font-semibold">
-              {post.tripDate}
+              {post.tripDate.slice(0, 10)}
             </p>
           </div>
           <div id="blocBody">
