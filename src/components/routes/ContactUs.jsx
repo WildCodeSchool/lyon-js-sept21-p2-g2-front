@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import emailjs from 'emailjs-com';
 import { useToasts } from 'react-toast-notifications';
-import './ContactUs.css';
+import '../../css/ContactUs.css';
 
 const ContactUs = () => {
   const [processing, setProcessing] = useState(false);
@@ -102,7 +102,7 @@ const ContactUs = () => {
           <input
             type="submit"
             id="submit-btn"
-            value="Send"
+            value="SEND"
             disabled={processing}
           />
         </div>

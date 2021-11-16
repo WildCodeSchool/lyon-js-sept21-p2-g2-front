@@ -36,8 +36,9 @@ const Home = () => {
   return (
     <div id="homeContainer">
       <div id="titleHome">
-        <h1>Trip@WILDERS</h1>
+        <h1 id="mainTitle">Trip@WILDERS</h1>
       </div>
+      <h2>Share the world...</h2>
       <img src={homeImg} alt="" className="home-image" />
       <label htmlFor="country">
         <input

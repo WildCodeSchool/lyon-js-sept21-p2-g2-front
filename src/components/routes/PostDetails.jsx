@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import dotenv from 'dotenv';
-import './PostDetails.css';
+import '../../css/PostDetails.css';
 import '../../css/FullUserPost.css';
 import emptyAvatar from '../../assets/emptyAvatar.png';
 

@@ -87,8 +87,17 @@ const Converter = () => {
       <div className="converter-container">
         <div className="devise-container">
           <div>
-            <img src={flag} alt="flag" />
-            <p className="currencies">{firstCurrency}</p>
+            <img
+              src={flag}
+              className="h-8 w-16 lg:h-16 lg:w-32 rounded-lg"
+              alt="flag"
+            />
+            <p
+              className="currencies"
+              // style={{ fontSize: displayInput ? '16px' : '12px' }}
+            >
+              {firstCurrency}
+            </p>
           </div>
           <select name="" id="" onChange={handleSelectCurrency}>
             <option value="">--Select currency--</option>
@@ -99,10 +108,14 @@ const Converter = () => {
             ))}
           </select>
           <button type="button">
-            <img src={arrow} alt="arrow" />
+            <img src={arrow} id="arrow" alt="arrow" />
           </button>
           <div className="toCurrency">
-            <img src={destination.flags.png} alt="usa flag" />
+            <img
+              src={destination.flags.png}
+              className="h-8 w-16 lg:h-16 lg:w-32 rounded-lg"
+              alt="usa flag"
+            />
             <p className="currencies">{currencyCode}</p>
           </div>
           <input
