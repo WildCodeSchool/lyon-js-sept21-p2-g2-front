@@ -5,14 +5,6 @@ const CommentForm = () => {
   const [author, setAuthor] = useState('');
   const [comment, setComment] = useState('');
 
-  const handleAuthorChange = (e) => {
-    setAuthor(e.target.value);
-  };
-
-  const handleCommentChange = (e) => {
-    setComment(e.target.value);
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -26,12 +18,21 @@ const CommentForm = () => {
     }
   };
 
+  const handleAuthorChange = (e) => {
+    setAuthor(e.target.value);
+  };
+
+  const handleCommentChange = (e) => {
+    setComment(e.target.value);
+  };
+
   return (
-    <div id="commentForm">
+    <div id="commentForm" className="w-4/5 ">
       <form
         action="/html/tags/html_form_tag_action.cfm"
         method="post"
         onSubmit={handleSubmit}
+        className="flex-col flex content-center"
       >
         <h3>Send a comment:</h3>
         <input
@@ -44,7 +45,7 @@ const CommentForm = () => {
           autoComplete="off"
           maxLength="50"
           required
-          className="md:w-4/5 lg:4/5 rounded-lg p-2 bg-apricot-pink"
+          className="w-full rounded-lg p-2 bg-apricot-pink"
         />
         <div id="textArea">
           <textarea
@@ -53,14 +54,17 @@ const CommentForm = () => {
             value={comment}
             onChange={handleCommentChange}
             placeholder="Write something here"
-            className="md:w-4/5 lg:4/5 rounded-lg p-2 bg-apricot-pink"
+            className="rounded-lg p-2 bg-apricot-pink"
           />
         </div>
         <input
           id="postBtn"
           type="button"
           value="Send your comment"
-          className="px-3 py-1.5 border border-transparent text-xs font-medium rounded-full shadow-sm text-white bg-dark-sienna hover:bg-english-red focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-english-red"
+          className="w-3/5 mx-auto px-3 py-1.5 border border-transparent
+           text-sm font-medium rounded-full shadow-sm text-white
+            bg-dark-sienna hover:bg-english-red focus:outline-none focus:ring-2 
+            focus:ring-offset-2 focus:ring-english-red"
         />
       </form>
     </div>
