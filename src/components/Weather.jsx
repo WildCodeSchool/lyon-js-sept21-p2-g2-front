@@ -3,11 +3,13 @@ import axios from 'axios';
 import Paper from '@material-ui/core/Paper';
 import { Button, TextField } from '@material-ui/core';
 import SendIcon from '@material-ui/icons/Send';
-import './weather.css';
+import '../css/weather.css';
 import { useParams } from 'react-router-dom';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 // Define API const
-
 const Weather = () => {
   const { name } = useParams();
   const firstLetter = name[0].toUpperCase();
@@ -17,7 +19,7 @@ const Weather = () => {
   const [value, setValue] = useState('');
   const [temp, setTemp] = useState('');
   const [typecity, setTypeCity] = useState('');
-  const [city, setCity] = useState('Paris');
+  const [city, setCity] = useState('');
   const [img, setimg] = useState('');
   const [disc, setdisc] = useState('');
 
@@ -38,6 +40,7 @@ const Weather = () => {
       `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
     )
       .then((resolve) => {
+        console.log(resolve);
         setValue(resolve.data);
         setTemp(resolve.data.main);
         setimg(
@@ -52,22 +55,6 @@ const Weather = () => {
       });
   }, [city]);
 
-  // if (!id) {
-  //   return (
-  //     <div className="flex justify-center items-center flex-col my-4">
-  //       <div
-  //         className="
-  //       animate-spin
-  //       rounded-full
-  //       h-20
-  //       w-20
-  //       border-t-2 border-b-2 border-dark-sienna my-3
-  //     "
-  //       />
-  //       <span className="text-dark-sienna">LOADING</span>
-  //     </div>
-  //   );
-  // }
   return (
     <div id="paperContainer">
       <Paper className="paper drop-shadow-md">
@@ -79,7 +66,7 @@ const Weather = () => {
             onChange={(e) => setTypeCity(e.target.value)}
           />
           <Button type="submit" name="btn">
-            <SendIcon style={{ outline: 'none' }} />
+            <SendIcon className="sendBtn" style={{ outline: 'none' }} />
           </Button>
         </form>
         <br />

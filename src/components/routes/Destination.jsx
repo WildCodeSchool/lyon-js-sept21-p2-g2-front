@@ -6,7 +6,7 @@ import MySelectTag from '../MySelectTag';
 import AbstractBlogPost from '../AbstractBlogPost';
 import CreatePostBtn from '../CreatePostBtn';
 import Divider from '../Divider';
-import './Destination.css';
+import '../../css/Destination.css';
 
 const Destination = () => {
   return (

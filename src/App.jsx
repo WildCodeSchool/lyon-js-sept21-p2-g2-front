@@ -8,6 +8,7 @@ import AboutUs from './components/routes/AboutUs';
 import Destination from './components/routes/Destination';
 import PostDetails from './components/routes/PostDetails';
 import Footer from './components/Footer';
+import Quizz from './components/routes/Quizz';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/contact-us" component={ContactUs} />
             <Route path="/about-us" component={AboutUs} />
             <Route path="/posts/:id" component={PostDetails} />
+            <Route path="/quizz" component={Quizz} />
           </Switch>
         </main>
         <Footer />

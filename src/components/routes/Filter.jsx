@@ -1,6 +1,6 @@
 import React from 'react';
 import filter from '../../assets/filter.png';
-import './Filter.css';
+import '../../css/Filter.css';
 
 const Filter = () => {
   return (
