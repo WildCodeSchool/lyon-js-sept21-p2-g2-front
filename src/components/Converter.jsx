@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-// import usa from '../assets/united-states.png';
 import arrow from '../assets/right-arrow.png';
 import choice from '../assets/choice.png';
 import '../css/Converter.css';
@@ -16,7 +15,6 @@ const Converter = () => {
   const [displayToCurrency, setDisplayToCurrency] = React.useState(false);
   const [destination, setDestination] = React.useState(null);
   const [countryList, setCountryList] = React.useState([]);
-  console.log(destination);
 
   const handleSelectCurrency = (e) => {
     const currentCountry = countryList.find(
@@ -57,7 +55,6 @@ const Converter = () => {
     if (destination && firstCurrency !== 'CHOOSE CURRENCY:') {
       const from = firstCurrency;
       const to = Object.keys(destination.currencies)[0];
-      console.log(from, to);
       const url = `https://api.exchangerate.host/convert?from=${from}&to=${to}`;
       axios
         .get(url)
@@ -66,7 +63,6 @@ const Converter = () => {
       // .catch((err) => console.error(err));
     }
   }, [amount, destination, firstCurrency]);
-  console.log(result);
 
   if (!destination) {
     return (
@@ -92,12 +88,7 @@ const Converter = () => {
         <div className="devise-container">
           <div>
             <img src={flag} alt="flag" />
-            <p
-              className="currencies"
-              // style={{ fontSize: displayInput ? '16px' : '12px' }}
-            >
-              {firstCurrency}
-            </p>
+            <p className="currencies">{firstCurrency}</p>
           </div>
           <select name="" id="" onChange={handleSelectCurrency}>
             <option value="">--Select currency--</option>
