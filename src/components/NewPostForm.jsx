@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { Widget } from '@uploadcare/react-widget';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-// import DatePicker from './DatePicker';
-// import TagList from './TagList';
 
 import '../css/NewPostForm.css';
 import MySelectTag from './MySelectTag';
@@ -88,7 +86,6 @@ const NewPostForm = () => {
       <MySelectTag setSelectedTags={setSelectedTags} />
       <h3>Upload your pictures</h3>
 
-      {/* ZONE DE TELECHARGEMENT IMAGE TEMPORAIRE */}
       <div id="picturesUpload">
         <p>
           <label htmlFor="file">Your file:</label>{' '}
@@ -101,17 +98,6 @@ const NewPostForm = () => {
           />
         </p>
       </div>
-      {/* <label htmlFor="url-image" data-translatable>
-        <h3>Insertion of the URL </h3>
-
-        <input
-          type="text"
-          id="input-img-temp"
-          value={newPhotos}
-          onChange={handlePhotosChange}
-        />
-      </label> */}
-      {/* FIN DE ZONE DE TELECHARGEMENT IMAGE TEMPORAIRE */}
 
       <button type="submit" id="add-post-btn">
         POST
