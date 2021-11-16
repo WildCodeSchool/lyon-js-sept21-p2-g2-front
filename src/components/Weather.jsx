@@ -3,7 +3,7 @@ import axios from 'axios';
 import Paper from '@material-ui/core/Paper';
 import { Button, TextField } from '@material-ui/core';
 import SendIcon from '@material-ui/icons/Send';
-import './weather.css';
+import '../css/weather.css';
 import { useParams } from 'react-router-dom';
 import dotenv from 'dotenv';
 

@@ -86,9 +86,9 @@ const NewPostForm = () => {
       <MySelectTag setSelectedTags={setSelectedTags} />
       <h3>Upload your pictures</h3>
 
+      {/* PICTURES UPLOAD */}
       <div id="picturesUpload">
         <p>
-          <label htmlFor="file">Your file:</label>{' '}
           <Widget
             publicKey="383c2db2fc40ae1ac595"
             id="file"
@@ -99,6 +99,7 @@ const NewPostForm = () => {
         </p>
       </div>
 
+      {/* POST BUTTON */}
       <button type="submit" id="add-post-btn">
         POST
       </button>

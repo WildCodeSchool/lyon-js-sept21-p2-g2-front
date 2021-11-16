@@ -1,5 +1,5 @@
 import React from 'react';
-import './MvdList.css';
+import '../css/MvdList.css';
 
 export default function MvdList() {
   const mvd = [
