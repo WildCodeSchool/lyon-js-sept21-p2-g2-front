@@ -1,0 +1,25 @@
+/* Voir avec william pour l'effet sur le titre?*/
+
+.dashboard-container {
+  background: var(--lightestShade);
+  height: auto;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  border-radius: 7px;
+  padding: 20px;
+  box-shadow: -2px -2px 8px 4px rgba(43, 35, 37, 0.3);
+}
+
+.teasing-container {
+  background: var(--lightestShade);
+  height: auto;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  border-radius: 7px;
+  padding: 20px;
+  box-shadow: -2px -2px 8px 4px rgba(43, 35, 37, 0.3);
+}
