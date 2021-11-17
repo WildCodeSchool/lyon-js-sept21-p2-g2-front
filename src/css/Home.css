@@ -18,6 +18,9 @@
   border-radius: var(--smallBorderRadius);
   box-shadow: -2px -2px 8px 4px rgba(43, 35, 37, 0.3);
   color: #fff;
+  position: relative;
+  overflow: hidden;
+  transition: 0.5s;
 }
 
 .home-image {
@@ -68,7 +71,28 @@
 #homeContainer h1 {
   font-size: 2rem;
   text-align: center;
+  background-image: linear-gradient(
+    to right,
+    #fcb9b2,
+    #b23a48,
+    #461220,
+    #b23a48,
+    #fcb9b2
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 400%;
+  background-position: -100%;
+  animation: animatedTitle 3s infinite alternate;
 }
+
+@keyframes animatedTitle {
+  to {
+    background-position: 100%;
+  }
+}
+
 #homeContainer h2 {
   font-size: 1rem;
   text-align: center;
@@ -77,19 +101,39 @@
 
 #homeContainer {
   position: relative;
+  z-index: 1;
+}
+
+#search-btn:hover {
+  background-color: var(--accentShade);
+}
+#search-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--lightShade),
+    transparent
+  );
+  transition: 0.5s;
+}
+#search-btn:hover::before {
+  left: 100%;
 }
 
 /* RESPONSIVE */
 
 @media only screen and (min-width: 1024px) {
   #homeContainer {
-    display: flex;
-    flex-direction: column;
     padding: 0 10%;
-    justify-content: center;
   }
   .home-image {
-    width: 50%;
+    width: 40%;
   }
   #homeContainer h1 {
     font-size: 3vw;
@@ -129,8 +173,8 @@
     position: absolute;
     width: 80px;
     height: 800px;
-    background: linear-gradient(#b23a48, #fcb9b2);
-    animation: animate 6s linear infinite;
+    background: linear-gradient(#b23a48, #461220);
+    animation: animate 6s linear infinite alternate;
   }
 
   @keyframes animate {
@@ -150,5 +194,16 @@
   .dropdown {
     width: 35%;
     left: 34%;
+  }
+
+  #search-btn {
+    width: 10%;
+    margin-left: -10%;
+  }
+  #country-input {
+    width: 50%;
+    margin-left: 25%;
+    height: 2.5rem;
+    margin-top: 10px;
   }
 }

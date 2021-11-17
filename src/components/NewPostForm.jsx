@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { Widget } from '@uploadcare/react-widget';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-// import DatePicker from './DatePicker';
-// import TagList from './TagList';
 
 import '../css/NewPostForm.css';
 import MySelectTag from './MySelectTag';
@@ -15,7 +13,7 @@ const NewPostForm = () => {
   const [picturesGroupUUID, setPicturesGroupUUID] = useState(null);
   const { destination } = useParams();
 
-  const [selectedTags, setSelectedTags] = React.useState(null);
+  const [selectedTags, setSelectedTags] = useState(null);
   console.log(selectedTags);
 
   const handleSubmit = (e) => {
@@ -35,21 +33,17 @@ const NewPostForm = () => {
         )
         .then((resp) => console.log(resp.data));
     }
-    // revoir le .then avec les bon éléments de la database....
   };
 
   const handleNameChange = (e) => {
     setNewName(e.target.value);
-    // console.log(newName);
   };
 
   const handleMessageChange = (e) => {
     setNewMessage(e.target.value);
-    // console.log(newMessage);
   };
   const handleDateChange = (e) => {
     setNewDate(e.target.value);
-    // console.log(newDate);
   };
 
   return (
@@ -88,10 +82,9 @@ const NewPostForm = () => {
       <MySelectTag setSelectedTags={setSelectedTags} />
       <h3>Upload your pictures</h3>
 
-      {/* ZONE DE TELECHARGEMENT IMAGE TEMPORAIRE */}
+      {/* PICTURES UPLOAD */}
       <div id="picturesUpload">
         <p>
-          <label htmlFor="file">Your file:</label>{' '}
           <Widget
             publicKey="383c2db2fc40ae1ac595"
             id="file"
@@ -101,18 +94,8 @@ const NewPostForm = () => {
           />
         </p>
       </div>
-      {/* <label htmlFor="url-image" data-translatable>
-        <h3>Insertion of the URL </h3>
 
-        <input
-          type="text"
-          id="input-img-temp"
-          value={newPhotos}
-          onChange={handlePhotosChange}
-        />
-      </label> */}
-      {/* FIN DE ZONE DE TELECHARGEMENT IMAGE TEMPORAIRE */}
-
+      {/* POST BUTTON */}
       <button type="submit" id="add-post-btn">
         POST
       </button>

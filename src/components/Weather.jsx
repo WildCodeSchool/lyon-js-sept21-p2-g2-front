@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import Paper from '@material-ui/core/Paper';
+// import Paper from '@material-ui/core/Paper';
 import { Button, TextField } from '@material-ui/core';
 import SendIcon from '@material-ui/icons/Send';
-import './weather.css';
+import '../css/weather.css';
 import { useParams } from 'react-router-dom';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 // Define API const
-
 const Weather = () => {
   const { name } = useParams();
   const firstLetter = name[0].toUpperCase();
@@ -38,6 +40,7 @@ const Weather = () => {
       `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
     )
       .then((resolve) => {
+        console.log(resolve);
         setValue(resolve.data);
         setTemp(resolve.data.main);
         setimg(
@@ -54,7 +57,7 @@ const Weather = () => {
 
   return (
     <div id="paperContainer">
-      <Paper className="paper drop-shadow-md">
+      <div className="paper">
         <form onSubmit={citySelect}>
           <TextField
             className="elementcenter"
@@ -85,7 +88,7 @@ const Weather = () => {
             {`${Math.floor(temp.temp_max - 273.15)}° C`}
           </p>
         </div>
-      </Paper>
+      </div>
     </div>
   );
 };
