@@ -38,12 +38,12 @@
   cursor: pointer;
   text-align: center;
 }
-#name-container {
-  width: 80%;
-}
+
 #name-and-date-container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+
+  /* justify-content: space-between; */
 }
 #avatarInput {
   text-align: center;
@@ -167,14 +167,19 @@
   overflow: hidden;
 }
 
-@media only screen and (min-width: 1024px) {
-  .contact-form {
-    width: 60%;
-    padding: 1% 2%;
-    margin: 3% auto;
+@media only screen and (min-width: 640px) {
+  #name-and-date-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
-
-  #add-post-btn {
-    width: 40%;
+  #name {
+    min-height: 28px;
+  }
+  #name-container {
+    width: 65%;
+  }
+  #dateArea {
+    min-height: 28px;
   }
 }
