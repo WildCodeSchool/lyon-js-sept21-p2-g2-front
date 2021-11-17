@@ -13,7 +13,7 @@ const NewPostForm = () => {
   const [picturesGroupUUID, setPicturesGroupUUID] = useState(null);
   const { destination } = useParams();
 
-  const [selectedTags, setSelectedTags] = React.useState(null);
+  const [selectedTags, setSelectedTags] = useState(null);
   console.log(selectedTags);
 
   const handleSubmit = (e) => {
@@ -33,21 +33,17 @@ const NewPostForm = () => {
         )
         .then((resp) => console.log(resp.data));
     }
-    // revoir le .then avec les bon éléments de la database....
   };
 
   const handleNameChange = (e) => {
     setNewName(e.target.value);
-    // console.log(newName);
   };
 
   const handleMessageChange = (e) => {
     setNewMessage(e.target.value);
-    // console.log(newMessage);
   };
   const handleDateChange = (e) => {
     setNewDate(e.target.value);
-    // console.log(newDate);
   };
 
   return (
