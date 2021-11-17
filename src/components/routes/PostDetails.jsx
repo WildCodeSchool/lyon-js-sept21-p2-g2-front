@@ -4,24 +4,29 @@ import axios from 'axios';
 import dotenv from 'dotenv';
 import '../../css/PostDetails.css';
 import '../../css/FullUserPost.css';
-import emptyAvatar from '../../assets/emptyAvatar.png';
+import CommentForm from '../CommentForm';
+import Comment from '../Comment';
 
 dotenv.config();
 
 const PostDetails = () => {
   const { id } = useParams();
   const [post, setPost] = React.useState(null);
+  const [comments, setComments] = React.useState(null);
 
   useEffect(() => {
     axios
       .get(`${process.env.REACT_APP_API_BASE_URL}/posts/${id}`)
       .then((res) => setPost(res.data[0]));
-    // return () => {
-    //   cleanup
-    // }
   }, []);
 
-  if (!post) {
+  useEffect(() => {
+    axios
+      .get(`${process.env.REACT_APP_API_BASE_URL}/posts/${id}/comments`)
+      .then((res) => setComments(res.data));
+  }, []);
+
+  if (!post || !comments) {
     return (
       <div className="flex justify-center items-center flex-col my-4">
         <div
@@ -47,7 +52,7 @@ const PostDetails = () => {
               {post.username}
             </span>
             <p id="date" className="font-semibold">
-              {post.tripDate}
+              {post.tripDate.slice(0, 10)}
             </p>
           </div>
           <div id="blocBody">
@@ -57,46 +62,16 @@ const PostDetails = () => {
             <div id="slider" className="m-2 md:w-4/5">
               <figure>
                 {post.pictures.split(',').map((photo) => (
-                  <img src={photo} alt="" />
+                  <img src={photo} alt="" key={photo} />
                 ))}
               </figure>
             </div>
-
             {/* Posted Comments */}
-            <div
-              id="postedComments"
-              className="bg-apricot-pink shadow-inner rounded-lg inline-flex items-center p-1 m-2"
-            >
-              <div id="userInfoComment">
-                <img src={emptyAvatar} alt="avatar" id="postAvatar" />
-                <span id="userNameComment">UserName</span>
-              </div>
-
-              <p id="postText">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-              </p>
-            </div>
-
+            {comments.map((comment) => (
+              <Comment key={comment.id} comment={comment} />
+            ))}
             {/* Comment Form */}
-            <div id="commentForm">
-              <form action="/html/tags/html_form_tag_action.cfm" method="post">
-                <div id="textArea">
-                  <textarea
-                    name="comments"
-                    id="comments"
-                    placeholder="Write something here"
-                    className="md:w-4/5 lg:4/5 rounded-lg p-2 bg-apricot-pink"
-                  />
-                </div>
-              </form>
-            </div>
-            {/* Comment Button */}
-            <input
-              id="postBtn"
-              type="button"
-              value="Comment"
-              className="px-3 py-1.5 border border-transparent text-xs font-medium rounded-full shadow-sm text-white bg-dark-sienna hover:bg-english-red focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-english-red"
-            />
+            <CommentForm />
           </div>
         </div>
       </div>

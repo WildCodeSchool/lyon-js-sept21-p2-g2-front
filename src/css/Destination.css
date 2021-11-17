@@ -5,4 +5,10 @@
     padding: 0 10%;
     justify-content: center;
   }
+  #feedback {
+    flex-wrap: nowrap;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
 }
