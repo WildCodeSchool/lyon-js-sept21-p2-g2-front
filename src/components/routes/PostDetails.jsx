@@ -5,12 +5,14 @@ import dotenv from 'dotenv';
 import '../../css/PostDetails.css';
 import '../../css/FullUserPost.css';
 import CommentForm from '../CommentForm';
+import Comment from '../Comment';
 
 dotenv.config();
 
 const PostDetails = () => {
   const { id } = useParams();
   const [post, setPost] = React.useState(null);
+  const [comments, setComments] = React.useState(null);
 
   useEffect(() => {
     axios
@@ -18,7 +20,13 @@ const PostDetails = () => {
       .then((res) => setPost(res.data[0]));
   }, []);
 
-  if (!post) {
+  useEffect(() => {
+    axios
+      .get(`${process.env.REACT_APP_API_BASE_URL}/posts/${id}/comments`)
+      .then((res) => setComments(res.data));
+  }, []);
+
+  if (!post || !comments) {
     return (
       <div className="flex justify-center items-center flex-col my-4">
         <div
@@ -54,25 +62,14 @@ const PostDetails = () => {
             <div id="slider" className="m-2 md:w-4/5">
               <figure>
                 {post.pictures.split(',').map((photo) => (
-                  <img src={photo} alt="" />
+                  <img src={photo} alt="" key={photo} />
                 ))}
               </figure>
             </div>
-
             {/* Posted Comments */}
-            <div
-              id="postedComments"
-              className="bg-apricot-pink shadow-inner rounded-lg inline-flex items-center p-1 m-2"
-            >
-              <div id="userInfoComment">
-                <span id="userNameComment">UserName</span>
-              </div>
-
-              <p id="postText">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-              </p>
-            </div>
-
+            {comments.map((comment) => (
+              <Comment key={comment.id} comment={comment} />
+            ))}
             {/* Comment Form */}
             <CommentForm />
           </div>
