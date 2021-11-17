@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import Paper from '@material-ui/core/Paper';
+// import Paper from '@material-ui/core/Paper';
 import { Button, TextField } from '@material-ui/core';
 import SendIcon from '@material-ui/icons/Send';
 import '../css/weather.css';
@@ -57,7 +57,7 @@ const Weather = () => {
 
   return (
     <div id="paperContainer">
-      <Paper className="paper drop-shadow-md">
+      <div className="paper">
         <form onSubmit={citySelect}>
           <TextField
             className="elementcenter"
@@ -88,7 +88,7 @@ const Weather = () => {
             {`${Math.floor(temp.temp_max - 273.15)}° C`}
           </p>
         </div>
-      </Paper>
+      </div>
     </div>
   );
 };
