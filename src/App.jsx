@@ -9,6 +9,7 @@ import Destination from './components/routes/Destination';
 import PostDetails from './components/routes/PostDetails';
 import Footer from './components/Footer';
 import Quizz from './components/routes/Quizz';
+import Error from './components/Error';
 import Dashboard from './components/routes/Dashboard';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
             <Route path="/about-us" component={AboutUs} />
             <Route path="/posts/:id" component={PostDetails} />
             <Route path="/quizz" component={Quizz} />
+            <Route path="/error" component={Error} />
             <Route path="/dashboard" component={Dashboard} />
           </Switch>
         </main>
