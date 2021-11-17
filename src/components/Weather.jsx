@@ -25,6 +25,7 @@ const Weather = () => {
 
   const citySelect = (e) => {
     e.preventDefault();
+    setCity(typecity);
   };
 
   // Call API
@@ -40,7 +41,6 @@ const Weather = () => {
       `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
     )
       .then((resolve) => {
-        console.log(resolve);
         setValue(resolve.data);
         setTemp(resolve.data.main);
         setimg(
