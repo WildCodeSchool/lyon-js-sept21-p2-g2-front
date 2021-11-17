@@ -9,7 +9,6 @@
   flex-direction: column;
   align-items: center;
   color: white;
-  font-family: 'secondaryFont';
   background-color: var(--lightShade);
   width: 90%;
   height: 640px;
@@ -40,6 +39,7 @@
   text-align: center;
   color: var(--lightShade);
   font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .button-overall {
