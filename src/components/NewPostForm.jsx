@@ -10,11 +10,11 @@ const NewPostForm = () => {
   const [newName, setNewName] = useState(null);
   const [newMessage, setNewMessage] = useState(null);
   const [newDate, setNewDate] = useState(null);
+  const [newAvatar, setNewAvatar] = useState(null);
   const [picturesGroupUUID, setPicturesGroupUUID] = useState(null);
   const { destination } = useParams();
 
-  const [selectedTags, setSelectedTags] = useState(null);
-  console.log(selectedTags);
+  const [selectedTags, setSelectedTags] = React.useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -26,6 +26,7 @@ const NewPostForm = () => {
           {
             name: newName,
             date: newDate,
+            avatar: newAvatar,
             message: newMessage,
             tags: selectedTags,
             photos: picturesGroupUUID,
@@ -37,6 +38,10 @@ const NewPostForm = () => {
 
   const handleNameChange = (e) => {
     setNewName(e.target.value);
+  };
+
+  const handleAvatarChange = (e) => {
+    setNewAvatar(e.target.value);
   };
 
   const handleMessageChange = (e) => {
@@ -60,6 +65,18 @@ const NewPostForm = () => {
         autoComplete="off"
         required
       />
+
+      <h3>Avatar's URL :</h3>
+      <input
+        type="url"
+        id="avatarInput"
+        name="avatar"
+        required
+        autoComplete="off"
+        onChange={handleAvatarChange}
+        value={newAvatar}
+      />
+
       <div>
         <h3>Date :</h3>
 

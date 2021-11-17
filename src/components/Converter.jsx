@@ -99,7 +99,12 @@ const Converter = () => {
               {firstCurrency}
             </p>
           </div>
-          <select name="" id="" onChange={handleSelectCurrency}>
+          <select
+            name=""
+            id=""
+            onChange={handleSelectCurrency}
+            className="bg-melon-pink p-px rounded-lg"
+          >
             <option value="">--Select currency--</option>
             {countryList.map((country) => (
               <option key={country.name} value={country.name}>
