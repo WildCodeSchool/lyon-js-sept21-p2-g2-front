@@ -38,7 +38,13 @@
   cursor: pointer;
   text-align: center;
 }
-
+#name-container {
+  width: 80%;
+}
+#name-and-date-container {
+  display: flex;
+  justify-content: space-between;
+}
 #avatarInput {
   text-align: center;
   cursor: pointer;
