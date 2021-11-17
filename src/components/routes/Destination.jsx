@@ -14,10 +14,12 @@ const Destination = () => {
       <DestinationBloc />
       <Weather />
       <Converter />
-      <Divider />
-      <MySelectTag />
-      <AbstractBlogPost />
-      <CreatePostBtn />
+      <div id="feedback">
+        <Divider />
+        <MySelectTag />
+        <AbstractBlogPost />
+        <CreatePostBtn />
+      </div>
     </div>
   );
 };
