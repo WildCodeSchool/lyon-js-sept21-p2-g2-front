@@ -11,6 +11,7 @@ const Home = () => {
   const [displaySearchFilter, setDisplaySearchFilter] = React.useState(false);
 
   const handleChange = (e) => {
+    e.preventDefault();
     const currentSearch = e.target.value;
     if (currentSearch.length > 1) {
       const firstLetter = currentSearch[0].toUpperCase();
