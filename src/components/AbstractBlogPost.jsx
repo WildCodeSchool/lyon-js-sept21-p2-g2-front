@@ -15,6 +15,7 @@ const AbstractBlogPost = () => {
       .get(
         `${process.env.REACT_APP_API_BASE_URL}/destinations/${name}/blog-posts`
       )
+      // .then((res) => console.log(res.data))
       .then((res) => setPosts(res.data));
     // return () => {
     //   cleanup
@@ -48,11 +49,11 @@ const AbstractBlogPost = () => {
             .
           </div>
           <div className="userinfo">
-            <p>{post.name}</p>
-            <p>{post.date.beginning}</p>
-            <p>{post.date.end}</p>
+            <p>{post.username}</p>
+            <p>{post.tripDate}</p>
           </div>
-          <div className="userText">{`${post.message.slice(0, 200)}...`}</div>
+          <div className="userText">{post.postContent}</div>
+          {/* <div className="userText">{`${post.message.slice(0, 200)}...`}</div> */}
         </div>
       </div>
     </Link>
