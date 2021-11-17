@@ -1,21 +1,27 @@
 import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 const CommentForm = () => {
   const [author, setAuthor] = useState('');
-  const [comment, setComment] = useState('');
+  const [comment, setComment] = useState(null);
+  const { id } = useParams();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (comment) {
+    if (comment !== null) {
       axios
-        .post(`${process.env.REACT_APP_API_BASE_URL}/blog-posts/:id/comments`, {
-          commentAuthor: author,
-          content: comment,
-        })
+        .post(
+          `${process.env.REACT_APP_API_BASE_URL}/blog-posts/${id}/comments`,
+          {
+            commentAuthor: author,
+            content: comment,
+          }
+        )
         .then((resp) => console.log(resp.data));
     }
+    setAuthor('');
+    setComment('');
   };
 
   const handleAuthorChange = (e) => {
@@ -59,7 +65,7 @@ const CommentForm = () => {
         </div>
         <input
           id="postBtn"
-          type="button"
+          type="submit"
           value="Send your comment"
           className="w-3/5 mx-auto px-3 py-1.5 border border-transparent
            text-sm font-medium rounded-full shadow-sm text-white
