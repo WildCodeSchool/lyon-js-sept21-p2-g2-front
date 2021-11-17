@@ -34,7 +34,6 @@ const NewPostForm = () => {
         )
         .then((resp) => console.log(resp.data));
     }
-    // revoir le .then avec les bon éléments de la database....
   };
 
   const handleNameChange = (e) => {
