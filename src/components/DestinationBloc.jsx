@@ -8,8 +8,6 @@ export default function DestinationBloc() {
 
   const { name } = useParams();
 
-  console.log(destination);
-
   function numberWithSpace(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
   }
@@ -43,7 +41,7 @@ export default function DestinationBloc() {
     <div id="mainContainer">
       <div
         id="destinationBloc"
-        className="countryBloc bg-dark-sienna text-white drop-shadow-md"
+        className="countryBloc bg-dark-sienna text-white drop-shadow-md w"
       >
         <div className="flagBox">
           <img id="flag" src={destination.flags.png} alt="Flag" />
