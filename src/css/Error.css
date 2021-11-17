@@ -5,3 +5,31 @@
 .errorTitle {
   font-family: 'secondaryFont';
 }
+
+.errorLinks a {
+  position: relative;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.errorLinks a:hover {
+  background-color: var(--accentShade);
+}
+.errorLinks a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--lightShade),
+    transparent
+  );
+  transition: 0.5s;
+}
+.errorLinks a:hover::before {
+  left: 100%;
+}
