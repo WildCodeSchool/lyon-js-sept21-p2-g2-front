@@ -8,8 +8,8 @@ export default function MvdList() {
       imageUrl: 'https://flagcdn.com/w320/ky.png',
     },
     {
-      name: 'United Arab Emirates',
-      imageUrl: 'https://flagcdn.com/w320/ae.png',
+      name: 'Maldives',
+      imageUrl: 'https://flagcdn.com/w320/mv.png',
     },
     {
       name: 'Switzerland',
@@ -36,8 +36,8 @@ export default function MvdList() {
       imageUrl: 'https://flagcdn.com/w320/lu.png',
     },
     {
-      name: 'Singapore',
-      imageUrl: 'https://flagcdn.com/w320/sg.png',
+      name: 'Panama',
+      imageUrl: 'https://flagcdn.com/w320/pa.png',
     },
     {
       name: 'Netherlands',

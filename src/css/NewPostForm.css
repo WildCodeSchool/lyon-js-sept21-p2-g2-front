@@ -15,6 +15,10 @@
   margin-top: 15px;
 }
 
+.contact-form input {
+  padding: 1px;
+}
+
 #post-title {
   text-align: left;
   margin: var(--smallBorderRadius);
@@ -26,7 +30,6 @@
   cursor: pointer;
   text-align: center;
   color: var(--drakestShade);
-  /* box-shadow: -2px -2px 8px 4px rgba(43, 35, 37, 0.3); */
 }
 
 #name {
@@ -34,7 +37,13 @@
   width: 100%;
   cursor: pointer;
   text-align: center;
-  /* box-shadow: -2px -2px 8px 4px rgba(43, 35, 37, 0.3); */
+}
+
+#avatarInput {
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  border-radius: var(--smallBorderRadius);
 }
 
 #add-post-btn {
@@ -43,7 +52,6 @@
   height: 2.5rem;
   width: 60%;
   border-radius: var(--smallBorderRadius);
-  /* box-shadow: -2px -2px 8px 4px rgba(43, 35, 37, 0.3); */
   color: #fff;
   position: relative;
   overflow: hidden;
@@ -89,27 +97,6 @@
   height: 100px;
   width: 100%;
 }
-
-/* @media screen and (max-width: 500px) {
-  .allTags {
-    width: 85%;
-    height: 200px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    background-color: var(--lightShade);
-    border-radius: 7px;
-    cursor: pointer;
-  }
-  #dateArea {
-    border-radius: var(--smallBorderRadius);
-    width: 100%;
-    cursor: pointer;
-    text-align: center;
-    color: var(--drakestShade);
-  }
-} */
 
 #picturesUpload button {
   background-color: var(--drakestShade);
