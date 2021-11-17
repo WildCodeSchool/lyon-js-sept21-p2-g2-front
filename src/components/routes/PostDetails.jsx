@@ -44,19 +44,19 @@ const PostDetails = () => {
           <div id="userPostInfo">
             <img src={post.avatar} alt="avatar" id="avatar" />
             <span id="userName" className="font-bold">
-              {post.name}
+              {post.username}
             </span>
             <p id="date" className="font-semibold">
-              {post.date.beginning} to {post.date.end}
+              {post.tripDate}
             </p>
           </div>
           <div id="blocBody">
             {/* Post Text */}
-            <p id="postText">{post.message}</p>
+            <p id="postText">{post.postContent}</p>
             {/* Carousel */}
             <div id="slider" className="m-2 md:w-4/5">
               <figure>
-                {post.photos.map((photo) => (
+                {post.pictures.split(',').map((photo) => (
                   <img src={photo} alt="" />
                 ))}
               </figure>
