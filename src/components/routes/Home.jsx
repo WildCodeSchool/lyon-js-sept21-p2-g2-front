@@ -11,6 +11,7 @@ const Home = () => {
   const [displaySearchFilter, setDisplaySearchFilter] = React.useState(false);
 
   const handleChange = (e) => {
+    e.preventDefault();
     const currentSearch = e.target.value;
     if (currentSearch.length > 1) {
       const firstLetter = currentSearch[0].toUpperCase();
@@ -36,8 +37,9 @@ const Home = () => {
   return (
     <div id="homeContainer">
       <div id="titleHome">
-        <h1>Trip@WILDERS</h1>
+        <h1 id="mainTitle">Trip@WILDERS</h1>
       </div>
+      <h2>Share the world...</h2>
       <img src={homeImg} alt="" className="home-image" />
       <label htmlFor="country">
         <input
@@ -60,7 +62,10 @@ const Home = () => {
         {countryList
           .filter((country) => country.name.includes(search))
           .map((elem) => (
-            <Link to={`/destination/${elem.name.toLowerCase()}`}>
+            <Link
+              to={`/destination/${elem.name.toLowerCase()}`}
+              key={elem.name}
+            >
               <div className="flex items-center space-x-4 filter-container">
                 <div>
                   <img

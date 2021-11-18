@@ -2,10 +2,10 @@
 
 footer {
   background-color: #b23a48;
-  color: white;
+  color: #fcb9b2;
   text-align: center;
   padding: 8px 8px 2px 8px;
-  margin-top: 1%;
+  margin-top: 4%;
   padding: 1%;
   bottom: 0;
 }
@@ -19,7 +19,9 @@ footer ul {
 
 footer li:hover {
   cursor: pointer;
-  color: #ffe4d8;
+  color: var(--drakestShade);
+  text-shadow: -1px -1px 0 #fcb9b2, 1px -1px 0 #fcb9b2, -1px 1px 0 #fcb9b2,
+    1px 1px 0 #fcb9b2;
 }
 
 .navigation {

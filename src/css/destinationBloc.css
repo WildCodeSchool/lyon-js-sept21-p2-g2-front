@@ -53,7 +53,7 @@
 }
 
 #liCatTitle {
-  font-weight: bold;
+  font-family: 'secondaryFont';
   color: var(--lightShade);
   text-transform: uppercase;
 }
@@ -68,6 +68,18 @@
   justify-content: flex-end;
   flex-wrap: wrap;
   column-gap: 4px;
+}
+
+#mapLink {
+  color: var(--lightShade);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2%;
+}
+
+#mapLink span {
+  font-family: 'secondaryFont';
 }
 
 /* TABLETS AND DESKTOP */

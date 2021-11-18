@@ -1,5 +1,5 @@
-import React from 'react';
-import './MvdList.css';
+import React, { useEffect } from 'react';
+import '../css/MvdList.css';
 
 export default function MvdList() {
   const mvd = [
@@ -8,45 +8,79 @@ export default function MvdList() {
       imageUrl: 'https://flagcdn.com/w320/ky.png',
     },
     {
-      name: 'United Arab Emirates',
-      imageUrl: 'https://flagcdn.com/w320/ae.png',
+      name: 'Maldives',
+      imageUrl: 'https://flagcdn.com/w320/mv.png',
     },
     {
       name: 'Switzerland',
       imageUrl: 'https://flagcdn.com/w320/ch.png',
     },
     {
-      name: 'USA',
-      imageUrl: 'https://flagcdn.com/w320/us.png',
+      name: 'Bahamas',
+      imageUrl: 'https://flagcdn.com/w320/bs.png',
     },
     {
-      name: 'Iceland',
-      imageUrl: 'https://flagcdn.com/w320/is.png',
+      name: 'Andorra',
+      imageUrl: 'https://flagcdn.com/w320/ad.png',
+    },
+    {
+      name: 'Malta',
+      imageUrl: 'https://flagcdn.com/w320/mt.png',
+    },
+    {
+      name: 'Liechtenstein',
+      imageUrl: 'https://flagcdn.com/w320/li.png',
+    },
+    {
+      name: 'Luxembourg',
+      imageUrl: 'https://flagcdn.com/w320/lu.png',
+    },
+    {
+      name: 'Panama',
+      imageUrl: 'https://flagcdn.com/w320/pa.png',
+    },
+    {
+      name: 'Netherlands',
+      imageUrl: 'https://flagcdn.com/w320/nl.png',
     },
   ];
+  const [destinations, setDestinations] = React.useState([]);
+
+  useEffect(() => {
+    const nbArray = [];
+    // eslint-disable-next-line no-plusplus
+    for (let i = 0; i <= mvd.length; i++) {
+      const randomNb = Math.floor(Math.random() * mvd.length);
+      if (!nbArray.includes(randomNb)) nbArray.push(randomNb);
+      if (nbArray.length === 5) break;
+    }
+    setDestinations(nbArray);
+  }, []);
+
   return (
     <div id="mvdBloc" className="flex flex-col items-center mvd">
       <div id="titleMvd">
-        <h3 className="text-center mt-6 text-lg">Most Valued Destinations</h3>
+        <h3 className="text-center mt-6 text-xl">Most Valued Destinations</h3>
       </div>
 
-      {mvd.map((country) => (
+      {destinations.map((index) => (
         <span
           id="countrySpan"
-          className="w-4/5 sm:w-1/3 md:w-2/4 mt-2 bg-dark-sienna text-white shadow-2xl rounded-full p-3"
+          className="w-4/5 sm:w-1/3 md:w-2/4 lg:w-3/12 mt-2 bg-dark-sienna text-white shadow-2xl rounded-full p-3"
+          key={mvd[index].name}
         >
-          <a href={`/destination/${country.name}`} id="link">
+          <a href={`/destination/${mvd[index].name.toLowerCase()}`} id="link">
             <div className="flex items-center space-x-4">
               <div>
                 <img
                   className="h-8 w-8 rounded-full"
-                  src={country.imageUrl}
+                  src={mvd[index].imageUrl}
                   alt="flag"
                 />
               </div>
               <div className="min-w-0">
                 <p className="text-sm font-medium text-melon-pink">
-                  {country.name}
+                  {mvd[index].name}
                 </p>
               </div>
             </div>

@@ -1,3 +1,9 @@
+#postedComments {
+  height: 64px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
 @media only screen and (min-width: 1024px) {
   #postsPage {
     display: flex;

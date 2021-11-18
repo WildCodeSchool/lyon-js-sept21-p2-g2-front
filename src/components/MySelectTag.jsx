@@ -1,6 +1,6 @@
 import React from 'react';
 import Select from 'react-select';
-import './MySelectTag.css';
+import '../css/MySelectTag.css';
 
 const tags = [
   { value: '#Gastronomy', label: '#Gastronomy' },
@@ -29,9 +29,6 @@ const MySelectTag = ({ setSelectedTags }) => {
         className="basic-multi-select"
         classNamePrefix="select"
       />
-      <button type="submit" id="tag-btn">
-        ADD #
-      </button>
     </div>
   );
 };

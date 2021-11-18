@@ -6,18 +6,24 @@ import MySelectTag from '../MySelectTag';
 import AbstractBlogPost from '../AbstractBlogPost';
 import CreatePostBtn from '../CreatePostBtn';
 import Divider from '../Divider';
-import './Destination.css';
+import SearchBtn from '../SearchBtn';
+import '../../css/Destination.css';
 
 const Destination = () => {
+  const [selectedTags, setSelectedTags] = React.useState(null);
+
   return (
     <div id="destinationPage">
       <DestinationBloc />
       <Weather />
       <Converter />
-      <Divider />
-      <MySelectTag />
-      <AbstractBlogPost />
-      <CreatePostBtn />
+      <div id="feedback">
+        <Divider />
+        <MySelectTag setSelectedTags={setSelectedTags} />
+        <SearchBtn foundTags={selectedTags} />
+        <AbstractBlogPost />
+        <CreatePostBtn />
+      </div>
     </div>
   );
 };

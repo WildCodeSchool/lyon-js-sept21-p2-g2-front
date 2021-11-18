@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import emailjs from 'emailjs-com';
 import { useToasts } from 'react-toast-notifications';
-import './ContactUs.css';
+import '../../css/ContactUs.css';
 
 const ContactUs = () => {
   const [processing, setProcessing] = useState(false);
@@ -24,6 +24,7 @@ const ContactUs = () => {
         process.env.REACT_APP_EMAILJS_KEYID
       )
       .then((result) => {
+        // eslint-disable-next-line
         console.log(result.text);
         setName('');
         setMessage('');
@@ -34,6 +35,7 @@ const ContactUs = () => {
         });
       })
       .catch((error) => {
+        // eslint-disable-next-line
         console.log(error.text);
         addToast('Sorry, something wrong happened, please, try again later!', {
           appearance: 'error',
@@ -102,7 +104,7 @@ const ContactUs = () => {
           <input
             type="submit"
             id="submit-btn"
-            value="Send"
+            value="SEND"
             disabled={processing}
           />
         </div>

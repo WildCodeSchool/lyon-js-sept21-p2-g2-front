@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import Paper from '@material-ui/core/Paper';
 import { Button, TextField } from '@material-ui/core';
 import SendIcon from '@material-ui/icons/Send';
-import './weather.css';
+import '../css/weather.css';
 import { useParams } from 'react-router-dom';
+import dotenv from 'dotenv';
 
-// Define API const
+dotenv.config();
 
+// DEFINE API CONST
 const Weather = () => {
   const { name } = useParams();
   const firstLetter = name[0].toUpperCase();
@@ -23,16 +24,22 @@ const Weather = () => {
 
   const citySelect = (e) => {
     e.preventDefault();
+    setCity(typecity);
   };
 
-  // Call API
+  // CALL DESTINATION API TO FIND CAPITAL
   useEffect(() => {
     axios(`https://countriesnow.space/api/v0.1/countries/capital`)
       .then((resolve) => resolve.data.data)
-      .then((data) => data.filter((country) => country.name === destination))
+      .then((data) =>
+        data.filter(
+          (country) => country.name.toLowerCase() === destination.toLowerCase()
+        )
+      )
       .then((country) => setCity(country[0].capital));
   }, []);
 
+  // CALL WEATHER API TO DISPLAY CAPITAL WEATHER
   useEffect(() => {
     axios(
       `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
@@ -54,7 +61,7 @@ const Weather = () => {
 
   return (
     <div id="paperContainer">
-      <Paper className="paper drop-shadow-md">
+      <div className="paper">
         <form onSubmit={citySelect}>
           <TextField
             className="elementcenter"
@@ -85,7 +92,7 @@ const Weather = () => {
             {`${Math.floor(temp.temp_max - 273.15)}° C`}
           </p>
         </div>
-      </Paper>
+      </div>
     </div>
   );
 };

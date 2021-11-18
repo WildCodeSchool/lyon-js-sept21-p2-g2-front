@@ -1,5 +1,6 @@
 .select-tag {
-  width: 100%;
+  width: 80%;
+  max-width: 80%;
   border-radius: var(--smallBorderRadius);
   background-color: var(--lightShade);
   height: auto;
@@ -30,9 +31,6 @@
 }
 
 @media only screen and (min-width: 1024px) {
-  .select-tag {
-    width: 50%;
-  }
   #tag-btn {
     font-size: 16px;
   }

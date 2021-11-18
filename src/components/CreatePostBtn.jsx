@@ -1,10 +1,9 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
-import './createPostBtn.css';
+import '../css/createPostBtn.css';
 
 const CreatePostBtn = () => {
   const { name } = useParams();
-  console.log(useParams());
 
   return (
     <div className="lg:w-full">
