@@ -10,6 +10,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 // Define API const
+// toUpperCase = checkout PascalCase
 const Weather = () => {
   const { name } = useParams();
   const firstLetter = name[0].toUpperCase();
@@ -32,8 +33,13 @@ const Weather = () => {
   useEffect(() => {
     axios(`https://countriesnow.space/api/v0.1/countries/capital`)
       .then((resolve) => resolve.data.data)
-      .then((data) => data.filter((country) => country.name === destination))
+      .then((data) =>
+        data.filter(
+          (country) => country.name.toLowerCase() === destination.toLowerCase()
+        )
+      )
       .then((country) => setCity(country[0].capital));
+    console.log(destination);
   }, []);
 
   useEffect(() => {
