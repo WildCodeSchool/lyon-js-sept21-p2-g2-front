@@ -63,18 +63,31 @@ const NewPostForm = () => {
   return (
     <form className="contact-form" onSubmit={handleSubmit}>
       <h2 id="post-title">Create a new post</h2>
-      <h3>User Name :</h3>
-      <input
-        type="text"
-        id="name"
-        name="UserName"
-        value={newName}
-        onChange={handleNameChange}
-        placeholder="User Name"
-        autoComplete="off"
-        required
-      />
+      <div id="name-and-date-container">
+        <div id="name-container">
+          <h3>User Name :</h3>
+          <input
+            type="text"
+            id="name"
+            name="UserName"
+            value={newName}
+            onChange={handleNameChange}
+            placeholder="User Name"
+            autoComplete="off"
+            required
+          />
+        </div>
 
+        <div id="date-container">
+          <h3>Date :</h3>
+          <input
+            type="date"
+            id="dateArea"
+            value={newDate}
+            onChange={handleDateChange}
+          />
+        </div>
+      </div>
       <h3>Avatar's URL :</h3>
       <input
         type="url"
@@ -85,17 +98,6 @@ const NewPostForm = () => {
         onChange={handleAvatarChange}
         value={newAvatar}
       />
-
-      <div>
-        <h3>Date :</h3>
-
-        <input
-          type="date"
-          id="dateArea"
-          value={newDate}
-          onChange={handleDateChange}
-        />
-      </div>
 
       <h3>Decription of your post</h3>
       <textarea
