@@ -11,13 +11,17 @@ dotenv.config();
 
 const PostDetails = () => {
   const { id } = useParams();
+  console.log(`id postDetails : ${id}`);
   const [post, setPost] = React.useState(null);
   const [comments, setComments] = React.useState(null);
 
   useEffect(() => {
     axios
       .get(`${process.env.REACT_APP_API_BASE_URL}/posts/${id}`)
-      .then((res) => setPost(res.data[0]));
+      .then((res) => {
+        setPost(res.data[0]);
+        console.log(res.data);
+      });
   }, []);
 
   useEffect(() => {
