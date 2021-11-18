@@ -18,7 +18,7 @@ const tags = [
 
 const MySelectTag = ({ setSelectedTags }) => {
   return (
-    <div className="select-tag shadow-2xl">
+    <div className="select-tag">
       <Select
         isMulti
         name="tags"
