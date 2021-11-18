@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-// import Paper from '@material-ui/core/Paper';
 import { Button, TextField } from '@material-ui/core';
 import SendIcon from '@material-ui/icons/Send';
 import '../css/weather.css';
@@ -9,8 +8,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-// Define API const
-// toUpperCase = checkout PascalCase
+// DEFINE API CONST
 const Weather = () => {
   const { name } = useParams();
   const firstLetter = name[0].toUpperCase();
@@ -29,7 +27,7 @@ const Weather = () => {
     setCity(typecity);
   };
 
-  // Call API
+  // CALL DESTINATION API TO FIND CAPITAL
   useEffect(() => {
     axios(`https://countriesnow.space/api/v0.1/countries/capital`)
       .then((resolve) => resolve.data.data)
@@ -39,9 +37,9 @@ const Weather = () => {
         )
       )
       .then((country) => setCity(country[0].capital));
-    console.log(destination);
   }, []);
 
+  // CALL WEATHER API TO DISPLAY CAPITAL WEATHER
   useEffect(() => {
     axios(
       `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
