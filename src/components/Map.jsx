@@ -8,7 +8,6 @@ function Map() {
         title="Inline Frame Example"
         width="300"
         height="200"
-        // margin="5%"
         src="https://www.openstreetmap.org/relation/307829"
       />
     </div>

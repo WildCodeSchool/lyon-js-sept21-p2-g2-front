@@ -24,6 +24,7 @@ const ContactUs = () => {
         process.env.REACT_APP_EMAILJS_KEYID
       )
       .then((result) => {
+        // eslint-disable-next-line
         console.log(result.text);
         setName('');
         setMessage('');
@@ -34,6 +35,7 @@ const ContactUs = () => {
         });
       })
       .catch((error) => {
+        // eslint-disable-next-line
         console.log(error.text);
         addToast('Sorry, something wrong happened, please, try again later!', {
           appearance: 'error',

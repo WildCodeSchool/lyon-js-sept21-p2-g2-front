@@ -32,6 +32,7 @@ const NewPostForm = () => {
             photos: picturesGroupUUID,
           }
         )
+        // eslint-disable-next-line
         .then((resp) => console.log(resp.data));
     }
   };

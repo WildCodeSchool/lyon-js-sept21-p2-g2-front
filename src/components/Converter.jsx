@@ -60,7 +60,6 @@ const Converter = () => {
         .get(url)
         .then((res) => res.data.info.rate)
         .then((data) => setResult((data * amount).toFixed(2)));
-      // .catch((err) => console.error(err));
     }
   }, [amount, destination, firstCurrency]);
 
@@ -92,12 +91,7 @@ const Converter = () => {
               className="h-8 w-16 lg:h-16 lg:w-32 rounded-lg"
               alt="flag"
             />
-            <p
-              className="currencies"
-              // style={{ fontSize: displayInput ? '16px' : '12px' }}
-            >
-              {firstCurrency}
-            </p>
+            <p className="currencies">{firstCurrency}</p>
           </div>
           <select
             name=""

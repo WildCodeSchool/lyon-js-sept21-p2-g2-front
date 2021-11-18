@@ -10,15 +10,13 @@ const CommentForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (comment !== null) {
-      axios
-        .post(
-          `${process.env.REACT_APP_API_BASE_URL}/blog-posts/${id}/comments`,
-          {
-            commentAuthor: author,
-            content: comment,
-          }
-        )
-        .then((resp) => console.log(resp.data));
+      axios.post(
+        `${process.env.REACT_APP_API_BASE_URL}/blog-posts/${id}/comments`,
+        {
+          commentAuthor: author,
+          content: comment,
+        }
+      );
     }
     setAuthor('');
     setComment('');
