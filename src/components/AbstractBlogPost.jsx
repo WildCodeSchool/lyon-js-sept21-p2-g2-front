@@ -1,14 +1,15 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import dotenv from 'dotenv';
 import '../css/AbstractBlogPost.css';
+import DisplayPostsContext from '../contexts/DisplayPostsContext';
 
 dotenv.config();
 
 const AbstractBlogPost = () => {
   const { name } = useParams();
-  const [posts, setPosts] = React.useState(null);
+  const { posts, setPosts } = useContext(DisplayPostsContext);
 
   useEffect(() => {
     axios

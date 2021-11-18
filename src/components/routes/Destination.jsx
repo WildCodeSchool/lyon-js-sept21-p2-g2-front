@@ -6,9 +6,12 @@ import MySelectTag from '../MySelectTag';
 import AbstractBlogPost from '../AbstractBlogPost';
 import CreatePostBtn from '../CreatePostBtn';
 import Divider from '../Divider';
+import SearchBtn from '../SearchBtn';
 import '../../css/Destination.css';
 
 const Destination = () => {
+  const [selectedTags, setSelectedTags] = React.useState(null);
+
   return (
     <div id="destinationPage">
       <DestinationBloc />
@@ -16,7 +19,8 @@ const Destination = () => {
       <Converter />
       <div id="feedback">
         <Divider />
-        <MySelectTag />
+        <MySelectTag setSelectedTags={setSelectedTags} />
+        <SearchBtn foundTags={selectedTags} />
         <AbstractBlogPost />
         <CreatePostBtn />
       </div>
