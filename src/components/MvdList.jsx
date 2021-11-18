@@ -20,16 +20,16 @@ export default function MvdList() {
       imageUrl: 'https://flagcdn.com/w320/bs.png',
     },
     {
-      name: 'Iceland',
-      imageUrl: 'https://flagcdn.com/w320/is.png',
+      name: 'Andorra',
+      imageUrl: 'https://flagcdn.com/w320/ad.png',
     },
     {
       name: 'Malta',
       imageUrl: 'https://flagcdn.com/w320/mt.png',
     },
     {
-      name: 'Ireland',
-      imageUrl: 'https://flagcdn.com/w320/ie.png',
+      name: 'Liechtenstein',
+      imageUrl: 'https://flagcdn.com/w320/li.png',
     },
     {
       name: 'Luxembourg',
