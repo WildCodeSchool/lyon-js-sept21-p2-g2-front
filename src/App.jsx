@@ -9,7 +9,7 @@ import Destination from './components/routes/Destination';
 import PostDetails from './components/routes/PostDetails';
 import Footer from './components/Footer';
 import Quizz from './components/routes/Quizz';
-import Error from './components/Error';
+// import Error from './components/Error';
 import Dashboard from './components/routes/Dashboard';
 import { DisplayPostsProvider } from './contexts/DisplayPostsContext';
 
