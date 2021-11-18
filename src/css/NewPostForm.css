@@ -1,6 +1,7 @@
 .contact-form {
   height: auto;
   width: 85%;
+  max-width: 700px;
   margin: 5% auto;
   background-color: var(--lightShade);
   border-radius: 7px;
@@ -42,9 +43,8 @@
 #name-and-date-container {
   display: flex;
   flex-direction: column;
-
-  /* justify-content: space-between; */
 }
+
 #avatarInput {
   text-align: center;
   cursor: pointer;
@@ -66,6 +66,7 @@
 #add-post-btn:hover {
   background-color: var(--accentShade);
 }
+
 #add-post-btn::before {
   content: '';
   position: absolute;
@@ -81,6 +82,7 @@
   );
   transition: 0.5s;
 }
+
 #add-post-btn:hover::before {
   left: 100%;
 }
@@ -115,6 +117,7 @@
 #picturesUpload button:hover {
   background-color: var(--accentShade);
 }
+
 #picturesUpload button::before {
   content: '';
   position: absolute;
@@ -130,6 +133,7 @@
   );
   transition: 0.5s;
 }
+
 #picturesUpload button:hover::before {
   left: 100%;
 }
@@ -138,22 +142,27 @@
   display: flex;
   justify-content: center;
 }
+
 #picturesUpload label {
   font-family: 'secondaryFont';
   color: var(--drakestShade);
 }
+
 .uploadcare--button {
   background-color: var(--drakestShade);
   color: white;
 }
+
 .uploadcare--button:hover {
   background-color: var(--accentShade);
   color: white;
 }
+
 .uploadcare--menu__item:hover {
   background-color: var(--accentShade);
   color: var(--lightShade);
 }
+
 #input-img-temp {
   border-radius: var(--smallBorderRadius);
   width: 100%;
@@ -168,6 +177,10 @@
 }
 
 @media only screen and (min-width: 640px) {
+  .contact-form {
+    padding: 30px;
+  }
+
   #name-and-date-container {
     display: flex;
     flex-direction: row;

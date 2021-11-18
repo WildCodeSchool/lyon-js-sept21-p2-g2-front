@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import '../css/CommentForm.css';
 
 const CommentForm = () => {
   const [author, setAuthor] = useState('');
@@ -56,7 +57,7 @@ const CommentForm = () => {
         <div id="textArea">
           <textarea
             name="comments"
-            id="comments"
+            id="comments-sender"
             value={comment}
             onChange={handleCommentChange}
             placeholder="Write something here"
