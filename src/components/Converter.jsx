@@ -124,7 +124,7 @@ const Converter = () => {
             <p className="currencies">{currencyCode}</p>
           </div>
           <input
-            type="text"
+            type="number"
             value={amount}
             style={{ display: displayInput ? 'block' : 'none' }}
             onChange={handleAmountChange}

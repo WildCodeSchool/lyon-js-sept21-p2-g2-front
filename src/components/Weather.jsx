@@ -44,13 +44,13 @@ const Weather = () => {
 
   useEffect(() => {
     axios(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
     )
       .then((resolve) => {
         setValue(resolve.data);
         setTemp(resolve.data.main);
         setimg(
-          `http://openweathermap.org/img/wn/${resolve.data.weather[0].icon}.png`
+          `https://openweathermap.org/img/wn/${resolve.data.weather[0].icon}.png`
         );
         setdisc(resolve.data.weather[0].description);
       })
