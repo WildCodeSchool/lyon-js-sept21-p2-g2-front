@@ -10,6 +10,7 @@ dotenv.config();
 const AbstractBlogPost = () => {
   const { name } = useParams();
   const { posts, setPosts } = useContext(DisplayPostsContext);
+  if (posts !== null) console.log(posts.map((post) => post));
 
   useEffect(() => {
     axios

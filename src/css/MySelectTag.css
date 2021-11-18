@@ -2,10 +2,9 @@
   width: 80%;
   max-width: 80%;
   border-radius: var(--smallBorderRadius);
-  background-color: var(--lightShade);
   height: auto;
   margin-top: 5%;
-  margin-bottom: 5%;
+  margin-bottom: 2%;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -21,13 +20,15 @@
 #tag-btn {
   background-color: var(--drakestShade);
   height: auto;
-  width: 15%;
+  width: 10%;
   border-radius: var(--smallBorderRadius);
+  padding: 0.5%;
   color: #fff;
   position: relative;
   overflow: hidden;
   transition: 0.5s;
   font-size: 14px;
+  margin-bottom: 2%;
 }
 
 @media only screen and (min-width: 1024px) {
