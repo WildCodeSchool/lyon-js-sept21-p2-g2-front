@@ -68,6 +68,11 @@
   margin: 2% auto;
 }
 
+.convImg {
+  width: 30%;
+  height: 15%;
+}
+
 .toCurrency {
   grid-row: 1;
   grid-column: 3;

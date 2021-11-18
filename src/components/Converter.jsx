@@ -86,11 +86,7 @@ const Converter = () => {
       <div className="converter-container">
         <div className="devise-container">
           <div>
-            <img
-              src={flag}
-              className="h-8 w-16 lg:h-16 lg:w-32 rounded-lg"
-              alt="flag"
-            />
+            <img src={flag} className="convImg rounded-lg" alt="flag" />
             <p className="currencies">{firstCurrency}</p>
           </div>
           <select
@@ -112,7 +108,7 @@ const Converter = () => {
           <div className="toCurrency">
             <img
               src={destination.flags.png}
-              className="h-8 w-16 lg:h-16 lg:w-32 rounded-lg"
+              className="convImg rounded-lg"
               alt="usa flag"
             />
             <p className="currencies">{currencyCode}</p>
