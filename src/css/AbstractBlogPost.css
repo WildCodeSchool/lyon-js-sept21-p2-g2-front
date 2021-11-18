@@ -1,7 +1,7 @@
 .miniatureBlogPost {
   background-color: var(--lightShade);
   height: 120px;
-  width: 85%;
+  width: 95%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
@@ -10,7 +10,7 @@
   transition: 0.5s;
 
   overflow: hidden;
-  padding: 15px;
+  padding: 1%;
   box-shadow: -2px -2px 8px 4px rgb(43 35 37 / 30%);
   position: relative;
   overflow: hidden;
@@ -21,32 +21,38 @@
   justify-content: center;
   flex-direction: column;
   text-align: left;
-  margin-left: 16px;
+  margin-left: 1%;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-align: center;
 }
 
 .username {
   margin: 16px 0 0 32px;
   font-weight: 900;
+  font-size: 0.8rem;
+  text-align: center;
 }
 
 .userText {
-  font-size: 1rem;
+  font-size: 0.8rem;
   width: 60%;
-  margin: auto;
+  margin: auto 0 auto 5%;
 }
 
 .avatar {
   border-radius: 50%;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   background-size: cover;
   background-color: #fff;
   color: var(--lightShade);
+  margin: auto 2% auto 2%;
 }
 
 @media only screen and (min-width: 1024px) {
   .miniatureBlogPost {
-    width: 50%;
+    width: 80%;
   }
   .miniatureBlogPost:hover {
     background-color: var(--accentShade);
@@ -69,5 +75,15 @@
   }
   .miniatureBlogPost:hover::before {
     left: 100%;
+  }
+  .avatar {
+    width: 80px;
+    height: 80px;
+  }
+  .userText {
+    font-size: 1rem;
+  }
+  .userinfo {
+    font-size: 1rem;
   }
 }
