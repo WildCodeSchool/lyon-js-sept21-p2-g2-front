@@ -62,7 +62,10 @@ const Home = () => {
         {countryList
           .filter((country) => country.name.includes(search))
           .map((elem) => (
-            <Link to={`/destination/${elem.name.toLowerCase()}`}>
+            <Link
+              to={`/destination/${elem.name.toLowerCase()}`}
+              key={elem.name}
+            >
               <div className="flex items-center space-x-4 filter-container">
                 <div>
                   <img

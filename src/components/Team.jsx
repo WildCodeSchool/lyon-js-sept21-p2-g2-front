@@ -19,7 +19,7 @@ const people = [
   },
   {
     name: 'Lea Weibel ',
-    role: 'Fake Student / Senior Lead Developer',
+    role: 'Junior Web Developer',
     imageUrl: 'https://i.ibb.co/cNk1d6L/lea.png',
     githubUrl: 'https://github.com/lea-weibel',
     linkedinUrl: 'https://www.linkedin.com/in/l%C3%A9a-weibel/',

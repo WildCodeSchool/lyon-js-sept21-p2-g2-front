@@ -17,7 +17,7 @@
   "rules": {
     "prettier/prettier": ["error", { "endOfLine": "auto" }],
     "react/jsx-filename-extension": "off",
-    "no-console": "warn",
+    "no-console": "off",
     "no-debugger": "warn",
     "react/react-in-jsx-scope": "off",
     "react/no-unescaped-entities": "off",

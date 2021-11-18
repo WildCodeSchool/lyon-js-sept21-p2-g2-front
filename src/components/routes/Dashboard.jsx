@@ -15,7 +15,7 @@ const Dashboard = () => {
         <p id="info-for-users">
           We prepare a personalized space for you to optimize the sharing of
           your experiences. For now, do not hesitate to share your travel
-          experiences, and to comment on others.
+          experiences and to comment on others.
         </p>
       </div>
       <h4 id="return-to-home-title"> Find your destination here</h4>

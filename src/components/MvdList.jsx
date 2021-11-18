@@ -20,16 +20,16 @@ export default function MvdList() {
       imageUrl: 'https://flagcdn.com/w320/bs.png',
     },
     {
-      name: 'Iceland',
-      imageUrl: 'https://flagcdn.com/w320/is.png',
+      name: 'Andorra',
+      imageUrl: 'https://flagcdn.com/w320/ad.png',
     },
     {
       name: 'Malta',
       imageUrl: 'https://flagcdn.com/w320/mt.png',
     },
     {
-      name: 'Ireland',
-      imageUrl: 'https://flagcdn.com/w320/ie.png',
+      name: 'Liechtenstein',
+      imageUrl: 'https://flagcdn.com/w320/li.png',
     },
     {
       name: 'Luxembourg',
@@ -67,6 +67,7 @@ export default function MvdList() {
         <span
           id="countrySpan"
           className="w-4/5 sm:w-1/3 md:w-2/4 lg:w-3/12 mt-2 bg-dark-sienna text-white shadow-2xl rounded-full p-3"
+          key={mvd[index].name}
         >
           <a href={`/destination/${mvd[index].name.toLowerCase()}`} id="link">
             <div className="flex items-center space-x-4">
