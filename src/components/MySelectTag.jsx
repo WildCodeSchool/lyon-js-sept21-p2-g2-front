@@ -29,9 +29,6 @@ const MySelectTag = ({ setSelectedTags }) => {
         className="basic-multi-select"
         classNamePrefix="select"
       />
-      <button type="submit" id="tag-btn">
-        ADD
-      </button>
     </div>
   );
 };

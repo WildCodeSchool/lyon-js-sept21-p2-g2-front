@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Widget } from '@uploadcare/react-widget';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 import '../css/NewPostForm.css';
@@ -16,6 +16,12 @@ const NewPostForm = () => {
 
   const [selectedTags, setSelectedTags] = React.useState(null);
 
+  const history = useHistory();
+  const routeChange = (id) => {
+    const path = `/posts/${id}`;
+    history.push(path);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -25,14 +31,17 @@ const NewPostForm = () => {
           `${process.env.REACT_APP_API_BASE_URL}/destinations/${destination}/blog-posts`,
           {
             name: newName,
-            date: newDate,
             avatar: newAvatar,
+            date: newDate,
             message: newMessage,
-            tags: selectedTags,
+            tags: selectedTags.join(),
             photos: picturesGroupUUID,
           }
         )
-        .then((resp) => console.log(resp.data));
+        .then((resp) => {
+          console.log(resp.data);
+          routeChange(resp.data.id);
+        });
     }
   };
 
