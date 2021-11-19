@@ -23,7 +23,7 @@ const SearchBtn = ({ foundTags }) => {
 
   return (
     <button type="button" id="tag-btn" onClick={searchTags}>
-      SEARCH
+      FILTER
     </button>
   );
 };

@@ -2,10 +2,9 @@
   width: 80%;
   max-width: 80%;
   border-radius: var(--smallBorderRadius);
-  background-color: var(--lightShade);
   height: auto;
   margin-top: 5%;
-  margin-bottom: 5%;
+  margin-bottom: 1%;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -23,16 +22,19 @@
   height: auto;
   width: 15%;
   border-radius: var(--smallBorderRadius);
+  padding: 0.5%;
   color: #fff;
   position: relative;
   overflow: hidden;
   transition: 0.5s;
   font-size: 14px;
+  margin: 0 auto;
 }
 
 @media only screen and (min-width: 1024px) {
   #tag-btn {
     font-size: 16px;
+    width: 10%;
   }
   #tag-btn:hover {
     background-color: var(--accentShade);

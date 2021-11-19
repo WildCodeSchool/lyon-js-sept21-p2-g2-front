@@ -70,7 +70,7 @@ const PostDetails = () => {
                 ))}
               </figure>
             </div>
-            {/* Posted Comments */}
+            {/* Comments */}
             {comments.map((comment) => (
               <Comment key={comment.id} comment={comment} />
             ))}

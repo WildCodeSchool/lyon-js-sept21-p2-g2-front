@@ -39,7 +39,6 @@ const NewPostForm = () => {
           }
         )
         .then((resp) => {
-          console.log(resp.data);
           routeChange(resp.data.id);
         });
     }
