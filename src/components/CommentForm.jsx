@@ -8,16 +8,25 @@ const CommentForm = () => {
   const [comment, setComment] = useState(null);
   const { id } = useParams();
 
+  const routeChange = () => {
+    window.location.reload(false);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (comment !== null) {
-      axios.post(
-        `${process.env.REACT_APP_API_BASE_URL}/blog-posts/${id}/comments`,
-        {
-          commentAuthor: author,
-          content: comment,
-        }
-      );
+      axios
+        .post(
+          `${process.env.REACT_APP_API_BASE_URL}/blog-posts/${id}/comments`,
+          {
+            commentAuthor: author,
+            content: comment,
+          }
+        )
+        .then((resp) => {
+          console.log(resp.data);
+          routeChange();
+        });
     }
     setAuthor('');
     setComment('');
