@@ -93,7 +93,7 @@ const NewPostForm = () => {
         type="url"
         id="avatarInput"
         name="avatar"
-        required
+        // required
         autoComplete="off"
         onChange={handleAvatarChange}
         value={newAvatar}

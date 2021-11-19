@@ -6,12 +6,12 @@ import '../../css/PostDetails.css';
 import '../../css/FullUserPost.css';
 import CommentForm from '../CommentForm';
 import Comment from '../Comment';
+import emptyAvatar from '../../assets/emptyAvatar.png';
 
 dotenv.config();
 
 const PostDetails = () => {
   const { id } = useParams();
-  console.log(`id postDetails : ${id}`);
   const [post, setPost] = React.useState(null);
   const [comments, setComments] = React.useState(null);
 
@@ -20,7 +20,6 @@ const PostDetails = () => {
       .get(`${process.env.REACT_APP_API_BASE_URL}/posts/${id}`)
       .then((res) => {
         setPost(res.data[0]);
-        console.log(res.data);
       });
   }, []);
 
@@ -51,7 +50,11 @@ const PostDetails = () => {
       <div id="mainContainer">
         <div id="fullUserPost" className="bg-melon-pink shadow-2xl">
           <div id="userPostInfo">
-            <img src={post.avatar} alt="avatar" id="avatar" />
+            <img
+              src={post.avatar === null ? emptyAvatar : post.avatar}
+              alt="avatar"
+              id="avatar"
+            />
             <span id="userName" className="font-bold">
               {post.username}
             </span>
