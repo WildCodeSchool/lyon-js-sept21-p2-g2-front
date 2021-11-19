@@ -90,7 +90,7 @@ export default function DestinationBloc() {
               <span id="liCatTitle">languages: </span>{' '}
               <span id="liCatResult" className="language">
                 {Object.values(destination.languages).map((language) => (
-                  <span>{language} </span>
+                  <span key={language}>{language} </span>
                 ))}
               </span>
             </li>{' '}

@@ -24,6 +24,7 @@ const CommentForm = () => {
           }
         )
         .then((resp) => {
+          // eslint-disable-next-line
           console.log(resp.data);
           routeChange();
         });
