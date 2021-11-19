@@ -43,12 +43,10 @@ const AbstractBlogPost = () => {
           <div
             className="avatar"
             style={{ backgroundImage: `url(${post.avatar})` }}
-          >
-            .
-          </div>
+          />
           <div className="userinfo">
             <p>{post.username}</p>
-            <p>{post.tripDate.slice(0, 10)}</p>
+            <p id="tripDate">{post.tripDate.slice(0, 10)}</p>
           </div>
           <div className="userText">{post.postContent.slice(0, 120)}...</div>
         </div>
