@@ -84,6 +84,7 @@ const NewPostForm = () => {
             id="dateArea"
             value={newDate}
             onChange={handleDateChange}
+            required
           />
         </div>
       </div>

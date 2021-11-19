@@ -52,11 +52,11 @@
 }
 
 #logoContainer {
-  position: relative;
+  /* position: relative; */
   margin: 15% 20px 15% 20px;
   height: 40%;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
 }
 
