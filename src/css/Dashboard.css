@@ -1,5 +1,5 @@
 #title-dash {
-  font-size: 2rem;
+  font-size: 3rem;
   text-align: center;
   background-image: linear-gradient(
     to right,
@@ -18,15 +18,7 @@
   margin-top: 10%;
 }
 
-#baseline-crew {
-  font-size: 1rem;
-  text-align: center;
-  font-style: italic;
-  margin-bottom: 60px;
-  color: #b23a48;
-}
-
-#info-for-users {
+.info-for-users {
   background-color: var(--lightShade);
   color: #b23a48;
   font-weight: bolder;
@@ -45,13 +37,6 @@
   position: relative;
   overflow: hidden;
 }
-#return-to-home-title {
-  font-size: 1rem;
-  text-align: center;
-  font-style: italic;
-  margin-top: 80px;
-  color: #b23a48;
-}
 
 #return-home-link {
   margin-left: auto;
@@ -65,18 +50,28 @@
   width: 40%;
   height: 50px;
   border-radius: 8px;
-  color: var(--lightShade);
+  color: white;
   text-align: center;
   position: relative;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.5s;
 }
+
+#dashboardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 /*effetbtn*/
 
 #return-home-link:hover {
   background-color: var(--accentShade);
+  color: black;
 }
 #return-home-link::before {
   content: '';

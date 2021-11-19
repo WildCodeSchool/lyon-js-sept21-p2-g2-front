@@ -1,3 +1,8 @@
+#feedback {
+  display: flex;
+  flex-direction: column;
+}
+
 @media only screen and (min-width: 1024px) {
   #destinationPage {
     display: flex;
