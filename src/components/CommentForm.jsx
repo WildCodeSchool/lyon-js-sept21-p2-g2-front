@@ -8,6 +8,10 @@ const CommentForm = () => {
   const [comment, setComment] = useState(null);
   const { id } = useParams();
 
+  const routeChange = () => {
+    window.location.reload(false);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (comment !== null) {
@@ -19,7 +23,10 @@ const CommentForm = () => {
             content: comment,
           }
         )
-        .then((resp) => console.log(resp.data));
+        .then((resp) => {
+          console.log(resp.data);
+          routeChange();
+        });
     }
     setAuthor('');
     setComment('');
